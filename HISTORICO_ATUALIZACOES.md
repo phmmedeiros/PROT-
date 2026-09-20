@@ -35,6 +35,26 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Visualização do Mecanismo Único: 3 Cards Fotográficos de Culinária Proteica
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`
+- **Tipo:** `feat` / `ui` / `conversion`
+- **Commit:** `280b77a`
+- **O que foi feito:**
+  - Transformação da seção de Mecanismo ("Arquitetura Gastronômica Proteica") em 3 cartões visuais de alta gastronomia com imagens fotográficas:
+    1. `images/mecanismo-textura.jpg`: Colher erguendo um creme sedoso e aveludado em macrofotografia (A Ilusão da Textura Sedosa).
+    2. `images/mecanismo-crosta.jpg`: Frigideira quente selando crosta dourada caramelizada e queijo (Reação Maillard Anti-Louça).
+    3. `images/mecanismo-densidade.jpg`: Prato refinado de corte macio suculento com redução brilhante (Densidade Proteica sem Estufamento).
+  - Layout com imagem 16:9, selo flutuante de autoridade científica (`🔬 Princípio #1`, `🔥 Princípio #2`, `⚡ Princípio #3`), badge numérico circular (`01`, `02`, `03`) e frases-chave de alto impacto.
+  - Alinhamento responsivo mobile-first estrito (1 coluna no mobile a 390px e 3 colunas niveladas em desktop).
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `04-pagina/images/mecanismo-textura.jpg`
+  - `04-pagina/images/mecanismo-crosta.jpg`
+  - `04-pagina/images/mecanismo-densidade.jpg`
+
+---
+
 ### [2026-09-20] Otimização Mobile: Alinhamento das Dores com Fotos Temáticas e Foco no Gancho de Culinária
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`, `local-preview-server.mjs`

@@ -445,40 +445,101 @@
       margin: 0;
     }
 
-    /* MECANISMO */
-    .mechanism { background: var(--mint); }
-    .mech-step {
+    /* MECANISMO: ARQUITETURA GASTRONÔMICA */
+    .mechanism {
+      background: var(--mint);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .mech-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .mech-card {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 12px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 26px rgba(23, 61, 49, 0.08);
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .mech-num {
-      flex: 0 0 32px;
-      height: 32px;
-      background: var(--orange);
+    .mech-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(23, 61, 49, 0.13);
+    }
+    .mech-img-wrap {
+      width: 100%;
+      position: relative;
+      background: #1a1a1a;
+    }
+    .mech-img-wrap img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+    .mech-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      background: rgba(16, 45, 36, 0.94);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color: #79e2a7;
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      border: 1px solid rgba(121, 226, 167, 0.35);
+    }
+    .mech-badge-num {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, var(--orange-bright) 0%, var(--orange) 100%);
       color: #fff;
+      font-weight: 950;
+      font-size: 14px;
       border-radius: 50%;
       display: grid;
       place-items: center;
+      box-shadow: 0 4px 12px rgba(232, 111, 45, 0.5);
+    }
+    .mech-card-body {
+      padding: 18px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .mech-card h3 {
+      font-size: 18px;
+      color: var(--green);
+      margin-bottom: 5px;
       font-weight: 900;
-      font-size: 15px;
+      line-height: 1.25;
     }
-    .mech-step b {
+    .mech-card .mech-highlight {
+      font-size: 12.5px;
+      color: var(--orange);
+      font-weight: 800;
+      margin-bottom: 8px;
       display: block;
-      font-size: 16px;
-      color: var(--ink);
-      margin-bottom: 3px;
+      line-height: 1.35;
     }
-    .mech-step span {
-      font-size: 13.5px;
+    .mech-card p {
+      font-size: 14px;
       color: var(--muted);
-      line-height: 1.45;
-      display: block;
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* VITRINE SENSORIAL */
@@ -796,6 +857,7 @@
       .tools-grid { grid-template-columns: repeat(4, 1fr); }
       .fork-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
       .cards-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+      .mech-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
     }
   </style>
 </head>
@@ -1251,28 +1313,48 @@
           <p>A maioria das receitas fit tem gosto de borracha porque quem cria não entende de gastronomia. Nós usamos 3 princípios simples:</p>
         </div>
 
-        <div class="mech-step">
-          <div class="mech-num">1</div>
-          <div>
-            <b>A Ilusão da Textura Sedosa</b>
-            <span>Combinações certas com queijos magros e emulsões proteicas que recriam na boca a sensação aveludada do leite condensado e molhos de restaurante. Seu cérebro jura que é besteira; seu corpo recebe aminoácidos para queimar gordura e construir músculo.</span>
-          </div>
-        </div>
+        <div class="mech-grid">
+          <!-- CARD 1: TEXTURA SEDOSA -->
+          <article class="mech-card">
+            <div class="mech-img-wrap">
+              <img src="images/mecanismo-textura.jpg" alt="A Ilusão da Textura Sedosa" loading="lazy">
+              <span class="mech-tag">🔬 Princípio #1 · Textura Sedosa</span>
+              <div class="mech-badge-num">01</div>
+            </div>
+            <div class="mech-card-body">
+              <h3>A Ilusão da Textura Sedosa</h3>
+              <span class="mech-highlight">Seu cérebro jura que é besteira; seu corpo queima gordura.</span>
+              <p>Combinações certas de queijos magros e emulsões proteicas que recriam na boca a sensação aveludada do leite condensado e molhos de restaurante, sem usar farinha branca nem açúcar refinado.</p>
+            </div>
+          </article>
 
-        <div class="mech-step">
-          <div class="mech-num">2</div>
-          <div>
-            <b>Reação Maillard Anti-Louça (1 Panela Só)</b>
-            <span>Técnicas de calor na frigideira e air fryer que criam aquela casquinha dourada e crocante nos salgados. Você prepara em 12 minutos e não passa a noite na pia lavando pilha de louça.</span>
-          </div>
-        </div>
+          <!-- CARD 2: REAÇÃO MAILLARD -->
+          <article class="mech-card">
+            <div class="mech-img-wrap">
+              <img src="images/mecanismo-crosta.jpg" alt="Reação Maillard Anti-Louça" loading="lazy">
+              <span class="mech-tag">🔥 Princípio #2 · Reação Maillard</span>
+              <div class="mech-badge-num">02</div>
+            </div>
+            <div class="mech-card-body">
+              <h3>Reação Maillard Anti-Louça (1 Panela Só)</h3>
+              <span class="mech-highlight">Casquinha crocante e dourada em 12 minutos na frigideira.</span>
+              <p>Técnicas de calor direto na frigideira e air fryer que caramelizam a crosta e retêm a suculência por dentro. Você prepara rápido, come como um rei e não passa a noite na pia lavando pilha de louça.</p>
+            </div>
+          </article>
 
-        <div class="mech-step">
-          <div class="mech-num">3</div>
-          <div>
-            <b>Densidade Proteica sem Estufamento</b>
-            <span>De 30g a 68g de proteína pura por porção sem precisar empanturrar o estômago com quilos de comida seca ou pós artificiais com gosto de giz.</span>
-          </div>
+          <!-- CARD 3: DENSIDADE PROTEICA -->
+          <article class="mech-card">
+            <div class="mech-img-wrap">
+              <img src="images/mecanismo-densidade.jpg" alt="Densidade Proteica sem Estufamento" loading="lazy">
+              <span class="mech-tag">⚡ Princípio #3 · Densidade Pura</span>
+              <div class="mech-badge-num">03</div>
+            </div>
+            <div class="mech-card-body">
+              <h3>Densidade Proteica sem Estufamento</h3>
+              <span class="mech-highlight">De 30g a 68g de proteína pura por refeição comum.</span>
+              <p>Proporções milimetricamente calculadas para você atingir a meta diária de proteína sem precisar empanturrar o estômago com quilos de comida seca ou pós artificiais caros com gosto de giz.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
