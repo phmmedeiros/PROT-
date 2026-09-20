@@ -35,6 +35,17 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Página de Vendas: Mockup do App na Oferta e Imagens dos Bônus
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Novo mockup do aplicativo na seção de oferta (`images/app-mockup-oferta.webp`).
+  - Imagens dos bônus 1 (treino) e 3 (whey) atualizadas.
+  - Ajustes correspondentes em `index.html`.
+- **Observação:** commit feito pelo agente a pedido; conteúdo produzido pelo Paulo.
+
 ### [2026-09-20] Webhook v5: Formato Real da Payt, Testes do Painel Ignorados e Chave Única Exigida
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/supabase/`

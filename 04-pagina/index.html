@@ -686,35 +686,132 @@
     .tool-box h4 { font-size: 15px; color: #ffca99; margin-bottom: 4px; }
     .tool-box p { font-size: 12.5px; color: #d1e2d7; line-height: 1.4; }
 
-    /* BÔNUS */
+    /* BÔNUS COM MOCKUPS 3D */
     .bonus-card {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px 18px;
-      margin-bottom: 14px;
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 22px;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(23, 61, 49, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      overflow: hidden;
+    }
+    .bonus-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(23, 61, 49, 0.12);
+      border-color: rgba(232, 111, 45, 0.4);
+    }
+    .bonus-mockup-wrapper {
       position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f4f7f4;
+      aspect-ratio: 700 / 520;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bonus-mockup-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .bonus-card:hover .bonus-mockup-wrapper img {
+      transform: scale(1.03);
+    }
+    .bonus-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
     }
     .bonus-tag {
       background: var(--orange);
       color: #fff;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 900;
-      padding: 3px 10px;
+      padding: 4px 12px;
       border-radius: 99px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       display: inline-block;
-      margin-bottom: 8px;
+      width: fit-content;
+      margin-bottom: 4px;
     }
-    .bonus-card h3 { font-size: 18px; color: var(--green); margin-bottom: 6px; }
-    .bonus-card p { font-size: 14px; color: var(--muted); line-height: 1.45; }
-    .bonus-card .val {
-      font-size: 12px;
+    .bonus-card h3 {
+      font-size: 20px;
+      color: var(--green);
+      margin: 0;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+    .bonus-card p {
+      font-size: 14.5px;
       color: var(--muted);
-      margin-top: 8px;
-      display: block;
-      font-weight: 800;
+      line-height: 1.5;
+      margin: 4px 0 8px;
+    }
+    .bonus-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .bonus-checklist li {
+      font-size: 13.5px;
+      color: #243b31;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    .bonus-checklist li::before {
+      content: "✓";
+      color: var(--orange);
+      font-weight: 900;
+    }
+    .bonus-price-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--line);
+    }
+    .bonus-price-row .val-cut {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+    .bonus-price-row .val-free {
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 900;
+      background: #eaf4eb;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    @media (max-width: 620px) {
+      .bonus-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+      }
+      .bonus-mockup-wrapper {
+        max-height: 230px;
+      }
+      .bonus-card h3 {
+        font-size: 18px;
+      }
     }
 
     /* O EFEITO NO-BRAINER: AS DUAS ESCOLHAS (THE FORK IN THE ROAD) */
@@ -777,6 +874,41 @@
       line-height: 1.2;
       margin-bottom: 14px;
       font-weight: 900;
+    }
+    .offer-app-mockup-wrapper {
+      margin: 16px 0 20px 0;
+    }
+    .offer-mockup-img-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 30, 20, 0.22);
+      border: 1.5px solid rgba(255, 114, 43, 0.35);
+      background: #081711;
+    }
+    .offer-app-mockup-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .offer-app-features-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .offer-feat-pill {
+      background: #f0f7f3;
+      color: #173d31;
+      border: 1px solid #c9e2d6;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 11.5px;
+      font-weight: 750;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
     .checklist-offer {
       list-style: none;
@@ -981,25 +1113,7 @@
       margin: 0 8px;
     }
 
-    /* STICKY CTA MOBILE */
-    .sticky-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(16, 45, 36, 0.96);
-      backdrop-filter: blur(10px);
-      padding: 10px 16px;
-      box-shadow: 0 -8px 25px rgba(0,0,0,0.25);
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-    }
-    .sticky-bar .cta {
-      padding: 14px 20px;
-      font-size: 15px;
-      min-height: auto;
-    }
+
 
     @media (min-width: 700px) {
       .app-showcase-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
@@ -1619,22 +1733,67 @@
           <h2>Três presentes estratégicos para acelerar sua transformação e economizar dinheiro.</h2>
         </div>
 
+        <!-- BÔNUS 1: FICHAS DE TREINO (MOCKUP 3D) -->
         <div class="bonus-card">
-          <span class="bonus-tag">BÔNUS 1 · VALOR: R$ 47 (HOJE GRÁTIS)</span>
-          <h3>Fichas de Treino Acelerador (Casa & Academia)</h3>
-          <p>Estruturas validadas para transformar cada grama de proteína em massa magra e tônus muscular visível no espelho, sem precisar passar 2 horas na academia.</p>
+          <div class="bonus-mockup-wrapper">
+            <img src="images/bonus/bonus-1-treino.webp" alt="Mockup 3D Fichas de Treino Acelerador Prot+" loading="lazy">
+          </div>
+          <div class="bonus-content">
+            <span class="bonus-tag">🎁 BÔNUS 1 · EXCLUSIVO HOJE</span>
+            <h3>Fichas de Treino Acelerador (Casa & Academia)</h3>
+            <p>Estruturas completas para transformar cada grama de proteína em tônus muscular e definição acelerada, sem perder horas na academia.</p>
+            <ul class="bonus-checklist">
+              <li>Divisões validadas: Push/Pull/Legs (PPL), ABC e Treino em Casa</li>
+              <li>Séries, repetições ideais e intervalos de descanso calculados</li>
+              <li>Treinos curtos e intensos de apenas 35 a 45 minutos por dia</li>
+            </ul>
+            <div class="bonus-price-row">
+              <span class="val-cut">Vendido avulso por: R$ 47,00</span>
+              <span class="val-free">100% GRÁTIS NA OFERTA</span>
+            </div>
+          </div>
         </div>
 
+        <!-- BÔNUS 2: CALCULADORA METABÓLICA (MOCKUP DASHBOARD 3D) -->
         <div class="bonus-card">
-          <span class="bonus-tag">BÔNUS 2 · VALOR: R$ 37 (HOJE GRÁTIS)</span>
-          <h3>Calculadora Metabólica de Déficit Calórico</h3>
-          <p>Descubra em 30 segundos exatamente quanto comer para secar a gordura abdominal sem passar fome, fraqueza ou lentidão.</p>
+          <div class="bonus-mockup-wrapper">
+            <img src="images/bonus/bonus-2-calculadora.webp" alt="Mockup 3D Calculadora Metabólica de Macros Prot+" loading="lazy">
+          </div>
+          <div class="bonus-content">
+            <span class="bonus-tag">🎁 BÔNUS 2 · EXCLUSIVO HOJE</span>
+            <h3>Calculadora Metabólica de Déficit Calórico</h3>
+            <p>Descubra em menos de 30 segundos exatamente quanto comer para secar a gordura abdominal sem passar fome, fraqueza ou lentidão.</p>
+            <ul class="bonus-checklist">
+              <li>Cálculo preciso de Taxa Metabólica Basal (TMB) e Gasto Diário</li>
+              <li>Divisão matemática exata de Proteínas, Carboidratos e Gorduras</li>
+              <li>Ajuste automático para Secar Gordura ou Ganhar Massa Muscular</li>
+            </ul>
+            <div class="bonus-price-row">
+              <span class="val-cut">Vendido avulso por: R$ 37,00</span>
+              <span class="val-free">100% GRÁTIS NA OFERTA</span>
+            </div>
+          </div>
         </div>
 
+        <!-- BÔNUS 3: MANUAL DO WHEY CASEIRO (MOCKUP 3D) -->
         <div class="bonus-card">
-          <span class="bonus-tag">BÔNUS 3 · VALOR: R$ 47 (HOJE GRÁTIS)</span>
-          <h3>O Manual do Whey Caseiro Econômico</h3>
-          <p>Pare de ser explorado por potes de Whey de R$ 200. Faça sua proteína de altíssimo valor biológico no supermercado e economize até R$ 1.800 por ano.</p>
+          <div class="bonus-mockup-wrapper">
+            <img src="images/bonus/bonus-3-whey.webp" alt="Mockup 3D O Manual do Whey Caseiro Prot+" loading="lazy">
+          </div>
+          <div class="bonus-content">
+            <span class="bonus-tag">🎁 BÔNUS 3 · EXCLUSIVO HOJE</span>
+            <h3>O Manual do Whey Caseiro & Proteína Econômica</h3>
+            <p>Pare de ser explorado por potes caros de suplemento. Faça seus próprios shakes hiperproteicos com itens comuns do supermercado e economize uma fortuna.</p>
+            <ul class="bonus-checklist">
+              <li>5 formulações de shakes cremosos com até 40g de proteína por dose</li>
+              <li>Custo real de apenas R$ 3 por dose (sem textura arenosa ou pó)</li>
+              <li>Economia calculada de até R$ 1.800 por ano no supermercado</li>
+            </ul>
+            <div class="bonus-price-row">
+              <span class="val-cut">Vendido avulso por: R$ 47,00</span>
+              <span class="val-free">100% GRÁTIS NA OFERTA</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1676,6 +1835,19 @@
           <span class="badge-fast" style="background: var(--orange);">🔥 ACESSO VITALÍCIO LIBERADO</span>
           <h2>Tudo o que você precisa para bater a proteína com prazer por menos de 1 lanche do delivery.</h2>
           
+          <!-- MOCKUP DO APLICATIVO COM FUNÇÕES PRINCIPAIS -->
+          <div class="offer-app-mockup-wrapper">
+            <div class="offer-mockup-img-container">
+              <img src="images/app-mockup-oferta.webp" alt="Mockup do Aplicativo Prot+ no Celular com Modo Geladeira Inteligente, 120 Receitas TACO e Acesso 100% Offline" class="offer-app-mockup-img" loading="lazy" width="600" height="338">
+            </div>
+            <div class="offer-app-features-pills">
+              <span class="offer-feat-pill">📱 App PWA no Celular</span>
+              <span class="offer-feat-pill">❄️ Geladeira Inteligente</span>
+              <span class="offer-feat-pill">📊 Tabela TACO Auditada</span>
+              <span class="offer-feat-pill">⚡ 100% Offline</span>
+            </div>
+          </div>
+
           <ul class="checklist-offer">
             <li><strong>120 Receitas Proteicas Gourmet:</strong> Café, Almoço, Jantar e Sobremesas</li>
             <li><strong>Macros reais na grama:</strong> Valores exatos auditados pela tabela TACO</li>
@@ -1823,11 +1995,6 @@
     </div>
   </footer>
 
-  <!-- BOTÃO FLUTUANTE STICKY MOBILE (ALTA CONVERSÃO) -->
-  <div class="sticky-bar" id="stickyBar">
-    <a class="cta" href="#oferta" id="btnSticky">QUERO MEU ACESSO · R$ 27,50 ⚡</a>
-  </div>
-
   <script>
     // =========================================================================
     // CONFIGURAÇÃO DO CHECKOUT PAYT (Cole a URL do checkout abaixo quando criada)
@@ -1835,7 +2002,7 @@
     const PAYT_CHECKOUT_URL = "https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9";
 
     // Redirecionamento inteligente dos botões de compra para o checkout Payt
-    document.querySelectorAll('a[href="#checkout"], #btnMainOffer, #btnSticky').forEach(btn => {
+    document.querySelectorAll('a[href="#checkout"], #btnMainOffer').forEach(btn => {
       btn.addEventListener('click', (e) => {
         if (PAYT_CHECKOUT_URL && PAYT_CHECKOUT_URL.trim() !== "") {
           e.preventDefault();
