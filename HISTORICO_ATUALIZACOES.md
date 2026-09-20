@@ -35,6 +35,23 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Segunda Dobra Bidirecional: Carrossel Duplo em Movimentos Opostos (Esquerda e Direita)
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/index.html`
+- **Tipo:** `feat` / `ui` / `style`
+- **Commit:** `4a75679`
+- **O que foi feito:**
+  - Evolução da segunda dobra com 2 linhas horizontais animadas e sincronizadas em sentidos opostos:
+    - **Linha 1 (Rolando para a esquerda):** 10 pratos principais e salgados de alta densidade proteica (Crepioca Crocante, Frango Dourado, Tilápia, Hambúrguer Fit, Parmegiana, Escondidinho, etc.) com badges de proteína até 52g.
+    - **Linha 2 (Rolando para a direita):** 10 sobremesas, doces e shakes anti-compulsão (Cheesecake de Morango, Panqueca Vulcão, Gelato Dark Cacau, Milkshake, Mousse, Brownie, Waffle, etc.).
+    - Duplicação exata de cada linha (total de 40 cards) gerando loop contínuo e fluido de 360 graus sem engasgos.
+    - Efeito de pausa ao passar o mouse ou toque prolongado (`:hover`).
+    - Proteção de viewport com `overflow-x: hidden` no elemento `html` e `body` para navegação mobile estável.
+- **Arquivos modificados:**
+  - `04-pagina/index.html`
+
+---
+
 ### [2026-09-20] Segunda Dobra de Alto Impacto: Slider Infinito de Receitas em Movimento e Stack de Valor
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/index.html`

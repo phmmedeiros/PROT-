@@ -28,7 +28,7 @@
       --green-bg: #f0fdf4;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       background: var(--cream);
       color: var(--ink);
@@ -224,7 +224,7 @@
       margin-top: 3px;
     }
 
-    /* SEGUNDA DOBRA: O SLIDER INFINITO COM FOTOS EM MOVIMENTO (MARQUEE) */
+    /* SEGUNDA DOBRA: SLIDER INFINITO DE DUAS LINHAS (ESQUERDA E DIREITA) */
     .what-you-get-section {
       background: #fff;
       padding: 44px 0 48px;
@@ -235,14 +235,14 @@
       margin-left: calc(-50vw + 50%);
       overflow: hidden;
       position: relative;
-      padding: 14px 0 20px;
+      padding: 14px 0 18px;
     }
     .recipe-marquee-wrap::before, .recipe-marquee-wrap::after {
       content: '';
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 34px;
+      width: 38px;
       z-index: 3;
       pointer-events: none;
     }
@@ -254,23 +254,41 @@
       right: 0;
       background: linear-gradient(to left, #fff, transparent);
     }
-    .recipe-marquee-track {
+    
+    /* LINHA 1 (ESQUERDA) */
+    .recipe-marquee-track.track-left {
       display: flex;
       gap: 12px;
       width: max-content;
-      animation: marqueeLeft 30s linear infinite;
+      animation: marqueeLeft 34s linear infinite;
       will-change: transform;
     }
+    /* LINHA 2 (DIREITA) */
+    .recipe-marquee-track.track-right {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      animation: marqueeRight 36s linear infinite;
+      will-change: transform;
+      margin-top: 12px;
+    }
+
     .recipe-marquee-track:hover {
       animation-play-state: paused;
     }
+
     @keyframes marqueeLeft {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    @keyframes marqueeRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
     .marquee-card {
-      flex: 0 0 170px;
-      width: 170px;
+      flex: 0 0 165px;
+      width: 165px;
       background: var(--cream);
       border-radius: 18px;
       overflow: hidden;
@@ -288,11 +306,11 @@
       display: block;
     }
     .marquee-card-info {
-      padding: 10px 12px 12px;
+      padding: 9px 11px 11px;
     }
     .marquee-card-info b {
       display: block;
-      font-size: 13px;
+      font-size: 12.5px;
       line-height: 1.25;
       color: var(--ink);
       white-space: nowrap;
@@ -304,19 +322,22 @@
       display: inline-block;
       color: #fff;
       background: var(--orange);
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 900;
       padding: 2.5px 8px;
       border-radius: 99px;
       margin-top: 5px;
       letter-spacing: 0.3px;
     }
+    .marquee-badge.sweet {
+      background: #c2410c;
+    }
 
     /* STACK VISUAL DO QUE O CLIENTE GANHA / RECEBE */
     .unlocked-stack {
       display: grid;
       gap: 10px;
-      margin: 22px auto 26px;
+      margin: 24px auto 26px;
       max-width: 600px;
     }
     .stack-item {
@@ -833,7 +854,7 @@
   </div>
 
   <main>
-    <!-- SEGUNDA DOBRA: SLIDER INFINITO EM MOVIMENTO PARA A ESQUERDA + O QUE VOCÊ VAI RECEBER -->
+    <!-- SEGUNDA DOBRA: SLIDER INFINITO DE 2 LINHAS (ESQUERDA E DIREITA) + O QUE VOCÊ VAI RECEBER -->
     <section class="what-you-get-section">
       <div class="wrap">
         <div class="section-title">
@@ -843,10 +864,12 @@
         </div>
       </div>
 
-      <!-- SLIDER INFINITO CONTÍNUO DESLIZANDO PARA A ESQUERDA -->
+      <!-- SLIDER INFINITO COM 2 LINHAS HORIZONTAIS EM MOVIMENTOS OPOSTOS -->
       <div class="recipe-marquee-wrap">
-        <div class="recipe-marquee-track">
-          <!-- CARD 1: Crepioca Crocante -->
+        
+        <!-- LINHA 1: ROLANDO SUAVEMENTE PARA A ESQUERDA (PRATOS PRINCIPAIS & SALGADOS) -->
+        <div class="recipe-marquee-track track-left">
+          <!-- CARD 1 -->
           <div class="marquee-card">
             <img src="../03-produto/app/images/CL-002.png" alt="Crepioca Folhada com Queijo">
             <div class="marquee-card-info">
@@ -854,26 +877,15 @@
               <span class="marquee-badge">29,8g Proteína</span>
             </div>
           </div>
-
-          <!-- CARD 2: Frango Dourado ao Molho -->
+          <!-- CARD 2 -->
           <div class="marquee-card">
-            <img src="../03-produto/app/images/AJ-001.png" alt="Frango Suculento ao Molho Dourado">
+            <img src="../03-produto/app/images/AJ-001.png" alt="Frango ao Molho Dourado">
             <div class="marquee-card-info">
-              <b>Frango ao Molho Dourado</b>
+              <b>Frango Dourado</b>
               <span class="marquee-badge">45g Proteína</span>
             </div>
           </div>
-
-          <!-- CARD 3: Cheesecake de Morango -->
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/SOB-002.png" alt="Cheesecake Cremoso de Morango">
-            <div class="marquee-card-info">
-              <b>Cheesecake de Morango</b>
-              <span class="marquee-badge">22g Proteína</span>
-            </div>
-          </div>
-
-          <!-- CARD 4: Tilápia com Purê Aveludado -->
+          <!-- CARD 3 -->
           <div class="marquee-card">
             <img src="../03-produto/app/images/AJ-003.png" alt="Tilápia com Purê Aveludado">
             <div class="marquee-card-info">
@@ -881,62 +893,64 @@
               <span class="marquee-badge">35g Proteína</span>
             </div>
           </div>
-
-          <!-- CARD 5: Milkshake de Cacau -->
+          <!-- CARD 4 -->
           <div class="marquee-card">
-            <img src="../03-produto/app/images/CL-014.png" alt="Milkshake Anabólico de Cacau">
+            <img src="../03-produto/app/images/AJ-020.png" alt="Hambúrguer Fit Caseiro">
             <div class="marquee-card-info">
-              <b>Milkshake de Cacau</b>
-              <span class="marquee-badge">32g Proteína</span>
-            </div>
-          </div>
-
-          <!-- CARD 6: Gelato Dark Proteico -->
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/SOB-014.png" alt="Gelato Dark Proteico">
-            <div class="marquee-card-info">
-              <b>Gelato Dark Chocolate</b>
-              <span class="marquee-badge">24g Proteína</span>
-            </div>
-          </div>
-
-          <!-- CARD 7: Panqueca Doce Vulcão -->
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/CL-001.png" alt="Panqueca Doce Vulcão de Banana">
-            <div class="marquee-card-info">
-              <b>Panqueca Doce Vulcão</b>
-              <span class="marquee-badge">23,4g Proteína</span>
-            </div>
-          </div>
-
-          <!-- CARD 8: Frango com Legumes ao Molho -->
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/AJ-015.png" alt="Frango Especial com Legumes">
-            <div class="marquee-card-info">
-              <b>Frango Dourado Especial</b>
-              <span class="marquee-badge">48g Proteína</span>
-            </div>
-          </div>
-
-          <!-- CARD 9: Mousse Proteico Aveludado -->
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/SOB-001.png" alt="Mousse Aveludado Proteico">
-            <div class="marquee-card-info">
-              <b>Mousse Aveludado</b>
-              <span class="marquee-badge">20g Proteína</span>
-            </div>
-          </div>
-
-          <!-- CARD 10: Hambúrguer Caseiro Fit -->
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/AJ-020.png" alt="Hambúrguer Caseiro Fit com Queijo">
-            <div class="marquee-card-info">
-              <b>Hambúrguer Fit Caseiro</b>
+              <b>Hambúrguer Caseiro</b>
               <span class="marquee-badge">42g Proteína</span>
             </div>
           </div>
+          <!-- CARD 5 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-015.png" alt="Frango Especial com Legumes">
+            <div class="marquee-card-info">
+              <b>Frango com Legumes</b>
+              <span class="marquee-badge">48g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 6 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-022.png" alt="Carne Desfiada Suculenta">
+            <div class="marquee-card-info">
+              <b>Carne Desfiada</b>
+              <span class="marquee-badge">44g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 7 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-005.png" alt="Omelete Cremoso Recheado">
+            <div class="marquee-card-info">
+              <b>Omelete Cremoso</b>
+              <span class="marquee-badge">31g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 8 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-028.png" alt="Parmegiana Fit Crocante">
+            <div class="marquee-card-info">
+              <b>Parmegiana Crocante</b>
+              <span class="marquee-badge">52g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 9 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-033.png" alt="Escondidinho com Carne">
+            <div class="marquee-card-info">
+              <b>Escondidinho Fit</b>
+              <span class="marquee-badge">46g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 10 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-020.png" alt="Wrap Crocante Proteico">
+            <div class="marquee-card-info">
+              <b>Wrap Crocante</b>
+              <span class="marquee-badge">28g Proteína</span>
+            </div>
+          </div>
 
-          <!-- ================= DUPLICAÇÃO EXATA PARA O LOOP INFINITO ================= -->
+          <!-- DUPLICAÇÃO EXATA LINHA 1 PARA O LOOP INFINITO -->
           <div class="marquee-card">
             <img src="../03-produto/app/images/CL-002.png" alt="Crepioca Folhada com Queijo">
             <div class="marquee-card-info">
@@ -945,17 +959,10 @@
             </div>
           </div>
           <div class="marquee-card">
-            <img src="../03-produto/app/images/AJ-001.png" alt="Frango Suculento ao Molho Dourado">
+            <img src="../03-produto/app/images/AJ-001.png" alt="Frango ao Molho Dourado">
             <div class="marquee-card-info">
-              <b>Frango ao Molho Dourado</b>
+              <b>Frango Dourado</b>
               <span class="marquee-badge">45g Proteína</span>
-            </div>
-          </div>
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/SOB-002.png" alt="Cheesecake Cremoso de Morango">
-            <div class="marquee-card-info">
-              <b>Cheesecake de Morango</b>
-              <span class="marquee-badge">22g Proteína</span>
             </div>
           </div>
           <div class="marquee-card">
@@ -966,45 +973,208 @@
             </div>
           </div>
           <div class="marquee-card">
-            <img src="../03-produto/app/images/CL-014.png" alt="Milkshake Anabólico de Cacau">
+            <img src="../03-produto/app/images/AJ-020.png" alt="Hambúrguer Fit Caseiro">
             <div class="marquee-card-info">
-              <b>Milkshake de Cacau</b>
-              <span class="marquee-badge">32g Proteína</span>
-            </div>
-          </div>
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/SOB-014.png" alt="Gelato Dark Proteico">
-            <div class="marquee-card-info">
-              <b>Gelato Dark Chocolate</b>
-              <span class="marquee-badge">24g Proteína</span>
-            </div>
-          </div>
-          <div class="marquee-card">
-            <img src="../03-produto/app/images/CL-001.png" alt="Panqueca Doce Vulcão de Banana">
-            <div class="marquee-card-info">
-              <b>Panqueca Doce Vulcão</b>
-              <span class="marquee-badge">23,4g Proteína</span>
+              <b>Hambúrguer Caseiro</b>
+              <span class="marquee-badge">42g Proteína</span>
             </div>
           </div>
           <div class="marquee-card">
             <img src="../03-produto/app/images/AJ-015.png" alt="Frango Especial com Legumes">
             <div class="marquee-card-info">
-              <b>Frango Dourado Especial</b>
+              <b>Frango com Legumes</b>
               <span class="marquee-badge">48g Proteína</span>
             </div>
           </div>
           <div class="marquee-card">
-            <img src="../03-produto/app/images/SOB-001.png" alt="Mousse Aveludado Proteico">
+            <img src="../03-produto/app/images/AJ-022.png" alt="Carne Desfiada Suculenta">
             <div class="marquee-card-info">
-              <b>Mousse Aveludado</b>
-              <span class="marquee-badge">20g Proteína</span>
+              <b>Carne Desfiada</b>
+              <span class="marquee-badge">44g Proteína</span>
             </div>
           </div>
           <div class="marquee-card">
-            <img src="../03-produto/app/images/AJ-020.png" alt="Hambúrguer Caseiro Fit com Queijo">
+            <img src="../03-produto/app/images/CL-005.png" alt="Omelete Cremoso Recheado">
             <div class="marquee-card-info">
-              <b>Hambúrguer Fit Caseiro</b>
-              <span class="marquee-badge">42g Proteína</span>
+              <b>Omelete Cremoso</b>
+              <span class="marquee-badge">31g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-028.png" alt="Parmegiana Fit Crocante">
+            <div class="marquee-card-info">
+              <b>Parmegiana Crocante</b>
+              <span class="marquee-badge">52g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-033.png" alt="Escondidinho com Carne">
+            <div class="marquee-card-info">
+              <b>Escondidinho Fit</b>
+              <span class="marquee-badge">46g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-020.png" alt="Wrap Crocante Proteico">
+            <div class="marquee-card-info">
+              <b>Wrap Crocante</b>
+              <span class="marquee-badge">28g Proteína</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINHA 2: ROLANDO SUAVEMENTE PARA A DIREITA (SOBREMESAS, DOCES & SHAKES) -->
+        <div class="recipe-marquee-track track-right">
+          <!-- CARD 1 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-002.png" alt="Cheesecake de Morango">
+            <div class="marquee-card-info">
+              <b>Cheesecake Morango</b>
+              <span class="marquee-badge sweet">22g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 2 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-001.png" alt="Panqueca Doce Vulcão">
+            <div class="marquee-card-info">
+              <b>Panqueca Vulcão</b>
+              <span class="marquee-badge sweet">23,4g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 3 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-014.png" alt="Gelato Dark Chocolate">
+            <div class="marquee-card-info">
+              <b>Gelato Dark Cacau</b>
+              <span class="marquee-badge sweet">24g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 4 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-014.png" alt="Milkshake Anabólico de Cacau">
+            <div class="marquee-card-info">
+              <b>Milkshake de Cacau</b>
+              <span class="marquee-badge sweet">32g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 5 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-001.png" alt="Mousse Aveludado">
+            <div class="marquee-card-info">
+              <b>Mousse Aveludado</b>
+              <span class="marquee-badge sweet">20g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 6 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-006.png" alt="Brownie Fit de Frigideira">
+            <div class="marquee-card-info">
+              <b>Brownie de Frigideira</b>
+              <span class="marquee-badge sweet">25g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 7 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-008.png" alt="Waffle Dourado de Canela">
+            <div class="marquee-card-info">
+              <b>Waffle Dourado</b>
+              <span class="marquee-badge sweet">26g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 8 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-010.png" alt="Torta Gelada de Limão">
+            <div class="marquee-card-info">
+              <b>Torta de Limão Fit</b>
+              <span class="marquee-badge sweet">21g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 9 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-018.png" alt="Picolé de Frutas Vermelhas">
+            <div class="marquee-card-info">
+              <b>Picolé Proteico</b>
+              <span class="marquee-badge sweet">19g Proteína</span>
+            </div>
+          </div>
+          <!-- CARD 10 -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-011.png" alt="Pudim Proteico Cremoso">
+            <div class="marquee-card-info">
+              <b>Pudim de Baunilha</b>
+              <span class="marquee-badge sweet">24g Proteína</span>
+            </div>
+          </div>
+
+          <!-- DUPLICAÇÃO EXATA LINHA 2 PARA O LOOP INFINITO -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-002.png" alt="Cheesecake de Morango">
+            <div class="marquee-card-info">
+              <b>Cheesecake Morango</b>
+              <span class="marquee-badge sweet">22g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-001.png" alt="Panqueca Doce Vulcão">
+            <div class="marquee-card-info">
+              <b>Panqueca Vulcão</b>
+              <span class="marquee-badge sweet">23,4g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-014.png" alt="Gelato Dark Chocolate">
+            <div class="marquee-card-info">
+              <b>Gelato Dark Cacau</b>
+              <span class="marquee-badge sweet">24g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-014.png" alt="Milkshake Anabólico de Cacau">
+            <div class="marquee-card-info">
+              <b>Milkshake de Cacau</b>
+              <span class="marquee-badge sweet">32g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-001.png" alt="Mousse Aveludado">
+            <div class="marquee-card-info">
+              <b>Mousse Aveludado</b>
+              <span class="marquee-badge sweet">20g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-006.png" alt="Brownie Fit de Frigideira">
+            <div class="marquee-card-info">
+              <b>Brownie de Frigideira</b>
+              <span class="marquee-badge sweet">25g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-008.png" alt="Waffle Dourado de Canela">
+            <div class="marquee-card-info">
+              <b>Waffle Dourado</b>
+              <span class="marquee-badge sweet">26g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-010.png" alt="Torta Gelada de Limão">
+            <div class="marquee-card-info">
+              <b>Torta de Limão Fit</b>
+              <span class="marquee-badge sweet">21g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-018.png" alt="Picolé de Frutas Vermelhas">
+            <div class="marquee-card-info">
+              <b>Picolé Proteico</b>
+              <span class="marquee-badge sweet">19g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-011.png" alt="Pudim Proteico Cremoso">
+            <div class="marquee-card-info">
+              <b>Pudim de Baunilha</b>
+              <span class="marquee-badge sweet">24g Proteína</span>
             </div>
           </div>
         </div>
