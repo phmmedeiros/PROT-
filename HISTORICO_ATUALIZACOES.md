@@ -39,7 +39,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `6f72a9b`
 - **O que foi feito:**
   - Novo mockup do aplicativo na seção de oferta (`images/app-mockup-oferta.webp`).
   - Imagens dos bônus 1 (treino) e 3 (whey) atualizadas.
