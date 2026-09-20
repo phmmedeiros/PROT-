@@ -23,3 +23,12 @@ desktop.ini
 
 # Pasta interna do agente IA
 .gemini/
+
+# Credenciais locais do QA (nunca versionar)
+.qa-credenciais
+
+# Segredos de servico (nunca versionar)
+.segredos
+
+# Pacotes de publicacao gerados
+03-produto/app/dist/
