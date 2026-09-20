@@ -7,7 +7,7 @@
 **Manual da Equipe:** [`BOAS_PRATICAS_EQUIPE.md`](./BOAS_PRATICAS_EQUIPE.md)  
 **Diretrizes de IA:** [`AGENTS.md`](./AGENTS.md)
 
-**Última atualização:** 20/09/2026 — Doze melhorias de usabilidade publicadas em https://app.comersemprebem.site, 63 verificações passando em produção. Faltam os segredos do lembrete e do webhook no painel da Supabase.
+**Última atualização:** 20/09/2026 — Webhook da Payt cadastrado e testado com o payload real (compra → conta → e-mail de acesso). Segredos no Vault da Supabase. App, página de vendas e banco no ar. Falta subir o limite de e-mails/hora antes do tráfego.
 
 
 ---
@@ -95,16 +95,18 @@
   - [x] Fichas de cadastro e imagens 800x800 preparadas para a Payt (`05-checkout/cadastro-payt.md` e `05-checkout/imagens-payt/`)
   - [x] Link de checkout da Payt ativado e integrado aos CTAs da Landing Page (`https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9`)
   - [x] Publicação em domínio/hospedagem pública (`lp.comersemprebem.site` e `comersemprebem.site` na Hostinger com SSL)
+  - [x] Webhook da Payt cadastrado (postback "PayT V1"), segredos no Vault, seis cenários testados com o payload real
+  - [x] Compra simulada → conta criada → e-mail de acesso entregue → link abre dentro do app (verificado pelo Paulo)
   - [ ] QA completo no celular real e compra de teste autorizada (Parada 4)
 
 ---
 
 ## 📌 Onde Paramos / Próximo Passo Imediato
 
-1. **Estado Atual:** **Fase 3 concluída**, com login e banco. Pendências antes de vender:
-   - Painel da Supabase: `PAYT_WEBHOOK_SECRET` e os três segredos do lembrete (`CRON_SECRET`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`); subir o limite de 30 e-mails/h; modelo do e-mail em português.
-   - Payt: colar a URL do webhook.
-   - Página de vendas: 40 imagens apontam para fora do site; tirar a promessa de offline; publicar em `lp.`.
+1. **Estado Atual:** app, login, banco, webhook da Payt e lembretes no ar e testados. Pendências antes de ligar o tráfego:
+   - Supabase: subir o limite de **30 e-mails/hora** — cada compra agora dispara um e-mail sozinha; a cliente 31 da hora não recebe.
+   - Página de vendas: revisar a promessa de funcionamento offline (o app exige internet).
+   - Compra real de teste na Payt, para fechar o circuito com pagamento de verdade (a função guarda o payload; ajuste é rápido se algo vier diferente).
    - [`02-blueprint/blueprint.md`](./02-blueprint/blueprint.md) e [`02-blueprint/produto.md`](./02-blueprint/produto.md) criados e especificados para o **Prot+**.
 2. **Próximo Passo Imediato (Fase 3 - Construir o Produto):**
    - **Lote 1 concluído:** 20 receitas autorais de café e lanches, com memória de cálculo e conferência independente de 3 receitas.
