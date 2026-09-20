@@ -2,9 +2,13 @@
 
 **Status atual:** Fase 6 — checkout Payt, QA final e entrega. O produto, os PDFs e a página estão prontos localmente; faltam URL pública, configuração externa e testes de compra.
 
-**Última atualização:** 19/09/2026
+**Equipe:** [Paulo Henrique](mailto:phenrimedeiros@gmail.com) & [Pedro Henrique](mailto:pedro.arqtt@gmail.com)  
+**Histórico de Autoria:** [`HISTORICO_ATUALIZACOES.md`](./HISTORICO_ATUALIZACOES.md)  
+**Manual da Equipe:** [`BOAS_PRATICAS_EQUIPE.md`](./BOAS_PRATICAS_EQUIPE.md)  
+**Diretrizes de IA:** [`AGENTS.md`](./AGENTS.md)
 
-**Atualização local:** 20/09/2026 — servidor de pré-visualização criado e iniciado em `http://127.0.0.1:4174/`. Página de vendas, app e banco de receitas responderam com sucesso.
+**Última atualização:** 20/09/2026 — Governança e boas práticas para trabalho em dupla integradas.
+
 
 ---
 
@@ -76,7 +80,7 @@
 ## 📌 Onde Paramos / Próximo Passo Imediato
 
 1. **Estado Atual:** **Fase 3 (Banco de Receitas)** em andamento; Lote 1 concluído e aguardando revisão.
-   - [02-blueprint/blueprint.md](file:///c:/Users/Pedro/Desktop/Digital/Modelagem-Receitas-Proteicas/02-blueprint/blueprint.md) e [02-blueprint/produto.md](file:///c:/Users/Pedro/Desktop/Digital/Modelagem-Receitas-Proteicas/02-blueprint/produto.md) criados e especificados para o **Prot+**.
+   - [`02-blueprint/blueprint.md`](./02-blueprint/blueprint.md) e [`02-blueprint/produto.md`](./02-blueprint/produto.md) criados e especificados para o **Prot+**.
 2. **Próximo Passo Imediato (Fase 3 - Construir o Produto):**
    - **Lote 1 concluído:** 20 receitas autorais de café e lanches, com memória de cálculo e conferência independente de 3 receitas.
    - **Lote 2 concluído e aguardando revisão:** mais 20 receitas de café e lanches (`CL-021` a `CL-040`).
