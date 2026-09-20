@@ -39,7 +39,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`, `03-produto/`, `06-entrega/`
 - **Tipo:** `deploy` / `infra`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `ea1a1ad`
 - **O que foi feito:**
   - Criação e configuração do subdomínio `lp.comersemprebem.site` na Hostinger com certificado SSL vitalício ativo e redirecionamento HTTPS automático.
   - Deploy completo da estrutura da Landing Page (`index.html`, `style.css`, `script.js`, `images/`, `obrigado.html`, `termos.html`, `privacidade.html`).
