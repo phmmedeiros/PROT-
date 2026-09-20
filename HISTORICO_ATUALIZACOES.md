@@ -39,7 +39,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/dados/`, `local-preview-server.mjs`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `034405f`
 - **O que foi feito:**
   - Reescrita do PWA a partir do esboço, cobrindo as 8 telas de `02-blueprint/produto.md`:
     Início, Catálogo, Detalhe da receita, Seletor Turbo, Radar de Despensa,
