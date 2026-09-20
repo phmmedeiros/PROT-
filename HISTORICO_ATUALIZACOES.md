@@ -35,6 +35,24 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Otimização Mobile Direct Response Extrema: Foto da Persona, Remoção de Menu e Efeito No-Brainer
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`
+- **Tipo:** `feat` / `ui` / `conversion`
+- **Commit:** `35a3961`
+- **O que foi feito:**
+  - Remoção completa da barra de navegação/menu superior, logo e botões institucionais para eliminar pontos de fuga e foco em marca.
+  - Adição de barra de alerta máxima no topo (`⚠️ ATENÇÃO...`).
+  - Substituição da imagem isolada do prato pela imagem autêntica da Persona (`04-pagina/images/hero-persona.jpg`): mulher brasileira atlética na cozinha comendo um hambúrguer suculento com satisfação e alívio, conectando imediatamente com a dor e o desejo de secar o corpo sem passar fome.
+  - Implementação da **Oferta Antecipada (Fast-Offer Banner)** logo após a dobra inicial para capturar compras por impulso (leads de decisão rápida).
+  - Implementação do bloco psicológico **"As Duas Escolhas" (The Fork in the Road)** antes da oferta final, evidenciando o custo da inação e gerando o efeito "no-brainer" (onde recusar a compra parece a decisão mais irracional do dia).
+  - Calibração de layout estrita para celulares (viewport de 390px): espaçamentos reduzidos, leitura fluida em escorregador, botões CTA com animação pulsante e barra sticky inferior para fechamento rápido.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html` [MODIFICADO]
+  - `04-pagina/images/hero-persona.jpg` [NOVO]
+
+---
+
 ### [2026-09-20] Copywriting Visceral de Alta Conversão para Público Frio (Direct Response)
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/index.html`, `.gitignore`
