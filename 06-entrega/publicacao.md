@@ -2,7 +2,11 @@
 
 ## Status
 
-Este documento prepara a publicação, mas nenhum site, domínio, checkout ou conta externa foi alterado. A publicação depende da confirmação do responsável, dos acessos de hospedagem e da URL definitiva do checkout.
+Publicação realizada com sucesso na Hostinger em 20/09/2026:
+- Domínio principal: `https://comersemprebem.site/` (redireciona para o subdomínio `lp`)
+- Página de vendas: `https://lp.comersemprebem.site/`
+- Aplicativo PWA: `https://lp.comersemprebem.site/app/`
+- Certificado SSL ativo (hSSL Lifetime) e QA automatizado com 33 testes aprovados sem falhas.
 
 ## 1. Estrutura para hospedagem
 
@@ -101,13 +105,13 @@ Texto-base:
 | Variável | Estado |
 |---|---|
 | URL real do checkout | `[CONFIGURAR]` |
-| Domínio da página | `[CONFIGURAR]` |
-| Domínio ou caminho final do app | `[CONFIGURAR]` |
+| Domínio da página | `https://lp.comersemprebem.site/` |
+| Domínio ou caminho final do app | `https://lp.comersemprebem.site/app/` |
 | E-mail remetente | `[CONFIGURAR]` |
 | Canal de suporte | `[CONFIGURAR]` |
 | Pixel e eventos | `[CONFIGURAR]` |
 | Data promocional | `[CONFIGURAR]` |
-| Termos e privacidade | `[CONFIGURAR]` |
+| Termos e privacidade | `https://lp.comersemprebem.site/termos.html` / `privacidade.html` |
 
 ## 7. Regra de publicação
 

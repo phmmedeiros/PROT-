@@ -35,6 +35,25 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Publicação e Deploy na Hostinger: lp.comersemprebem.site e comersemprebem.site
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `03-produto/`, `06-entrega/`
+- **Tipo:** `deploy` / `infra`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Criação e configuração do subdomínio `lp.comersemprebem.site` na Hostinger com certificado SSL vitalício ativo e redirecionamento HTTPS automático.
+  - Deploy completo da estrutura da Landing Page (`index.html`, `style.css`, `script.js`, `images/`, `obrigado.html`, `termos.html`, `privacidade.html`).
+  - Deploy do aplicativo PWA integrado (`app/` com fotos WebP `w400/` e `w900/`, ícones do manifest e service worker) e dados JSON (`dados/receitas.json`, `dicas-chef.json`, `bonus.json`).
+  - Configuração de `.htaccess` com tipos MIME modernos (`image/webp`, `application/json`), regras de cache e compatibilidade.
+  - Configuração de redirecionamento 301 da raiz e www de `comersemprebem.site` para `https://lp.comersemprebem.site/`.
+  - Execução e aprovação da suite de testes de QA contra `https://lp.comersemprebem.site/app/` (33 testes aprovados, 0 falhas).
+- **Arquivos modificados/criados:**
+  - `06-entrega/publicacao.md`
+  - `PROGRESSO.md`
+  - `HISTORICO_ATUALIZACOES.md`
+
+---
+
 ### [2026-09-20] Aplicativo Prot+ Completo: 8 Telas, 4 Ferramentas, 3 Bônus e QA Automatizado
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/dados/`, `local-preview-server.mjs`

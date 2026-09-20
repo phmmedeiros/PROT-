@@ -84,10 +84,9 @@
   - [x] Manual detalhado da Payt com 3 Order Bumps e template de e-mail (`06-entrega/payt-configuracao.md`)
   - [x] Variável de checkout centralizada no script da página de vendas (`04-pagina/index.html`)
   - [x] Servidor de preview local atualizado com rotas amigáveis (`local-preview-server.mjs`)
-  - [x] Auditoria final local e registro de bloqueios (`06-entrega/status-final.md`)
   - [x] PDFs das receitas gerados e validados (`03-produto/pdf/`)
   - [ ] Cadastro da oferta e bumps no painel da Payt
-  - [ ] Publicação em domínio/hospedagem pública
+  - [x] Publicação em domínio/hospedagem pública (`lp.comersemprebem.site` e `comersemprebem.site` na Hostinger com SSL)
   - [ ] QA completo no celular real e compra de teste autorizada (Parada 4)
 
 ---
