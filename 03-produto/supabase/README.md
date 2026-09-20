@@ -195,16 +195,20 @@ Antes disso a v3 chegou a criar conta e enviar e-mail para o comprador
 fictício da Payt (`yoda@testsuser.com`): o rastro foi apagado e o campo `test`
 passou a ser respeitado.
 
-### Estado verificado sem o segredo no painel
+### Comportamento verificado (segredos lidos do Vault)
 
 | Tentativa | Resposta |
 |---|---|
-| POST sem segredo | 500, recusado |
-| POST com segredo errado | 500, recusado |
+| POST sem `secret` na URL | **401** |
+| POST com `secret` errado | **401** |
+| POST com `secret` certo, mas `integration_key` ausente ou errada | **401** |
 | GET (varredura automática) | 405 |
+| Postback de teste do painel (`test: true`) | 200, `teste: true`, nada criado |
 
-Nenhuma compra foi criada por essas tentativas. Depois de cadastrar
-`PAYT_WEBHOOK_SECRET` no painel, as duas primeiras passam a responder **401**.
+Nenhuma compra é criada por chamadas recusadas. Se algum dia a função responder
+500 "sem segredo configurado", é porque o Vault perdeu `PAYT_WEBHOOK_SECRET` e
+não há variável de ambiente no painel — nesse estado ela recusa tudo, nunca
+libera.
 
 ### Testar sem compra real
 
