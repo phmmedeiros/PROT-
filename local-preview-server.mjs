@@ -29,6 +29,8 @@ const server = http.createServer((req, res) => {
     relative = `03-produto/dados/${urlPath.slice(7)}`;
   } else if (urlPath.startsWith('/pdf/')) {
     relative = `03-produto/pdf/${urlPath.slice(5)}`;
+  } else if (urlPath.startsWith('/images/')) {
+    relative = `04-pagina/images/${urlPath.slice(8)}`;
   } else {
     relative = urlPath.slice(1);
   }

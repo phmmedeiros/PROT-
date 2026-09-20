@@ -333,61 +333,30 @@
       background: #c2410c;
     }
 
-    /* STACK VISUAL DO QUE O CLIENTE GANHA / RECEBE */
-    .unlocked-stack {
-      display: grid;
-      gap: 10px;
-      margin: 24px auto 26px;
-      max-width: 600px;
-    }
-    .stack-item {
-      background: var(--cream);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 16px;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      text-align: left;
-    }
-    .stack-item .s-icon {
-      font-size: 26px;
-      flex: 0 0 32px;
-      display: grid;
-      place-items: center;
-    }
-    .stack-item b {
-      display: block;
-      font-size: 15px;
-      color: var(--green);
-      line-height: 1.2;
-      margin-bottom: 2px;
-    }
-    .stack-item span {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.35;
-      display: block;
-    }
-
     /* GANCHO DE CURIOSIDADE (ESCORREGADOR PARA CONTINUAR LENDO) */
     .curiosity-hook {
-      background: linear-gradient(135deg, var(--peach) 0%, #fff7ef 100%);
-      border: 1.5px dashed var(--orange);
-      border-radius: 16px;
-      padding: 16px 18px;
+      background: linear-gradient(135deg, #fff2e8 0%, #fffbf7 100%);
+      border: 2px dashed var(--orange);
+      border-radius: 18px;
+      padding: 18px 20px;
       text-align: center;
-      margin: 0 auto;
-      max-width: 600px;
+      margin: 22px auto 0;
+      max-width: 560px;
+      box-shadow: 0 4px 18px rgba(232, 111, 45, 0.08);
     }
     .curiosity-hook p {
-      font-size: 14.5px;
+      font-size: 15px;
       color: var(--ink);
       line-height: 1.5;
       margin: 0;
+      font-weight: 600;
     }
     .curiosity-hook strong {
       color: var(--orange);
+      display: block;
+      margin-top: 6px;
+      font-weight: 900;
+      font-size: 15.5px;
     }
 
     /* SEÇÃO DE PROBLEMA & DORES OCULTAS */
@@ -411,33 +380,69 @@
     }
     .cards-grid {
       display: grid;
-      gap: 14px;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 20px;
     }
     .card-pain {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px 18px;
-      box-shadow: 0 6px 20px rgba(23, 61, 49, 0.05);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 26px rgba(23, 61, 49, 0.07);
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .card-pain .icon {
-      font-size: 26px;
-      line-height: 1;
-      flex: 0 0 32px;
+    .card-pain:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(23, 61, 49, 0.12);
+    }
+    .card-pain-img-wrap {
+      width: 100%;
+      position: relative;
+      background: #1a1a1a;
+    }
+    .card-pain-img-wrap img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+    .card-pain-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      background: rgba(220, 38, 38, 0.94);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+    }
+    .card-pain-body {
+      padding: 18px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
     .card-pain h3 {
-      font-size: 17px;
+      font-size: 18px;
       color: var(--green);
-      margin-bottom: 4px;
-      font-weight: 850;
+      margin-bottom: 8px;
+      font-weight: 900;
+      line-height: 1.25;
     }
     .card-pain p {
       font-size: 14px;
       color: var(--muted);
-      line-height: 1.45;
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* MECANISMO */
@@ -790,7 +795,7 @@
       .app-features { grid-template-columns: repeat(4, 1fr); }
       .tools-grid { grid-template-columns: repeat(4, 1fr); }
       .fork-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-      .cards-grid { grid-template-columns: repeat(3, 1fr); }
+      .cards-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
     }
   </style>
 </head>
@@ -1181,43 +1186,12 @@
       </div>
 
       <div class="wrap">
-        <!-- O PACOTE COMPLETO QUE VOCÊ RECEBE (VALUE STACK VISUAL) -->
-        <div class="unlocked-stack">
-          <div class="stack-item">
-            <div class="s-icon">📲</div>
-            <div>
-              <b>Aplicativo PWA de Bolso</b>
-              <span>120 preparos no seu celular com busca inteligente e modo offline.</span>
-            </div>
-          </div>
-          <div class="stack-item">
-            <div class="s-icon">🍰</div>
-            <div>
-              <b>30 Sobremesas Anti-Compulsão</b>
-              <span>Doces densos com até 30g de proteína que matam a fissura da noite.</span>
-            </div>
-          </div>
-          <div class="stack-item">
-            <div class="s-icon">🍳</div>
-            <div>
-              <b>Método Anti-Louça (15 min)</b>
-              <span>Pratos de 1 panela só para quem não tem tempo a perder na pia.</span>
-            </div>
-          </div>
-          <div class="stack-item">
-            <div class="s-icon">🎁</div>
-            <div>
-              <b>3 Bônus Estratégicos Inclusos</b>
-              <span>Fichas de Treino, Calculadora de Déficit e o Manual do Whey Caseiro.</span>
-            </div>
-          </div>
-        </div>
-
         <!-- O GANCHO DE CURIOSIDADE QUE PUXA PARA A PRÓXIMA SEÇÃO -->
         <div class="curiosity-hook">
           <p>
-            👇 Mas como é possível um prato ter gosto de "gordice" do iFood sem farinha branca nem açúcar? <strong>Veja a verdade revelada abaixo:</strong>
+            👇 Mas como é possível um prato ter gosto de <strong>"gordice" de fast food</strong> sem uma grama de farinha branca nem açúcar?
           </p>
+          <strong>Veja a verdade revelada logo abaixo:</strong>
         </div>
       </div>
     </section>
@@ -1233,24 +1207,33 @@
 
         <div class="cards-grid">
           <article class="card-pain">
-            <div class="icon">⚡</div>
-            <div>
+            <div class="card-pain-img-wrap">
+              <img src="images/dor-recaida.jpg" alt="A Culpa e a Recaída Noturna na Dieta" loading="lazy">
+              <span class="card-pain-tag">🔴 Dor #1: Fissura Noturna</span>
+            </div>
+            <div class="card-pain-body">
               <h3>A Culpa e a Recaída Noturna</h3>
-              <p>Você passa o dia na linha. Às 22h bate aquela fissura incontrolável por doce, você abre a despensa ou o iFood, come o que não devia e vai dormir com uma culpa esmagadora achando que nunca vai secar.</p>
+              <p>Você passa o dia na linha. Às 22h bate aquela fissura incontrolável por doce, você abre a despensa ou o delivery, come o que não devia e vai dormir com uma culpa esmagadora achando que nunca vai secar.</p>
             </div>
           </article>
 
           <article class="card-pain">
-            <div class="icon">🍽</div>
-            <div>
+            <div class="card-pain-img-wrap">
+              <img src="images/dor-duas-comidas.jpg" alt="O Trauma de Fazer Duas Comidas" loading="lazy">
+              <span class="card-pain-tag">🔴 Dor #2: Rotina em Dobro</span>
+            </div>
+            <div class="card-pain-body">
               <h3>O Trauma de Fazer Duas Comidas</h3>
               <p>Você quer comer saudável, mas seu parceiro ou seus filhos odeiam "comida de dieta". Você se desdobra cozinhando em dobro ou cede à comida gordurosa deles para não ouvir cara feia na mesa.</p>
             </div>
           </article>
 
           <article class="card-pain">
-            <div class="icon">🪞</div>
-            <div>
+            <div class="card-pain-img-wrap">
+              <img src="images/dor-espelho.jpg" alt="Treinar Pesado e o Espelho Não Mudar" loading="lazy">
+              <span class="card-pain-tag">🔴 Dor #3: Frustração no Espelho</span>
+            </div>
+            <div class="card-pain-body">
               <h3>Treinar Pesado e o Espelho Não Mudar</h3>
               <p>A pior frustração é suar na academia, gastar dinheiro com Whey caro e não ver a barriga sumir nem o músculo aparecer porque você simplesmente não consegue empurrar a quantidade de proteína que precisa.</p>
             </div>

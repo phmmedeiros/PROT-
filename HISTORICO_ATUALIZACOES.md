@@ -35,6 +35,29 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Otimização Mobile: Alinhamento das Dores com Fotos Temáticas e Foco no Gancho de Culinária
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`, `local-preview-server.mjs`
+- **Tipo:** `feat` / `ui` / `conversion`
+- **Commit:** `67f0fec`
+- **O que foi feito:**
+  - **Foco Puro na Retenção na 2ª Dobra:** Removida a listagem prematura de entregáveis (App PWA, 30 sobremesas, método anti-louça e 3 bônus) abaixo do carrossel duplo, mantendo apenas o gancho de curiosidade magnético sobre o segredo gastronômico de ter sabor de fast food sem farinha nem açúcar, induzindo a continuidade da rolagem.
+  - **Reestruturação Visual dos 3 Cards de Dores Ocultas ("O problema não é sua força de vontade"):**
+    - Geração e inclusão de 3 imagens fotográficas de alto impacto emocional:
+      1. `images/dor-recaida.jpg`: Fissura noturna em frente à geladeira com doce.
+      2. `images/dor-duas-comidas.jpg`: Cozinheira sobrecarregada cozinhando comida de dieta seca e refeição comum ao mesmo tempo.
+      3. `images/dor-espelho.jpg`: Frustração olhando para a barriga no espelho após treino exaustivo.
+    - Novo layout vertical unificado com proporção 16:9, badges flutuantes de dor (`🔴 Dor #1`, `🔴 Dor #2`, `🔴 Dor #3`) e alinhamento milimétrico em viewport mobile de 390px (e 3 colunas esticadas em desktop).
+    - Ajuste no roteamento do servidor local (`local-preview-server.mjs`) para servir estáticos de `04-pagina/images/`.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `04-pagina/images/dor-recaida.jpg`
+  - `04-pagina/images/dor-duas-comidas.jpg`
+  - `04-pagina/images/dor-espelho.jpg`
+  - `local-preview-server.mjs`
+
+---
+
 ### [2026-09-20] Segunda Dobra Bidirecional: Carrossel Duplo em Movimentos Opostos (Esquerda e Direita)
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/index.html`
