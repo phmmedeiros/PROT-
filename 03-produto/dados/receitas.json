@@ -1,0 +1,4997 @@
+[
+  {
+    "id": "CL-001",
+    "nome": "Panqueca de Banana, Aveia e Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 2,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "canela em pó",
+        "quantidade": 1,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana e misture com os ovos, a aveia e a canela.",
+      "2. Aqueça uma frigideira antiaderente em fogo baixo e despeje a massa.",
+      "3. Doure por cerca de 3 minutos de cada lado.",
+      "4. Sirva com o cottage por cima."
+    ],
+    "por_porção": {
+      "proteína_g": 23.4,
+      "calorias": 390,
+      "carboidrato_g": 44,
+      "gordura_g": 14.3
+    }
+  },
+  {
+    "id": "CL-002",
+    "nome": "Crepioca de Frango com Tomate",
+    "categoria": "cafe-lanches",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "goma de tapioca",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "orégano",
+        "quantidade": 1,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o ovo com a goma de tapioca e o orégano.",
+      "2. Despeje em frigideira antiaderente e cozinhe até firmar.",
+      "3. Vire a massa, distribua o frango e o tomate em metade do disco.",
+      "4. Dobre e aqueça por mais 2 minutos antes de servir."
+    ],
+    "por_porção": {
+      "proteína_g": 29.8,
+      "calorias": 285,
+      "carboidrato_g": 23.7,
+      "gordura_g": 6.6
+    }
+  },
+  {
+    "id": "CL-003",
+    "nome": "Muffin Salgado de Frango e Aveia",
+    "categoria": "cafe-lanches",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo muçarela",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o ovo, a aveia, o frango e o tomate picado.",
+      "2. Distribua em uma forminha pequena untada.",
+      "3. Cubra com a muçarela.",
+      "4. Asse a 200 °C por 15 minutos, até firmar e dourar."
+    ],
+    "por_porção": {
+      "proteína_g": 23.8,
+      "calorias": 231,
+      "carboidrato_g": 11.6,
+      "gordura_g": 9.6
+    }
+  },
+  {
+    "id": "CL-004",
+    "nome": "Tostada Integral de Atum e Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "pão integral",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "atum em água drenado",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "salsinha",
+        "quantidade": 2,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o atum, o cottage, o tomate picado e a salsinha.",
+      "2. Toste as fatias de pão em frigideira seca.",
+      "3. Divida o recheio sobre as torradas.",
+      "4. Sirva imediatamente."
+    ],
+    "por_porção": {
+      "proteína_g": 31.4,
+      "calorias": 329,
+      "carboidrato_g": 32.3,
+      "gordura_g": 8.8
+    }
+  },
+  {
+    "id": "CL-005",
+    "nome": "Creme de Banana com Leite em Pó",
+    "categoria": "cafe-lanches",
+    "tempo": 5,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o leite, o leite em pó e a banana no liquidificador.",
+      "2. Transfira para uma tigela.",
+      "3. Misture a aveia e deixe descansar por 3 minutos.",
+      "4. Sirva gelado ou em temperatura ambiente."
+    ],
+    "por_porção": {
+      "proteína_g": 19.3,
+      "calorias": 300,
+      "carboidrato_g": 54,
+      "gordura_g": 1.9
+    }
+  },
+  {
+    "id": "CL-006",
+    "nome": "Omelete de Espinafre e Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 2,
+        "unidade": "unidade"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "espinafre cru",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata os ovos e misture o espinafre e o tomate picados.",
+      "2. Cozinhe em frigideira antiaderente até a base firmar.",
+      "3. Espalhe o cottage sobre metade da omelete.",
+      "4. Dobre e cozinhe por mais 1 minuto."
+    ],
+    "por_porção": {
+      "proteína_g": 21.1,
+      "calorias": 218,
+      "carboidrato_g": 5.3,
+      "gordura_g": 12.3
+    }
+  },
+  {
+    "id": "CL-007",
+    "nome": "Sanduíche Integral de Frango Desfiado",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "pão integral",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "alface",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o frango, o cottage e a cenoura ralada.",
+      "2. Aqueça o pão rapidamente em frigideira ou torradeira.",
+      "3. Monte o sanduíche com a alface e o recheio.",
+      "4. Corte ao meio e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 30.7,
+      "calorias": 340,
+      "carboidrato_g": 43.8,
+      "gordura_g": 5.8
+    }
+  },
+  {
+    "id": "CL-008",
+    "nome": "Tapioca de Atum com Creme de Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "goma de tapioca",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "atum em água drenado",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse o cottage com o atum e o tomate picado.",
+      "2. Espalhe a goma de tapioca em uma frigideira quente.",
+      "3. Vire quando a massa estiver unida.",
+      "4. Recheie, dobre e aqueça por 1 minuto."
+    ],
+    "por_porção": {
+      "proteína_g": 22.8,
+      "calorias": 270,
+      "carboidrato_g": 29.1,
+      "gordura_g": 5.6
+    }
+  },
+  {
+    "id": "CL-009",
+    "nome": "Aveia Dormida de Morango e Chia",
+    "categoria": "cafe-lanches",
+    "tempo": 5,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "aveia em flocos",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "morango",
+        "quantidade": 80,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture a aveia, o leite, o leite em pó e a chia em um pote.",
+      "2. Tampe e leve à geladeira por pelo menos 4 horas.",
+      "3. Finalize com os morangos picados.",
+      "4. Consuma gelado."
+    ],
+    "por_porção": {
+      "proteína_g": 19.1,
+      "calorias": 317,
+      "carboidrato_g": 47.3,
+      "gordura_g": 6.3
+    }
+  },
+  {
+    "id": "CL-010",
+    "nome": "Crepe de Maçã com Cottage e Canela",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "maçã com casca",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "canela em pó",
+        "quantidade": 1,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o ovo com a aveia e a canela.",
+      "2. Cozinhe a massa em frigideira antiaderente dos dois lados.",
+      "3. Aqueça a maçã picada por 2 minutos na mesma frigideira.",
+      "4. Recheie o crepe com cottage e maçã."
+    ],
+    "por_porção": {
+      "proteína_g": 17.8,
+      "calorias": 285,
+      "carboidrato_g": 32.3,
+      "gordura_g": 10.1
+    }
+  },
+  {
+    "id": "CL-011",
+    "nome": "Bolo de Caneca de Atum e Aveia",
+    "categoria": "cafe-lanches",
+    "tempo": 7,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "atum em água drenado",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo muçarela",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture todos os ingredientes em uma caneca grande.",
+      "2. Leve ao micro-ondas por 2 minutos em potência alta.",
+      "3. Verifique se o centro está firme e aqueça por mais 30 segundos se necessário.",
+      "4. Aguarde 1 minuto antes de desenformar ou comer na caneca."
+    ],
+    "por_porção": {
+      "proteína_g": 28.1,
+      "calorias": 307,
+      "carboidrato_g": 18.2,
+      "gordura_g": 13.1
+    }
+  },
+  {
+    "id": "CL-012",
+    "nome": "Bowl de Batata-Doce, Ovo e Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 2,
+        "unidade": "unidade"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "cebolinha",
+        "quantidade": 3,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse grosseiramente a batata-doce e coloque em uma tigela.",
+      "2. Prepare os ovos mexidos em frigideira antiaderente.",
+      "3. Disponha os ovos e o cottage sobre a batata.",
+      "4. Finalize com cebolinha e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 19.1,
+      "calorias": 307,
+      "carboidrato_g": 30.1,
+      "gordura_g": 11.8
+    }
+  },
+  {
+    "id": "CL-013",
+    "nome": "Torrada de Homus, Ovo e Tomate",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "pão integral",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "suco de limão",
+        "quantidade": 10,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse o grão-de-bico com o suco de limão até formar uma pasta rústica.",
+      "2. Toste o pão e cozinhe o ovo na frigideira ou em água.",
+      "3. Espalhe a pasta sobre as torradas.",
+      "4. Finalize com o ovo fatiado e o tomate."
+    ],
+    "por_porção": {
+      "proteína_g": 19.6,
+      "calorias": 363,
+      "carboidrato_g": 54.4,
+      "gordura_g": 9.2
+    }
+  },
+  {
+    "id": "CL-014",
+    "nome": "Vitamina de Banana, Cacau e Amendoim",
+    "categoria": "cafe-lanches",
+    "tempo": 5,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 5,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Coloque todos os ingredientes no liquidificador.",
+      "2. Bata por 1 minuto, até ficar homogêneo.",
+      "3. Ajuste a textura com gelo, se desejar.",
+      "4. Sirva imediatamente."
+    ],
+    "por_porção": {
+      "proteína_g": 19.1,
+      "calorias": 301,
+      "carboidrato_g": 46.3,
+      "gordura_g": 6.7
+    }
+  },
+  {
+    "id": "CL-015",
+    "nome": "Cuscuz de Milho com Frango e Ovo",
+    "categoria": "cafe-lanches",
+    "tempo": 18,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o cuscuz cozido com o tomate picado.",
+      "2. Junte o frango e misture até aquecer.",
+      "3. Prepare o ovo mexido em frigideira antiaderente.",
+      "4. Sirva o ovo sobre o cuscuz."
+    ],
+    "por_porção": {
+      "proteína_g": 26,
+      "calorias": 277,
+      "carboidrato_g": 27,
+      "gordura_g": 8.2
+    }
+  },
+  {
+    "id": "CL-016",
+    "nome": "Creme de Ricota com Espinafre na Torrada",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "pão integral",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "ricota",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "espinafre cru",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a ricota e misture com o espinafre picado.",
+      "2. Toste o pão e cozinhe o ovo mexido.",
+      "3. Espalhe o creme de ricota sobre o pão.",
+      "4. Finalize com o ovo e sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 20.9,
+      "calorias": 318,
+      "carboidrato_g": 33.9,
+      "gordura_g": 12
+    }
+  },
+  {
+    "id": "CL-017",
+    "nome": "Tapioca de Frango com Ovo Mexido",
+    "categoria": "cafe-lanches",
+    "tempo": 14,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "goma de tapioca",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Faça o ovo mexido em frigideira antiaderente e reserve.",
+      "2. Prepare o disco de tapioca em fogo médio.",
+      "3. Recheie com o frango, o ovo e o tomate.",
+      "4. Dobre e aqueça por mais 1 minuto."
+    ],
+    "por_porção": {
+      "proteína_g": 23.3,
+      "calorias": 251,
+      "carboidrato_g": 23,
+      "gordura_g": 6.1
+    }
+  },
+  {
+    "id": "CL-018",
+    "nome": "Shake de Leite, Banana e Pasta de Amendoim",
+    "categoria": "cafe-lanches",
+    "tempo": 5,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 10,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o leite, o leite em pó e a banana no liquidificador.",
+      "2. Acrescente o amendoim e bata novamente.",
+      "3. Adicione gelo para uma textura mais cremosa, se desejar.",
+      "4. Sirva na hora."
+    ],
+    "por_porção": {
+      "proteína_g": 18.1,
+      "calorias": 283,
+      "carboidrato_g": 43.4,
+      "gordura_g": 5.5
+    }
+  },
+  {
+    "id": "CL-019",
+    "nome": "Panquequinha de Maçã, Aveia e Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "maçã com casca",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "canela em pó",
+        "quantidade": 1,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Rale a maçã e misture com o ovo, a aveia e a canela.",
+      "2. Cozinhe pequenas porções da massa em frigideira antiaderente.",
+      "3. Vire quando as bordas firmarem.",
+      "4. Sirva com o cottage."
+    ],
+    "por_porção": {
+      "proteína_g": 15.1,
+      "calorias": 259,
+      "carboidrato_g": 30.1,
+      "gordura_g": 9.1
+    }
+  },
+  {
+    "id": "CL-020",
+    "nome": "Torrada de Feijão, Ovo e Tomate",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "pão integral",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "coentro",
+        "quantidade": 2,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o feijão e amasse parte dos grãos com um garfo.",
+      "2. Toste o pão e prepare o ovo mexido ou estrelado.",
+      "3. Espalhe o feijão sobre as torradas.",
+      "4. Finalize com o ovo, o tomate e o coentro."
+    ],
+    "por_porção": {
+      "proteína_g": 16,
+      "calorias": 291,
+      "carboidrato_g": 42.8,
+      "gordura_g": 7.5
+    }
+  },
+  {
+    "id": "CL-021",
+    "nome": "Crepe de Tapioca com Cottage e Espinafre",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "goma de tapioca",
+        "quantidade": 35,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "espinafre cru",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o ovo e misture com a goma de tapioca.",
+      "2. Prepare o disco em frigideira antiaderente.",
+      "3. Refogue rapidamente o espinafre e misture ao cottage.",
+      "4. Recheie o disco, dobre e aqueça por 1 minuto."
+    ],
+    "por_porção": {
+      "proteína_g": 14.6,
+      "calorias": 223,
+      "carboidrato_g": 22.4,
+      "gordura_g": 7.5
+    }
+  },
+  {
+    "id": "CL-022",
+    "nome": "Pão de Queijo de Frigideira com Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "goma de tapioca",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo muçarela",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture todos os ingredientes até formar uma massa uniforme.",
+      "2. Despeje em frigideira pequena untada.",
+      "3. Cozinhe em fogo baixo até firmar.",
+      "4. Vire e doure o outro lado antes de servir."
+    ],
+    "por_porção": {
+      "proteína_g": 15.7,
+      "calorias": 242,
+      "carboidrato_g": 18.8,
+      "gordura_g": 10.7
+    }
+  },
+  {
+    "id": "CL-023",
+    "nome": "Cookie Macio de Banana, Aveia e Amendoim",
+    "categoria": "cafe-lanches",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana e misture com a aveia, o amendoim e o leite em pó.",
+      "2. Modele dois cookies sobre assadeira forrada.",
+      "3. Asse a 180 °C por 15 minutos.",
+      "4. Espere amornar antes de retirar da assadeira."
+    ],
+    "por_porção": {
+      "proteína_g": 13.3,
+      "calorias": 311,
+      "carboidrato_g": 50.6,
+      "gordura_g": 7.7
+    }
+  },
+  {
+    "id": "CL-024",
+    "nome": "Barquinhas de Alface com Atum e Grão-de-Bico",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "alface",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "atum em água drenado",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse grosseiramente o grão-de-bico.",
+      "2. Misture com o atum e o tomate picado.",
+      "3. Distribua o recheio nas folhas de alface.",
+      "4. Sirva as folhas dobradas como barquinhas."
+    ],
+    "por_porção": {
+      "proteína_g": 23.8,
+      "calorias": 210,
+      "carboidrato_g": 16.1,
+      "gordura_g": 5.7
+    }
+  },
+  {
+    "id": "CL-025",
+    "nome": "Quiche de Caneca de Frango e Ricota",
+    "categoria": "cafe-lanches",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "ricota",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "espinafre cru",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o ovo dentro de uma caneca grande.",
+      "2. Misture o frango, a ricota esfarelada e o espinafre.",
+      "3. Leve ao micro-ondas por 2 minutos.",
+      "4. Aguarde 1 minuto e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 28.1,
+      "calorias": 213,
+      "carboidrato_g": 2.7,
+      "gordura_g": 9.3
+    }
+  },
+  {
+    "id": "CL-026",
+    "nome": "Mingau de Aveia com Maçã e Chia",
+    "categoria": "cafe-lanches",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "aveia em flocos",
+        "quantidade": 35,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 180,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "maçã com casca",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture a aveia, o leite e o leite em pó em uma panela.",
+      "2. Cozinhe em fogo baixo, mexendo até engrossar.",
+      "3. Junte a maçã em cubos e a chia.",
+      "4. Cozinhe por mais 2 minutos e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 20.1,
+      "calorias": 359,
+      "carboidrato_g": 58.3,
+      "gordura_g": 6.1
+    }
+  },
+  {
+    "id": "CL-027",
+    "nome": "Bolinho Assado de Batata-Doce e Frango",
+    "categoria": "cafe-lanches",
+    "tempo": 25,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a batata-doce e misture com o frango, o ovo e a aveia.",
+      "2. Modele bolinhos pequenos com as mãos úmidas.",
+      "3. Disponha em assadeira antiaderente.",
+      "4. Asse a 200 °C por 18 minutos, virando na metade."
+    ],
+    "por_porção": {
+      "proteína_g": 28.3,
+      "calorias": 318,
+      "carboidrato_g": 32.4,
+      "gordura_g": 7.6
+    }
+  },
+  {
+    "id": "CL-028",
+    "nome": "Mexidão de Atum, Milho e Ovo",
+    "categoria": "cafe-lanches",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 2,
+        "unidade": "unidade"
+      },
+      {
+        "item": "atum em água drenado",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata os ovos e cozinhe em frigideira antiaderente.",
+      "2. Acrescente o atum e o milho.",
+      "3. Misture o tomate picado.",
+      "4. Mexa até aquecer por completo e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 32.7,
+      "calorias": 330,
+      "carboidrato_g": 17.4,
+      "gordura_g": 14.6
+    }
+  },
+  {
+    "id": "CL-029",
+    "nome": "Tapioca Doce de Ricota, Banana e Canela",
+    "categoria": "cafe-lanches",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "goma de tapioca",
+        "quantidade": 40,
+        "unidade": "g"
+      },
+      {
+        "item": "ricota",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "canela em pó",
+        "quantidade": 1,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Prepare o disco de tapioca em frigideira quente.",
+      "2. Amasse a ricota com a banana e a canela.",
+      "3. Espalhe o recheio no centro do disco.",
+      "4. Dobre e aqueça por mais 1 minuto."
+    ],
+    "por_porção": {
+      "proteína_g": 9.1,
+      "calorias": 251,
+      "carboidrato_g": 43,
+      "gordura_g": 5
+    }
+  },
+  {
+    "id": "CL-030",
+    "nome": "Panqueca de Cacau com Banana e Amendoim",
+    "categoria": "cafe-lanches",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 5,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o ovo com a banana amassada, a aveia e o cacau.",
+      "2. Cozinhe a massa em pequenas porções.",
+      "3. Vire quando as bordas firmarem.",
+      "4. Finalize com o amendoim triturado."
+    ],
+    "por_porção": {
+      "proteína_g": 14.6,
+      "calorias": 324,
+      "carboidrato_g": 43.1,
+      "gordura_g": 12.5
+    }
+  },
+  {
+    "id": "CL-031",
+    "nome": "Creme de Morango com Leite em Pó e Chia",
+    "categoria": "cafe-lanches",
+    "tempo": 6,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata os morangos, o leite e o leite em pó.",
+      "2. Transfira para uma tigela.",
+      "3. Misture a chia.",
+      "4. Leve à geladeira por 20 minutos antes de servir."
+    ],
+    "por_porção": {
+      "proteína_g": 17,
+      "calorias": 228,
+      "carboidrato_g": 33.8,
+      "gordura_g": 3.3
+    }
+  },
+  {
+    "id": "CL-032",
+    "nome": "Cuscuz Cremoso de Ricota e Ovo",
+    "categoria": "cafe-lanches",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "ricota",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o cuscuz em uma panela pequena.",
+      "2. Misture a ricota esfarelada e o tomate.",
+      "3. Prepare o ovo mexido separadamente.",
+      "4. Sirva o ovo sobre o cuscuz cremoso."
+    ],
+    "por_porção": {
+      "proteína_g": 19.5,
+      "calorias": 284,
+      "carboidrato_g": 28.9,
+      "gordura_g": 11.3
+    }
+  },
+  {
+    "id": "CL-033",
+    "nome": "Purê de Batata-Doce com Cottage e Frango",
+    "categoria": "cafe-lanches",
+    "tempo": 18,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "cebolinha",
+        "quantidade": 3,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a batata-doce ainda quente.",
+      "2. Misture metade do cottage ao purê.",
+      "3. Cubra com o frango aquecido e o restante do cottage.",
+      "4. Finalize com cebolinha."
+    ],
+    "por_porção": {
+      "proteína_g": 23.4,
+      "calorias": 231,
+      "carboidrato_g": 24.2,
+      "gordura_g": 4
+    }
+  },
+  {
+    "id": "CL-034",
+    "nome": "Torrada de Ricota, Cenoura e Ovo",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "pão integral",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "ricota",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture a ricota com a cenoura ralada.",
+      "2. Toste as fatias de pão.",
+      "3. Prepare o ovo mexido.",
+      "4. Monte as torradas com o creme de ricota e o ovo."
+    ],
+    "por_porção": {
+      "proteína_g": 18.8,
+      "calorias": 306,
+      "carboidrato_g": 35.3,
+      "gordura_g": 11.1
+    }
+  },
+  {
+    "id": "CL-035",
+    "nome": "Muffin de Atum, Milho e Muçarela",
+    "categoria": "cafe-lanches",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "atum em água drenado",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo muçarela",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o ovo, o atum e o milho.",
+      "2. Coloque em forminha individual.",
+      "3. Cubra com a muçarela.",
+      "4. Asse a 200 °C por 15 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 28.7,
+      "calorias": 289,
+      "carboidrato_g": 13.6,
+      "gordura_g": 13.3
+    }
+  },
+  {
+    "id": "CL-036",
+    "nome": "Creme de Banana com Cacau e Cottage",
+    "categoria": "cafe-lanches",
+    "tempo": 6,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 5,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana com o cottage.",
+      "2. Misture o cacau e a aveia.",
+      "3. Leve à geladeira por 10 minutos.",
+      "4. Sirva com canela, se desejar."
+    ],
+    "por_porção": {
+      "proteína_g": 13,
+      "calorias": 234,
+      "carboidrato_g": 36.4,
+      "gordura_g": 6
+    }
+  },
+  {
+    "id": "CL-037",
+    "nome": "Mingau de Cuscuz com Leite em Pó",
+    "categoria": "cafe-lanches",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o leite com o leite em pó.",
+      "2. Junte o cuscuz e amasse parte dos grãos.",
+      "3. Cozinhe até ficar cremoso.",
+      "4. Finalize com a banana fatiada."
+    ],
+    "por_porção": {
+      "proteína_g": 21.6,
+      "calorias": 332,
+      "carboidrato_g": 59.3,
+      "gordura_g": 2.9
+    }
+  },
+  {
+    "id": "CL-038",
+    "nome": "Salada Morna de Morango, Cottage e Aveia",
+    "categoria": "cafe-lanches",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 5,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça os morangos por 1 minuto em frigideira antiaderente.",
+      "2. Coloque o cottage em uma tigela.",
+      "3. Cubra com os morangos mornos.",
+      "4. Finalize com a aveia e a chia."
+    ],
+    "por_porção": {
+      "proteína_g": 15.8,
+      "calorias": 237,
+      "carboidrato_g": 26.6,
+      "gordura_g": 7.9
+    }
+  },
+  {
+    "id": "CL-039",
+    "nome": "Bolinhos de Grão-de-Bico com Atum",
+    "categoria": "cafe-lanches",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "atum em água drenado",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse o grão-de-bico com um garfo.",
+      "2. Misture o atum, o ovo e a aveia.",
+      "3. Modele bolinhos pequenos.",
+      "4. Asse a 200 °C por 15 minutos, virando uma vez."
+    ],
+    "por_porção": {
+      "proteína_g": 31.2,
+      "calorias": 361,
+      "carboidrato_g": 32.3,
+      "gordura_g": 11.7
+    }
+  },
+  {
+    "id": "CL-040",
+    "nome": "Crepioca de Cottage com Cenoura e Cebolinha",
+    "categoria": "cafe-lanches",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "goma de tapioca",
+        "quantidade": 35,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "cebolinha",
+        "quantidade": 3,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o ovo com a goma de tapioca.",
+      "2. Cozinhe o disco em frigideira antiaderente.",
+      "3. Recheie com cottage, cenoura e cebolinha.",
+      "4. Dobre e aqueça por 1 minuto antes de servir."
+    ],
+    "por_porção": {
+      "proteína_g": 15.1,
+      "calorias": 234,
+      "carboidrato_g": 24.1,
+      "gordura_g": 7.9
+    }
+  },
+  {
+    "id": "AJ-001",
+    "nome": "Bowl de Frango, Arroz Integral e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 25,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o arroz e o frango em uma frigideira.",
+      "2. Junte o brócolis e o tomate picado.",
+      "3. Misture até os ingredientes ficarem quentes.",
+      "4. Sirva em uma tigela."
+    ],
+    "por_porção": {
+      "proteína_g": 43.1,
+      "calorias": 341,
+      "carboidrato_g": 30.6,
+      "gordura_g": 4.5
+    }
+  },
+  {
+    "id": "AJ-002",
+    "nome": "Picadinho de Carne com Abóbora e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 25,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne moída com o tomate picado.",
+      "2. Amasse a abóbora até formar um purê rústico.",
+      "3. Sirva a carne sobre o purê com o arroz ao lado.",
+      "4. Ajuste os temperos e consuma quente."
+    ],
+    "por_porção": {
+      "proteína_g": 36.8,
+      "calorias": 430,
+      "carboidrato_g": 38.4,
+      "gordura_g": 15.2
+    }
+  },
+  {
+    "id": "AJ-003",
+    "nome": "Tilápia com Batata-Doce e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 25,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 30,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia em frigideira antiaderente.",
+      "2. Aqueça a batata-doce em rodelas.",
+      "3. Cozinhe o brócolis até ficar macio.",
+      "4. Monte o prato com o tomate picado."
+    ],
+    "por_porção": {
+      "proteína_g": 33.7,
+      "calorias": 284,
+      "carboidrato_g": 32.1,
+      "gordura_g": 3.6
+    }
+  },
+  {
+    "id": "AJ-004",
+    "nome": "Arroz de Sardinha com Feijão e Cenoura",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "sardinha em conserva drenada",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o arroz e o feijão juntos.",
+      "2. Junte a sardinha em pedaços.",
+      "3. Acrescente a cenoura ralada no final.",
+      "4. Misture delicadamente e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 32.8,
+      "calorias": 382,
+      "carboidrato_g": 43.6,
+      "gordura_g": 8.6
+    }
+  },
+  {
+    "id": "AJ-005",
+    "nome": "Lombo Suíno com Purê de Abóbora",
+    "categoria": "almoco-jantar",
+    "tempo": 25,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 180,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Corte o lombo em fatias e aqueça.",
+      "2. Amasse a abóbora com um garfo.",
+      "3. Sirva o purê com o arroz e o brócolis.",
+      "4. Disponha o lombo por cima."
+    ],
+    "por_porção": {
+      "proteína_g": 51.1,
+      "calorias": 461,
+      "carboidrato_g": 40.1,
+      "gordura_g": 11.4
+    }
+  },
+  {
+    "id": "AJ-006",
+    "nome": "Macarrão Integral com Frango e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o tomate picado até formar um molho rústico.",
+      "2. Junte o frango e o cottage.",
+      "3. Misture o macarrão já cozido.",
+      "4. Cozinhe por mais 2 minutos e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 50.8,
+      "calorias": 406,
+      "carboidrato_g": 37,
+      "gordura_g": 6.1
+    }
+  },
+  {
+    "id": "AJ-007",
+    "nome": "Carne Moída com Arroz, Feijão e Cenoura",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne moída com a cenoura.",
+      "2. Aqueça o arroz e o feijão separadamente.",
+      "3. Monte as porções no prato.",
+      "4. Sirva imediatamente."
+    ],
+    "por_porção": {
+      "proteína_g": 39.1,
+      "calorias": 449,
+      "carboidrato_g": 39.7,
+      "gordura_g": 14.6
+    }
+  },
+  {
+    "id": "AJ-008",
+    "nome": "Tilápia com Arroz, Feijão e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia dos dois lados.",
+      "2. Aqueça o arroz e o feijão.",
+      "3. Pique o tomate e use como acompanhamento.",
+      "4. Monte o prato e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 39.7,
+      "calorias": 348,
+      "carboidrato_g": 38.9,
+      "gordura_g": 4.7
+    }
+  },
+  {
+    "id": "AJ-009",
+    "nome": "Salada Morna de Frango e Grão-de-Bico",
+    "categoria": "almoco-jantar",
+    "tempo": 18,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 60,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o grão-de-bico em uma panela.",
+      "2. Junte o tomate e a cenoura.",
+      "3. Misture por 2 minutos, sem desmanchar os grãos.",
+      "4. Sirva morna."
+    ],
+    "por_porção": {
+      "proteína_g": 48.6,
+      "calorias": 381,
+      "carboidrato_g": 33.1,
+      "gordura_g": 5.8
+    }
+  },
+  {
+    "id": "AJ-010",
+    "nome": "Carne Moída com Macarrão Integral e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 80,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne com o tomate picado.",
+      "2. Junte o macarrão cozido.",
+      "3. Misture o brócolis no final.",
+      "4. Aqueça por 2 minutos e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 41.5,
+      "calorias": 444,
+      "carboidrato_g": 38.5,
+      "gordura_g": 14.9
+    }
+  },
+  {
+    "id": "AJ-011",
+    "nome": "Lombo com Arroz Integral e Feijão",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Fatie o lombo e aqueça em frigideira.",
+      "2. Aqueça o arroz e o feijão.",
+      "3. Pique o tomate para acompanhar.",
+      "4. Monte o prato e sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 53,
+      "calorias": 480,
+      "carboidrato_g": 41,
+      "gordura_g": 10.7
+    }
+  },
+  {
+    "id": "AJ-012",
+    "nome": "Frango Desfiado com Purê de Abóbora e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 180,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a abóbora e misture o cottage.",
+      "2. Aqueça o frango desfiado.",
+      "3. Cozinhe o brócolis até ficar macio.",
+      "4. Sirva o frango sobre o purê com o brócolis ao lado."
+    ],
+    "por_porção": {
+      "proteína_g": 50.2,
+      "calorias": 352,
+      "carboidrato_g": 24.3,
+      "gordura_g": 6.6
+    }
+  },
+  {
+    "id": "AJ-013",
+    "nome": "Macarrão Integral com Sardinha e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 18,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "sardinha em conserva drenada",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Refogue o tomate picado até amolecer.",
+      "2. Acrescente a sardinha em pedaços.",
+      "3. Misture o macarrão e o brócolis.",
+      "4. Aqueça por mais 2 minutos e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 34.3,
+      "calorias": 355,
+      "carboidrato_g": 38.2,
+      "gordura_g": 8.7
+    }
+  },
+  {
+    "id": "AJ-014",
+    "nome": "Penne Integral com Carne e Cottage",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 80,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne com o tomate até formar um molho.",
+      "2. Junte o cottage e misture.",
+      "3. Acrescente o penne cozido.",
+      "4. Cozinhe por 2 minutos e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 45.4,
+      "calorias": 473,
+      "carboidrato_g": 36.7,
+      "gordura_g": 16.7
+    }
+  },
+  {
+    "id": "AJ-015",
+    "nome": "Frango com Brócolis, Cenoura e Arroz",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango em frigideira antiaderente.",
+      "2. Acrescente o arroz e os vegetais.",
+      "3. Misture até a cenoura amolecer levemente.",
+      "4. Sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 46.3,
+      "calorias": 365,
+      "carboidrato_g": 32.7,
+      "gordura_g": 4.7
+    }
+  },
+  {
+    "id": "AJ-016",
+    "nome": "Tilápia com Purê de Batata-Doce e Cottage",
+    "categoria": "almoco-jantar",
+    "tempo": 23,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe o filé de tilápia.",
+      "2. Amasse a batata-doce e misture o cottage.",
+      "3. Pique o tomate para acompanhar.",
+      "4. Sirva o peixe sobre o purê."
+    ],
+    "por_porção": {
+      "proteína_g": 39.7,
+      "calorias": 332,
+      "carboidrato_g": 32.4,
+      "gordura_g": 5.6
+    }
+  },
+  {
+    "id": "AJ-017",
+    "nome": "Carne com Grão-de-Bico e Abóbora",
+    "categoria": "almoco-jantar",
+    "tempo": 25,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne com o tomate.",
+      "2. Junte o grão-de-bico e misture.",
+      "3. Amasse a abóbora e sirva como base.",
+      "4. Disponha a mistura de carne por cima."
+    ],
+    "por_porção": {
+      "proteína_g": 41.4,
+      "calorias": 447,
+      "carboidrato_g": 36.4,
+      "gordura_g": 16.2
+    }
+  },
+  {
+    "id": "AJ-018",
+    "nome": "Lombo com Arroz e Cenoura Refogada",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o lombo fatiado.",
+      "2. Refogue rapidamente a cenoura e o brócolis.",
+      "3. Aqueça o arroz integral.",
+      "4. Monte o prato e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 50.4,
+      "calorias": 439,
+      "carboidrato_g": 34.6,
+      "gordura_g": 10.6
+    }
+  },
+  {
+    "id": "AJ-019",
+    "nome": "Frango com Cuscuz de Milho e Feijão",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o cuscuz e o feijão.",
+      "2. Junte o frango desfiado.",
+      "3. Acrescente o tomate picado.",
+      "4. Misture e sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 50.5,
+      "calorias": 426,
+      "carboidrato_g": 43.6,
+      "gordura_g": 6.4
+    }
+  },
+  {
+    "id": "AJ-020",
+    "nome": "Tilápia com Arroz, Abóbora e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 70,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia até ficar cozida no centro.",
+      "2. Aqueça o arroz e a abóbora.",
+      "3. Cozinhe o brócolis até ficar macio.",
+      "4. Monte o prato e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 38.5,
+      "calorias": 353,
+      "carboidrato_g": 41.8,
+      "gordura_g": 5.4
+    }
+  },
+  {
+    "id": "AJ-021",
+    "nome": "Frango com Arroz, Abóbora e Cenoura",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o arroz.",
+      "2. Junte a abóbora amassada.",
+      "3. Acrescente a cenoura e misture.",
+      "4. Sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 46.5,
+      "calorias": 405,
+      "carboidrato_g": 42.6,
+      "gordura_g": 5.2
+    }
+  },
+  {
+    "id": "AJ-022",
+    "nome": "Carne com Batata-Doce e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 25,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne com o tomate.",
+      "2. Corte a batata-doce em cubos.",
+      "3. Junte o brócolis aquecido.",
+      "4. Monte e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 37.8,
+      "calorias": 421,
+      "carboidrato_g": 34.2,
+      "gordura_g": 14.9
+    }
+  },
+  {
+    "id": "AJ-023",
+    "nome": "Tilápia com Penne Integral e Cottage",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 80,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia e reserve.",
+      "2. Aqueça o tomate picado.",
+      "3. Misture o macarrão e o cottage.",
+      "4. Sirva com a tilápia por cima."
+    ],
+    "por_porção": {
+      "proteína_g": 46.1,
+      "calorias": 376,
+      "carboidrato_g": 36.7,
+      "gordura_g": 6.7
+    }
+  },
+  {
+    "id": "AJ-024",
+    "nome": "Sardinha com Arroz Integral e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 18,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "sardinha em conserva drenada",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 110,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o arroz e o brócolis.",
+      "2. Acrescente a sardinha em pedaços.",
+      "3. Finalize com a cenoura ralada.",
+      "4. Misture com cuidado e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 30.3,
+      "calorias": 337,
+      "carboidrato_g": 35.4,
+      "gordura_g": 8.6
+    }
+  },
+  {
+    "id": "AJ-025",
+    "nome": "Lombo com Abóbora e Feijão",
+    "categoria": "almoco-jantar",
+    "tempo": 23,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o lombo fatiado.",
+      "2. Amasse a abóbora cozida.",
+      "3. Aqueça o feijão com o tomate.",
+      "4. Sirva o lombo sobre o purê."
+    ],
+    "por_porção": {
+      "proteína_g": 52.6,
+      "calorias": 430,
+      "carboidrato_g": 31.8,
+      "gordura_g": 10.8
+    }
+  },
+  {
+    "id": "AJ-026",
+    "nome": "Frango com Macarrão Integral e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 140,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o macarrão.",
+      "2. Junte o brócolis.",
+      "3. Acrescente a cenoura no final.",
+      "4. Misture e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 51.2,
+      "calorias": 414,
+      "carboidrato_g": 41.6,
+      "gordura_g": 5
+    }
+  },
+  {
+    "id": "AJ-027",
+    "nome": "Carne com Arroz e Grão-de-Bico",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne com o tomate.",
+      "2. Junte o grão-de-bico.",
+      "3. Sirva com o arroz aquecido.",
+      "4. Misture apenas no prato."
+    ],
+    "por_porção": {
+      "proteína_g": 42,
+      "calorias": 501,
+      "carboidrato_g": 46.7,
+      "gordura_g": 16.3
+    }
+  },
+  {
+    "id": "AJ-028",
+    "nome": "Tilápia com Abóbora e Grão-de-Bico",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia.",
+      "2. Amasse a abóbora.",
+      "3. Aqueça o grão-de-bico e o brócolis.",
+      "4. Monte o prato e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 43.3,
+      "calorias": 372,
+      "carboidrato_g": 40.8,
+      "gordura_g": 6.6
+    }
+  },
+  {
+    "id": "AJ-029",
+    "nome": "Frango com Feijão e Batata-Doce",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o feijão.",
+      "2. Corte a batata-doce em rodelas.",
+      "3. Junte o tomate picado ao feijão.",
+      "4. Sirva tudo no mesmo prato."
+    ],
+    "por_porção": {
+      "proteína_g": 47.4,
+      "calorias": 405,
+      "carboidrato_g": 42.8,
+      "gordura_g": 4
+    }
+  },
+  {
+    "id": "AJ-030",
+    "nome": "Carne com Abóbora, Cottage e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 23,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 70,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne e o brócolis.",
+      "2. Amasse a abóbora.",
+      "3. Distribua o cottage sobre o purê.",
+      "4. Sirva com a carne ao lado."
+    ],
+    "por_porção": {
+      "proteína_g": 41.2,
+      "calorias": 389,
+      "carboidrato_g": 21,
+      "gordura_g": 16.8
+    }
+  },
+  {
+    "id": "AJ-031",
+    "nome": "Lombo com Macarrão Integral e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o tomate picado.",
+      "2. Junte o macarrão e o lombo fatiado.",
+      "3. Misture a cenoura no final.",
+      "4. Sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 50.5,
+      "calorias": 442,
+      "carboidrato_g": 38.7,
+      "gordura_g": 9.8
+    }
+  },
+  {
+    "id": "AJ-032",
+    "nome": "Frango com Arroz, Cottage e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o arroz.",
+      "2. Junte o brócolis.",
+      "3. Misture o cottage fora do fogo.",
+      "4. Sirva imediatamente."
+    ],
+    "por_porção": {
+      "proteína_g": 51.4,
+      "calorias": 400,
+      "carboidrato_g": 31,
+      "gordura_g": 6.8
+    }
+  },
+  {
+    "id": "AJ-033",
+    "nome": "Sardinha com Batata-Doce e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "sardinha em conserva drenada",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a batata-doce e o brócolis.",
+      "2. Junte a sardinha em pedaços.",
+      "3. Acrescente o tomate picado.",
+      "4. Sirva sem desmanchar o peixe."
+    ],
+    "por_porção": {
+      "proteína_g": 28.2,
+      "calorias": 315,
+      "carboidrato_g": 34.5,
+      "gordura_g": 7.7
+    }
+  },
+  {
+    "id": "AJ-034",
+    "nome": "Tilápia com Arroz e Cenoura",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 110,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia.",
+      "2. Aqueça o arroz.",
+      "3. Refogue rapidamente a cenoura com o tomate.",
+      "4. Monte e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 37.1,
+      "calorias": 323,
+      "carboidrato_g": 35.8,
+      "gordura_g": 4.5
+    }
+  },
+  {
+    "id": "AJ-035",
+    "nome": "Carne com Feijão e Abóbora",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne e o feijão.",
+      "2. Amasse a abóbora.",
+      "3. Acrescente a cenoura ralada.",
+      "4. Sirva a carne sobre o purê."
+    ],
+    "por_porção": {
+      "proteína_g": 41.8,
+      "calorias": 434,
+      "carboidrato_g": 33.3,
+      "gordura_g": 15.9
+    }
+  },
+  {
+    "id": "AJ-036",
+    "nome": "Lombo com Arroz e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 110,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o lombo fatiado.",
+      "2. Cozinhe o brócolis.",
+      "3. Aqueça o arroz e o tomate.",
+      "4. Monte o prato e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 50.8,
+      "calorias": 439,
+      "carboidrato_g": 33.9,
+      "gordura_g": 10.7
+    }
+  },
+  {
+    "id": "AJ-037",
+    "nome": "Frango com Grão-de-Bico e Macarrão Integral",
+    "categoria": "almoco-jantar",
+    "tempo": 23,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o grão-de-bico.",
+      "2. Junte o macarrão cozido.",
+      "3. Acrescente o tomate picado.",
+      "4. Misture e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 51.5,
+      "calorias": 455,
+      "carboidrato_g": 48.8,
+      "gordura_g": 6.1
+    }
+  },
+  {
+    "id": "AJ-038",
+    "nome": "Tilápia com Macarrão Integral e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 23,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 70,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia.",
+      "2. Aqueça o macarrão com o tomate.",
+      "3. Junte o brócolis.",
+      "4. Sirva com o peixe por cima."
+    ],
+    "por_porção": {
+      "proteína_g": 42.1,
+      "calorias": 345,
+      "carboidrato_g": 38.2,
+      "gordura_g": 4.9
+    }
+  },
+  {
+    "id": "AJ-039",
+    "nome": "Carne com Cuscuz e Feijão",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne com o tomate.",
+      "2. Aqueça o cuscuz e o feijão.",
+      "3. Monte os três componentes no prato.",
+      "4. Sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 44.1,
+      "calorias": 486,
+      "carboidrato_g": 43.6,
+      "gordura_g": 16.6
+    }
+  },
+  {
+    "id": "AJ-040",
+    "nome": "Frango com Arroz, Abóbora e Cottage",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o arroz e o frango.",
+      "2. Amasse a abóbora.",
+      "3. Misture o cottage ao purê.",
+      "4. Sirva o frango com os acompanhamentos."
+    ],
+    "por_porção": {
+      "proteína_g": 51.6,
+      "calorias": 442,
+      "carboidrato_g": 41.5,
+      "gordura_g": 7.3
+    }
+  },
+  {
+    "id": "AJ-041",
+    "nome": "Frango com Cuscuz, Brócolis e Cottage",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o cuscuz e o frango.",
+      "2. Junte o brócolis cozido.",
+      "3. Misture o cottage fora do fogo.",
+      "4. Sirva imediatamente."
+    ],
+    "por_porção": {
+      "proteína_g": 55.6,
+      "calorias": 431,
+      "carboidrato_g": 35.7,
+      "gordura_g": 8.3
+    }
+  },
+  {
+    "id": "AJ-042",
+    "nome": "Carne com Arroz, Abóbora e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 70,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne e o arroz.",
+      "2. Amasse a abóbora.",
+      "3. Acrescente o brócolis aquecido.",
+      "4. Monte o prato e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 37.9,
+      "calorias": 455,
+      "carboidrato_g": 42.9,
+      "gordura_g": 15.5
+    }
+  },
+  {
+    "id": "AJ-043",
+    "nome": "Tilápia com Feijão, Cenoura e Cottage",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia.",
+      "2. Aqueça o feijão com a cenoura.",
+      "3. Finalize com o cottage.",
+      "4. Sirva com o peixe ao lado."
+    ],
+    "por_porção": {
+      "proteína_g": 42.6,
+      "calorias": 294,
+      "carboidrato_g": 20.8,
+      "gordura_g": 5.6
+    }
+  },
+  {
+    "id": "AJ-044",
+    "nome": "Sardinha com Arroz, Abóbora e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "sardinha em conserva drenada",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o arroz e a abóbora.",
+      "2. Junte a sardinha em pedaços.",
+      "3. Acrescente o tomate picado.",
+      "4. Misture com delicadeza e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 30.4,
+      "calorias": 369,
+      "carboidrato_g": 43.9,
+      "gordura_g": 9.2
+    }
+  },
+  {
+    "id": "AJ-045",
+    "nome": "Lombo com Batata-Doce e Cenoura",
+    "categoria": "almoco-jantar",
+    "tempo": 23,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o lombo fatiado.",
+      "2. Corte a batata-doce em cubos.",
+      "3. Refogue rapidamente a cenoura com o tomate.",
+      "4. Sirva os acompanhamentos com o lombo."
+    ],
+    "por_porção": {
+      "proteína_g": 47.8,
+      "calorias": 426,
+      "carboidrato_g": 36.1,
+      "gordura_g": 9.5
+    }
+  },
+  {
+    "id": "AJ-046",
+    "nome": "Frango com Macarrão, Abóbora e Cottage",
+    "categoria": "almoco-jantar",
+    "tempo": 23,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "macarrão integral cozido",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 40,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o macarrão.",
+      "2. Misture a abóbora amassada.",
+      "3. Acrescente o cottage fora do fogo.",
+      "4. Sirva quente."
+    ],
+    "por_porção": {
+      "proteína_g": 53.8,
+      "calorias": 443,
+      "carboidrato_g": 42.2,
+      "gordura_g": 6.8
+    }
+  },
+  {
+    "id": "AJ-047",
+    "nome": "Carne com Batata-Doce, Feijão e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "carne bovina moída magra cozida",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "batata-doce cozida",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça a carne com o tomate.",
+      "2. Aqueça o feijão.",
+      "3. Corte a batata-doce em rodelas.",
+      "4. Monte o prato e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 37.1,
+      "calorias": 435,
+      "carboidrato_g": 40.3,
+      "gordura_g": 13.8
+    }
+  },
+  {
+    "id": "AJ-048",
+    "nome": "Tilápia com Cuscuz, Brócolis e Cenoura",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "filé de tilápia grelhado",
+        "quantidade": 160,
+        "unidade": "g"
+      },
+      {
+        "item": "milho para cuscuz cozido",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "cenoura crua ralada",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Grelhe a tilápia.",
+      "2. Aqueça o cuscuz.",
+      "3. Cozinhe o brócolis e junte a cenoura.",
+      "4. Sirva os vegetais ao lado do peixe."
+    ],
+    "por_porção": {
+      "proteína_g": 42.8,
+      "calorias": 354,
+      "carboidrato_g": 37.8,
+      "gordura_g": 6.5
+    }
+  },
+  {
+    "id": "AJ-049",
+    "nome": "Lombo com Feijão, Arroz e Brócolis",
+    "categoria": "almoco-jantar",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "lombo suíno assado",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "feijão carioca cozido",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "arroz integral cozido",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "brócolis cozido",
+        "quantidade": 70,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o lombo fatiado.",
+      "2. Aqueça o arroz e o feijão.",
+      "3. Cozinhe o brócolis.",
+      "4. Monte a refeição e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 49.9,
+      "calorias": 450,
+      "carboidrato_g": 38.9,
+      "gordura_g": 10.1
+    }
+  },
+  {
+    "id": "AJ-050",
+    "nome": "Frango com Abóbora, Grão-de-Bico e Tomate",
+    "categoria": "almoco-jantar",
+    "tempo": 24,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "peito de frango cozido e desfiado",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "abóbora cabotiá cozida",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "grão-de-bico cozido",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "tomate",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Aqueça o frango e o grão-de-bico.",
+      "2. Amasse a abóbora.",
+      "3. Acrescente o tomate picado.",
+      "4. Sirva o frango sobre o purê."
+    ],
+    "por_porção": {
+      "proteína_g": 51.1,
+      "calorias": 408,
+      "carboidrato_g": 37.5,
+      "gordura_g": 6.3
+    }
+  },
+  {
+    "id": "SOB-001",
+    "nome": "Mousse de Cottage com Cacau e Banana",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 8,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata todos os ingredientes no liquidificador.",
+      "2. Transfira para uma taça.",
+      "3. Leve à geladeira por 30 minutos.",
+      "4. Sirva gelado."
+    ],
+    "por_porção": {
+      "proteína_g": 21,
+      "calorias": 278,
+      "carboidrato_g": 39.3,
+      "gordura_g": 6.4
+    }
+  },
+  {
+    "id": "SOB-002",
+    "nome": "Cheesecake de Morango com Ricota",
+    "categoria": "sobremesas",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ricota",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "morango",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Triture a aveia e pressione no fundo de uma taça.",
+      "2. Bata a ricota com o leite em pó.",
+      "3. Cubra a base com o creme.",
+      "4. Finalize com morangos e gele por 30 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 21.8,
+      "calorias": 309,
+      "carboidrato_g": 32.8,
+      "gordura_g": 10.3
+    }
+  },
+  {
+    "id": "SOB-003",
+    "nome": "Pudim de Caneca de Banana e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 7,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 80,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata todos os ingredientes em uma caneca.",
+      "2. Leve ao micro-ondas por 2 minutos.",
+      "3. Aguarde 1 minuto para firmar.",
+      "4. Sirva morno ou gelado."
+    ],
+    "por_porção": {
+      "proteína_g": 19.2,
+      "calorias": 269,
+      "carboidrato_g": 38.2,
+      "gordura_g": 5.2
+    }
+  },
+  {
+    "id": "SOB-004",
+    "nome": "Trufa Cremosa de Cacau e Amendoim",
+    "categoria": "sobremesas",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 12,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana.",
+      "2. Misture o leite em pó e o cacau.",
+      "3. Incorpore o amendoim triturado.",
+      "4. Modele uma trufa grande e gele por 20 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 17,
+      "calorias": 286,
+      "carboidrato_g": 42.1,
+      "gordura_g": 8.6
+    }
+  },
+  {
+    "id": "SOB-005",
+    "nome": "Sorvete de Morango, Banana e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Congele o morango e a banana previamente.",
+      "2. Bata as frutas com o leite e o leite em pó.",
+      "3. Leve ao congelador por 30 minutos.",
+      "4. Sirva na consistência de sorvete."
+    ],
+    "por_porção": {
+      "proteína_g": 13.2,
+      "calorias": 227,
+      "carboidrato_g": 44.7,
+      "gordura_g": 0.8
+    }
+  },
+  {
+    "id": "SOB-006",
+    "nome": "Brownie de Caneca com Aveia e Cacau",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 10,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana na caneca.",
+      "2. Misture o ovo, a aveia e o cacau.",
+      "3. Leve ao micro-ondas por 2 minutos.",
+      "4. Aguarde 1 minuto antes de comer."
+    ],
+    "por_porção": {
+      "proteína_g": 12.8,
+      "calorias": 275,
+      "carboidrato_g": 41,
+      "gordura_g": 9.3
+    }
+  },
+  {
+    "id": "SOB-007",
+    "nome": "Creme de Ricota com Cacau e Amendoim",
+    "categoria": "sobremesas",
+    "tempo": 6,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ricota",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 8,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a ricota.",
+      "2. Misture o cacau e o leite em pó.",
+      "3. Cubra com o amendoim triturado.",
+      "4. Gele por 20 minutos e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 23.6,
+      "calorias": 290,
+      "carboidrato_g": 20.5,
+      "gordura_g": 14.1
+    }
+  },
+  {
+    "id": "SOB-008",
+    "nome": "Taça de Morango, Cottage e Chia",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Coloque metade dos morangos em uma taça.",
+      "2. Cubra com o cottage.",
+      "3. Acrescente a aveia e a chia.",
+      "4. Finalize com o restante dos morangos."
+    ],
+    "por_porção": {
+      "proteína_g": 16.2,
+      "calorias": 251,
+      "carboidrato_g": 27.3,
+      "gordura_g": 9.1
+    }
+  },
+  {
+    "id": "SOB-009",
+    "nome": "Docinho de Banana, Aveia e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana e misture os demais ingredientes.",
+      "2. Leve à geladeira por 10 minutos.",
+      "3. Modele bolinhas pequenas.",
+      "4. Sirva gelado."
+    ],
+    "por_porção": {
+      "proteína_g": 15.6,
+      "calorias": 315,
+      "carboidrato_g": 52.1,
+      "gordura_g": 6.3
+    }
+  },
+  {
+    "id": "SOB-010",
+    "nome": "Manjar de Leite em Pó com Chia e Cacau",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 12,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 5,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o leite, o leite em pó e o cacau.",
+      "2. Acrescente a chia.",
+      "3. Leve à geladeira por 2 horas.",
+      "4. Sirva quando estiver firme."
+    ],
+    "por_porção": {
+      "proteína_g": 19.2,
+      "calorias": 239,
+      "carboidrato_g": 31.1,
+      "gordura_g": 5.4
+    }
+  },
+  {
+    "id": "SOB-011",
+    "nome": "Mousse de Ricota, Banana e Chia",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ricota",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 8,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 5,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata a ricota e a banana.",
+      "2. Misture a chia e o cacau.",
+      "3. Transfira para uma taça.",
+      "4. Gele por 30 minutos antes de servir."
+    ],
+    "por_porção": {
+      "proteína_g": 16,
+      "calorias": 276,
+      "carboidrato_g": 30.9,
+      "gordura_g": 11.8
+    }
+  },
+  {
+    "id": "SOB-012",
+    "nome": "Cheesecake de Cottage, Morango e Chia",
+    "categoria": "sobremesas",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "queijo cottage",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "morango",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Triture a aveia para formar a base.",
+      "2. Bata o cottage com metade dos morangos.",
+      "3. Monte a base e cubra com o creme.",
+      "4. Finalize com os morangos restantes e gele."
+    ],
+    "por_porção": {
+      "proteína_g": 18.5,
+      "calorias": 271,
+      "carboidrato_g": 28.6,
+      "gordura_g": 9.7
+    }
+  },
+  {
+    "id": "SOB-013",
+    "nome": "Pudim de Chocolate com Ovo e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "leite desnatado",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata todos os ingredientes.",
+      "2. Coloque em uma caneca ou forma pequena.",
+      "3. Cozinhe no micro-ondas por 2 minutos.",
+      "4. Gele até firmar."
+    ],
+    "por_porção": {
+      "proteína_g": 22.3,
+      "calorias": 245,
+      "carboidrato_g": 25.7,
+      "gordura_g": 7.1
+    }
+  },
+  {
+    "id": "SOB-014",
+    "nome": "Sorvete de Banana, Cacau e Amendoim",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 120,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 8,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Congele a banana em rodelas.",
+      "2. Bata com o cacau e o leite em pó.",
+      "3. Misture o amendoim triturado.",
+      "4. Sirva imediatamente ou gele por 20 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 13.1,
+      "calorias": 279,
+      "carboidrato_g": 48.3,
+      "gordura_g": 7.1
+    }
+  },
+  {
+    "id": "SOB-015",
+    "nome": "Brigadeiro de Cottage e Cacau",
+    "categoria": "sobremesas",
+    "tempo": 12,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o cottage até ficar cremoso.",
+      "2. Misture o cacau e o leite em pó.",
+      "3. Gele por 20 minutos.",
+      "4. Finalize com o amendoim triturado."
+    ],
+    "por_porção": {
+      "proteína_g": 24.3,
+      "calorias": 273,
+      "carboidrato_g": 23.9,
+      "gordura_g": 10.8
+    }
+  },
+  {
+    "id": "SOB-016",
+    "nome": "Pavê de Morango, Cottage e Aveia",
+    "categoria": "sobremesas",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 130,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o cottage com o leite em pó.",
+      "2. Monte camadas de aveia, creme e morango.",
+      "3. Repita as camadas.",
+      "4. Gele por 30 minutos e sirva."
+    ],
+    "por_porção": {
+      "proteína_g": 21.1,
+      "calorias": 290,
+      "carboidrato_g": 36.3,
+      "gordura_g": 6.9
+    }
+  },
+  {
+    "id": "SOB-017",
+    "nome": "Brownie de Maçã, Aveia e Cacau",
+    "categoria": "sobremesas",
+    "tempo": 22,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "maçã com casca",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 10,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Rale a maçã e misture ao ovo.",
+      "2. Acrescente a aveia e o cacau.",
+      "3. Coloque em forma pequena.",
+      "4. Asse a 180 °C por 15 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 12.1,
+      "calorias": 262,
+      "carboidrato_g": 38,
+      "gordura_g": 9.4
+    }
+  },
+  {
+    "id": "SOB-018",
+    "nome": "Creme de Banana, Ricota e Canela",
+    "categoria": "sobremesas",
+    "tempo": 7,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "ricota",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      },
+      {
+        "item": "canela em pó",
+        "quantidade": 1,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana e a ricota.",
+      "2. Misture a aveia e a canela.",
+      "3. Leve à geladeira por 20 minutos.",
+      "4. Sirva em uma taça."
+    ],
+    "por_porção": {
+      "proteína_g": 16,
+      "calorias": 300,
+      "carboidrato_g": 40.6,
+      "gordura_g": 9.5
+    }
+  },
+  {
+    "id": "SOB-019",
+    "nome": "Trufa de Morango, Leite em Pó e Amendoim",
+    "categoria": "sobremesas",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 12,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse os morangos.",
+      "2. Misture o leite em pó e a aveia.",
+      "3. Incorpore o amendoim triturado.",
+      "4. Modele e gele por 20 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 17,
+      "calorias": 270,
+      "carboidrato_g": 34.6,
+      "gordura_g": 7.7
+    }
+  },
+  {
+    "id": "SOB-020",
+    "nome": "Parfait de Banana, Cottage e Cacau",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 8,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 6,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o cottage com o cacau.",
+      "2. Faça uma camada de banana em rodelas.",
+      "3. Cubra com o creme e a chia.",
+      "4. Gele por 20 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 14.8,
+      "calorias": 247,
+      "carboidrato_g": 33.7,
+      "gordura_g": 8.3
+    }
+  },
+  {
+    "id": "SOB-021",
+    "nome": "Mousse de Morango com Ricota e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "ricota",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 6,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata os morangos e a ricota.",
+      "2. Misture o leite em pó e a chia.",
+      "3. Distribua em uma taça.",
+      "4. Gele por 30 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 22.1,
+      "calorias": 287,
+      "carboidrato_g": 26.5,
+      "gordura_g": 10.6
+    }
+  },
+  {
+    "id": "SOB-022",
+    "nome": "Cookie de Cacau, Banana e Aveia",
+    "categoria": "sobremesas",
+    "tempo": 20,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 90,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 30,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 8,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 10,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse a banana.",
+      "2. Misture a aveia, o cacau e o amendoim.",
+      "3. Modele os cookies.",
+      "4. Asse a 180 °C por 15 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 9.7,
+      "calorias": 296,
+      "carboidrato_g": 50.1,
+      "gordura_g": 9.4
+    }
+  },
+  {
+    "id": "SOB-023",
+    "nome": "Pudim de Chia com Morango e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 15,
+        "unidade": "g"
+      },
+      {
+        "item": "morango",
+        "quantidade": 100,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Misture o leite, o leite em pó e a chia.",
+      "2. Deixe descansar por 10 minutos.",
+      "3. Cubra com os morangos picados.",
+      "4. Leve à geladeira por 2 horas."
+    ],
+    "por_porção": {
+      "proteína_g": 17.7,
+      "calorias": 247,
+      "carboidrato_g": 33.4,
+      "gordura_g": 5.4
+    }
+  },
+  {
+    "id": "SOB-024",
+    "nome": "Creme de Cacau, Cottage e Amendoim",
+    "categoria": "sobremesas",
+    "tempo": 7,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "queijo cottage",
+        "quantidade": 110,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 8,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 60,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o cottage com a banana.",
+      "2. Misture o cacau.",
+      "3. Cubra com o amendoim triturado.",
+      "4. Gele por 20 minutos."
+    ],
+    "por_porção": {
+      "proteína_g": 17.4,
+      "calorias": 256,
+      "carboidrato_g": 26,
+      "gordura_g": 11.6
+    }
+  },
+  {
+    "id": "SOB-025",
+    "nome": "Sorvete de Morango com Cottage e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 10,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "morango",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 50,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Congele os morangos e a banana.",
+      "2. Bata com o cottage e o leite em pó.",
+      "3. Leve ao congelador por 20 minutos.",
+      "4. Sirva cremoso."
+    ],
+    "por_porção": {
+      "proteína_g": 20.3,
+      "calorias": 264,
+      "carboidrato_g": 36.6,
+      "gordura_g": 5
+    }
+  },
+  {
+    "id": "SOB-026",
+    "nome": "Bolo de Caneca de Maçã, Aveia e Leite em Pó",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ovo",
+        "quantidade": 1,
+        "unidade": "unidade"
+      },
+      {
+        "item": "maçã com casca",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 20,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Rale a maçã dentro de uma caneca.",
+      "2. Misture o ovo, a aveia e o leite em pó.",
+      "3. Leve ao micro-ondas por 2 minutos.",
+      "4. Aguarde 1 minuto antes de servir."
+    ],
+    "por_porção": {
+      "proteína_g": 17.2,
+      "calorias": 287,
+      "carboidrato_g": 39.6,
+      "gordura_g": 7.2
+    }
+  },
+  {
+    "id": "SOB-027",
+    "nome": "Taça de Banana, Morango e Cottage",
+    "categoria": "sobremesas",
+    "tempo": 6,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "morango",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "queijo cottage",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Corte as frutas em rodelas.",
+      "2. Coloque uma camada de banana.",
+      "3. Cubra com cottage, aveia e morango.",
+      "4. Sirva gelado."
+    ],
+    "por_porção": {
+      "proteína_g": 15.1,
+      "calorias": 266,
+      "carboidrato_g": 40.7,
+      "gordura_g": 6
+    }
+  },
+  {
+    "id": "SOB-028",
+    "nome": "Trufa de Aveia, Cacau e Cottage",
+    "categoria": "sobremesas",
+    "tempo": 15,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "queijo cottage",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "cacau em pó",
+        "quantidade": 10,
+        "unidade": "g"
+      },
+      {
+        "item": "amendoim torrado sem sal",
+        "quantidade": 8,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Amasse o cottage.",
+      "2. Misture a aveia e o cacau.",
+      "3. Modele uma trufa grande.",
+      "4. Passe no amendoim triturado e gele."
+    ],
+    "por_porção": {
+      "proteína_g": 16.6,
+      "calorias": 261,
+      "carboidrato_g": 26.8,
+      "gordura_g": 11.9
+    }
+  },
+  {
+    "id": "SOB-029",
+    "nome": "Manjar de Banana e Chia",
+    "categoria": "sobremesas",
+    "tempo": 8,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "leite desnatado",
+        "quantidade": 150,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 70,
+        "unidade": "g"
+      },
+      {
+        "item": "chia",
+        "quantidade": 12,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Bata o leite, o leite em pó e a banana.",
+      "2. Misture a chia.",
+      "3. Leve à geladeira por 2 horas.",
+      "4. Sirva firme."
+    ],
+    "por_porção": {
+      "proteína_g": 17.2,
+      "calorias": 271,
+      "carboidrato_g": 43.8,
+      "gordura_g": 4.3
+    }
+  },
+  {
+    "id": "SOB-030",
+    "nome": "Cheesecake de Banana, Ricota e Aveia",
+    "categoria": "sobremesas",
+    "tempo": 18,
+    "porcoes": 1,
+    "ingredientes": [
+      {
+        "item": "ricota",
+        "quantidade": 100,
+        "unidade": "g"
+      },
+      {
+        "item": "banana-prata",
+        "quantidade": 80,
+        "unidade": "g"
+      },
+      {
+        "item": "aveia em flocos",
+        "quantidade": 25,
+        "unidade": "g"
+      },
+      {
+        "item": "leite em pó desnatado",
+        "quantidade": 15,
+        "unidade": "g"
+      }
+    ],
+    "modo_preparo": [
+      "1. Triture a aveia e forme a base.",
+      "2. Bata a ricota, a banana e o leite em pó.",
+      "3. Cubra a base com o creme.",
+      "4. Gele por 1 hora antes de servir."
+    ],
+    "por_porção": {
+      "proteína_g": 22.5,
+      "calorias": 371,
+      "carboidrato_g": 49.1,
+      "gordura_g": 10.4
+    }
+  }
+]

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#153b2e">
+  <meta name="description" content="Prot+ — receitas proteicas práticas para sua rotina.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <title>Prot+ | Receitas proteicas</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar"><div><span class="eyebrow">SUA ROTINA MAIS FORTE</span><h1>Prot<span>+</span></h1></div><button id="installBtn" class="icon-button" hidden>＋</button></header>
+    <main id="view" class="view" aria-live="polite"></main>
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button data-screen="home" class="nav-item active">⌂<small>Início</small></button>
+      <button data-screen="recipes" class="nav-item">▦<small>Receitas</small></button>
+      <button data-screen="tools" class="nav-item">⚙<small>Ferramentas</small></button>
+      <button data-screen="bonus" class="nav-item">✦<small>Bônus</small></button>
+    </nav>
+  </div>
+  <div id="modal" class="modal" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

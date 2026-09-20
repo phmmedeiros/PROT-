@@ -1,0 +1,10 @@
+{
+  "name":"Prot+ — Receitas Proteicas",
+  "short_name":"Prot+",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#fffaf2",
+  "theme_color":"#153b2e",
+  "lang":"pt-BR",
+  "icons":[]
+}

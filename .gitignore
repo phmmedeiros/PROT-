@@ -1,0 +1,21 @@
+﻿# Dependencias
+node_modules/
+
+# Arquivos temporarios do agente
+scratch/
+.agents/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Ambiente
+.env
+.env.local
+
+# Pasta interna do agente IA
+.gemini/
