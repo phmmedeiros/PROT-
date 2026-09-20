@@ -6,6 +6,24 @@
   <meta name="theme-color" content="#102d24">
   <meta name="description" content="Chega de frango seco e ovo cozido. Conheça o Prot+: 120 receitas proteicas práticas de 25g a 68g com sabor de delivery, prontas em 15 minutos.">
   <title>Prot+ | Como Bater Sua Proteína e Secar Comendo com Sabor de Delivery</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1310891797657056');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1310891797657056&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <style>
     :root {
       --ink: #142820;
@@ -807,6 +825,89 @@
       font-weight: 700;
     }
 
+    /* SEÇÃO DE DEPOIMENTOS EM PRINTS (SLIDER INFINITO PARA A ESQUERDA) */
+    .testimonials-slider-block {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px dashed var(--line);
+      text-align: center;
+    }
+    .testimonials-header {
+      max-width: 620px;
+      margin: 0 auto 20px;
+      padding: 0 16px;
+    }
+    .testimonials-title {
+      font-size: 22px;
+      color: var(--green);
+      font-weight: 900;
+      line-height: 1.25;
+      margin: 10px 0 6px;
+    }
+    .testimonials-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 auto;
+      line-height: 1.45;
+    }
+    .testimonials-marquee-wrap {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      overflow: hidden;
+      position: relative;
+      padding: 12px 0 22px;
+      cursor: grab;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    }
+    .testimonials-marquee-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: testimonialsMarqueeLeft 42s linear infinite;
+      will-change: transform;
+    }
+    .testimonials-marquee-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes testimonialsMarqueeLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonial-print-card {
+      flex: 0 0 220px;
+      width: 220px;
+      height: 390px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #ffffff;
+      border: 2px solid #e2e8e3;
+      box-shadow: 0 12px 28px rgba(21, 59, 46, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .testimonial-print-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(21, 59, 46, 0.18);
+      border-color: var(--green);
+    }
+    .testimonial-print-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .testimonial-print-card {
+        flex: 0 0 195px;
+        width: 195px;
+        height: 345px;
+        border-radius: 16px;
+      }
+      .testimonials-title {
+        font-size: 19px;
+      }
+    }
+
     /* GARANTIA 45 DIAS */
     .guarantee-box {
       background: #fff;
@@ -1592,13 +1693,49 @@
             <span class="cond">pagamento único · acesso vitalício para sempre</span>
           </div>
 
-          <a class="cta cta-pulse" href="#checkout" id="btnMainOffer">
+          <a class="cta cta-pulse" href="https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9" id="btnMainOffer">
             QUERO O PROT+ COM TODOS OS BÔNUS <span>→</span>
           </a>
 
           <p class="micro" style="margin-top: 14px; color: var(--muted);">
             🔒 Compra 100% segura e criptografada · Garantia incondicional de 45 dias
           </p>
+        </div>
+
+        <!-- SLIDER DE DEPOIMENTOS / PRINTS REAIS (PASSANDO PARA A ESQUERDA) -->
+        <div class="testimonials-slider-block">
+          <div class="testimonials-header">
+            <span class="badge-fast" style="background: var(--green); color: #fff;">💬 CONVERSAS REAIS NO WHATSAPP & DIRECT</span>
+            <h3 class="testimonials-title">Veja os prints de quem já está batendo a meta sem enjoar</h3>
+            <p class="testimonials-subtitle">Resultados práticos e mensagens de quem trocou o frango seco pelas receitas do Prot+:</p>
+          </div>
+
+          <div class="testimonials-marquee-wrap">
+            <div class="testimonials-marquee-track">
+              <!-- Sequência de Depoimentos Reais 1 a 10 -->
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep1.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep2.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep3.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep4.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep5.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep6.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep7.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep8.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep9.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep10.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <!-- Duplicado para loop infinito 100% contínuo -->
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep1.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep2.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep3.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep4.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep5.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep6.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep7.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep8.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep9.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+              <div class="testimonial-print-card"><img src="images/depoimentos/dep10.webp" alt="Print de depoimento de aluno do Prot+" loading="lazy"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1695,7 +1832,7 @@
     // =========================================================================
     // CONFIGURAÇÃO DO CHECKOUT PAYT (Cole a URL do checkout abaixo quando criada)
     // =========================================================================
-    const PAYT_CHECKOUT_URL = ""; // Ex: "https://payt.com.br/checkout/exemplo"
+    const PAYT_CHECKOUT_URL = "https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9";
 
     // Redirecionamento inteligente dos botões de compra para o checkout Payt
     document.querySelectorAll('a[href="#checkout"], #btnMainOffer, #btnSticky').forEach(btn => {
