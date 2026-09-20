@@ -174,6 +174,12 @@ echo "https://zhbvlqlkdpbtqvctrerw.supabase.co/functions/v1/payt-webhook?secret=
 **Eventos a marcar na Payt:** compra aprovada/paga, reembolso, chargeback e
 cancelamento.
 
+**Chave única do postback** (gerada pela Payt, guardada em `.segredos` e no
+Vault como `PAYT_CHAVE_UNICA`): o webhook a **reconhece e registra** em qual
+cabeçalho ou campo ela chega — a resposta traz `chave_payt` — mas **não a
+exige**, porque o lugar exato só se confirma numa chamada real. Quando isso
+acontecer, ela vira segunda trava além do `secret` da URL.
+
 ### Estado verificado sem o segredo no painel
 
 | Tentativa | Resposta |

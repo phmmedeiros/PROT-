@@ -35,6 +35,36 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Webhook Reconhece a Chave Única da Payt (v4)
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/supabase/`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Postback cadastrado na Payt (tipo "PayT V1", "notificar erros" ligado) com a
+    URL da função e o `secret` embutido.
+  - A chave única do postback foi guardada (`.segredos` e Vault, `PAYT_CHAVE_UNICA`).
+    O webhook a **reconhece** em qualquer cabeçalho ou campo, aninhado ou não, e
+    devolve `chave_payt` dizendo onde a achou — **sem exigir**, porque o lugar
+    exato só se confirma numa chamada real. Testado: campo simples, campo
+    aninhado, cabeçalho e ausência.
+  - Quando a primeira chamada real mostrar o lugar, a chave vira segunda trava.
+- **Arquivos:** `supabase/functions/payt-webhook/index.ts`, `supabase/README.md`.
+
+### [2026-09-20] Remoção do Botão Sticky CTA Mobile e Deploy Hostinger
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`
+- **Tipo:** `style` / `refactor`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Remoção da barra flutuante fixa (`.sticky-bar` / `#stickyBar`) e do botão sticky mobile no rodapé da Landing Page.
+  - Limpeza das regras de CSS associadas e ajuste no seletor JavaScript de redirecionamento de checkout.
+  - Deploy em produção na Hostinger para `https://lp.comersemprebem.site/` e purga de cache da CDN via MCP (`hosting_clearWebsiteCacheV1`).
+  - Verificação com `curl` confirmando a ausência do elemento fixo em produção.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `HISTORICO_ATUALIZACOES.md`
+
 ### [2026-09-20] Segredos no Vault e Webhook Testado de Ponta a Ponta
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/supabase/`

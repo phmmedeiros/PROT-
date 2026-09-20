@@ -47,6 +47,32 @@ async function lerSegredo(sb: SupabaseClient, nome: string): Promise<string | nu
   return (data as string | null) ?? null;
 }
 
+/** Chave única do postback (gerada pela Payt). Ainda não sabemos em que
+ *  cabeçalho ou campo ela chega, então só é RECONHECIDA e registrada; a
+ *  autenticação obrigatória segue sendo o `secret` da URL. Assim que uma
+ *  chamada real mostrar onde ela vem, vira segunda trava. Nunca lança erro. */
+function ondeEstaAChave(requisicao: Request, corpo: unknown, chave: string): string | null {
+  try {
+    for (const [nome, valor] of requisicao.headers) {
+      if (valor.includes(chave)) return `cabeçalho ${nome}`;
+    }
+    const procurar = (valor: unknown, caminho: string): string | null => {
+      if (typeof valor === 'string') return valor.includes(chave) ? caminho || 'corpo' : null;
+      if (valor && typeof valor === 'object') {
+        for (const [k, v] of Object.entries(valor as Record<string, unknown>)) {
+          const achado = procurar(v, caminho ? `${caminho}.${k}` : k);
+          if (achado) return achado;
+        }
+      }
+      return null;
+    };
+    const campo = procurar(corpo, '');
+    return campo ? `campo ${campo}` : null;
+  } catch {
+    return null;
+  }
+}
+
 /** Procura um valor no payload, inclusive dentro de objetos aninhados. */
 function achar(corpo: Record<string, unknown>, chaves: string[]): string | null {
   for (const chave of chaves) {
@@ -116,6 +142,11 @@ Deno.serve(async (requisicao) => {
     return responder(400, { erro: 'Corpo não é JSON válido.' });
   }
 
+  // Onde a chave única da Payt aparece nesta chamada (só registro, sem exigir).
+  const chavePayt = await lerSegredo(supabase, 'PAYT_CHAVE_UNICA');
+  const chaveOnde = chavePayt ? ondeEstaAChave(requisicao, corpo, chavePayt) : null;
+  console.log(chaveOnde ? `Chave única da Payt reconhecida (${chaveOnde}).` : 'Chave única da Payt não encontrada nesta chamada.');
+
   const email = achar(corpo, CAMPOS_EMAIL);
   const pedido = achar(corpo, CAMPOS_PEDIDO);
   const situacao = classificar(achar(corpo, CAMPOS_STATUS));
@@ -132,7 +163,7 @@ Deno.serve(async (requisicao) => {
 
   if (!situacao) {
     console.log('Evento ignorado, status não reconhecido:', JSON.stringify(corpo));
-    return responder(200, { ok: true, ignorado: true });
+    return responder(200, { ok: true, ignorado: true, chave_payt: chaveOnde ?? 'não encontrada' });
   }
 
   let centavos: number | null = null;
@@ -157,7 +188,7 @@ Deno.serve(async (requisicao) => {
   //    e `tenho_acesso()` passa a responder falso na próxima abertura do app.
   if (situacao !== 'ativo') {
     console.log(`Acesso encerrado para ${email}: ${situacao}`);
-    return responder(200, { ok: true, status: situacao });
+    return responder(200, { ok: true, status: situacao, chave_payt: chaveOnde ?? 'não encontrada' });
   }
 
   // 5. Cria o usuário. Cadastro público fica desligado no painel, então este é
@@ -184,5 +215,5 @@ Deno.serve(async (requisicao) => {
   if (erroEmail) console.error(`Compra registrada, mas o e-mail de acesso falhou para ${email}:`, erroEmail.message);
   else console.log(`Link de acesso enviado para ${email}.`);
 
-  return responder(200, { ok: true, status: 'ativo', novo: !jaExistia, email_enviado: !erroEmail });
+  return responder(200, { ok: true, status: 'ativo', novo: !jaExistia, email_enviado: !erroEmail, chave_payt: chaveOnde ?? 'não encontrada' });
 });
