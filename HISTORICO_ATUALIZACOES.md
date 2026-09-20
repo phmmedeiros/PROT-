@@ -35,6 +35,34 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Copywriting Visceral de Alta Conversão para Público Frio (Direct Response)
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/index.html`, `.gitignore`
+- **Tipo:** `copy` / `feat`
+- **Commit:** `fdcfa71`
+- **O que foi feito:**
+  - Substituição integral da copy institucional da página de vendas por uma narrativa visceral de Direct Response desenhada para tráfego pago frio.
+  - Incorporação cirúrgica das 11 dores ocultas e ruminações mentais do avatar:
+    1. Permissão para comer gostoso sem culpa (quebrando a ideia de que dieta precisa ser punição).
+    2. Fim do ciclo de desistir da dieta na 1ª semana pela monotonia do frango grelhado.
+    3. Solução real para a compulsão noturna por doces (sobremesas proteicas densas).
+    4. Quebra do trauma de "receita fit com gosto de papelão" através da explicação química da Arquitetura Gastronômica Proteica.
+    5. Foco no resultado real no espelho (secar barriga e ganhar tônus), conectando a proteína à estética.
+    6. Destruição do concorrente invisível: o delivery/iFood de madrugada por desespero.
+    7. Eliminação da pia cheia de louça (método de 1 panela só e pratos prontos em 15 minutos).
+    8. Destruição do medo de errar na cozinha (passo a passo infalível com medidas caseiras).
+    9. Fim da fadiga mental de decidir o que cozinhar (Modo Geladeira e Cardápio Blindado).
+    10. Monitoramento em tempo real para não desperdiçar o treino na academia.
+    11. Inimigo comum: a indústria de Whey protein caro de R$ 200 (reforçando o Whey caseiro).
+    - Dor Social: fim da necessidade de cozinhar duas comidas na mesma casa (pratos que a família toda adora).
+  - Rebatismo sensorial de todas as 6 receitas da vitrine com linguagem de dar água na boca.
+  - Atualização do `.gitignore` contra metadados do macOS (`._*`).
+- **Arquivos modificados:**
+  - `04-pagina/index.html`
+  - `.gitignore`
+
+---
+
 ### [2026-09-20] Execução da Fase 6: Página de Obrigado, Entrega, Páginas Legais e Esteira Payt
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`, raiz (`local-preview-server.mjs`)

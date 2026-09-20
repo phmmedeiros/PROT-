@@ -1,4 +1,4 @@
-﻿# Dependencias
+# Dependencias
 node_modules/
 
 # Arquivos temporarios do agente
@@ -9,6 +9,10 @@ scratch/
 .DS_Store
 Thumbs.db
 desktop.ini
+._*
+.AppleDouble
+.Spotlight-V100
+.Trashes
 
 # Logs
 *.log
