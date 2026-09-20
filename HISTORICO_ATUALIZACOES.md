@@ -35,6 +35,50 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Segredos no Vault e Webhook Testado de Ponta a Ponta
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/supabase/`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - O painel de segredos das Edge Functions não é alcançável por MCP nem por CLI sem
+    token pessoal. Os quatro segredos (`PAYT_WEBHOOK_SECRET`, `CRON_SECRET`,
+    `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`) foram gravados no **Vault** do banco
+    (migration `0006`); as funções leem de lá quando não há variável de ambiente.
+    `public.segredo()` só é chamável pelo `service_role`.
+  - `payt-webhook` v3 e `enviar-lembretes` v2 publicadas com essa leitura.
+  - **Testes contra produção:** sem segredo → 401; segredo errado → 401; GET → 405;
+    "pix gerado" → ignorado sem criar conta; **compra simulada aprovada → conta
+    criada, compra registrada e e-mail "Seu acesso ao Prot+" entregue pelo Resend**;
+    reenvio do mesmo pedido não duplica nem reenvia e-mail; lembretes → 200.
+  - Verificador de segurança: apenas os dois avisos conhecidos e intencionais.
+- **Pendente:** colar a URL do webhook no painel da Payt — o único passo fora do
+  alcance do agente. A compra de teste (`TESTE-COMPRA-001`,
+  `phenrimedeiros+compra@gmail.com`) pode ser apagada depois de usada.
+- **Arquivos:** `supabase/migrations/0006_segredos_no_vault.sql`,
+  `supabase/functions/payt-webhook/index.ts`, `supabase/functions/enviar-lembretes/index.ts`,
+  `supabase/README.md`.
+
+### [2026-09-20] Criação de Mockups 3D dos Bônus e Deploy Hostinger
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`
+- **Tipo:** `feat` / `marketing`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Criação de mockups 3D digitais fotorrealistas para os 3 bônus exclusivos da oferta:
+    1. `bonus-1-treino.webp` (Capa de Livro 3D com lombada, textura de verniz, selo dourado 100% Grátis e fotografia de treino integrada).
+    2. `bonus-2-calculadora.webp` (Mockup de iPad Pro / Dashboard 3D com widgets e anéis de macros: Proteína, Carboidrato e Gorduras).
+    3. `bonus-3-whey.webp` (Capa de Livro 3D gastronômico com shake proteico cremoso e selo de economia de R$ 1.800/ano).
+  - Redesenho completo da seção de bônus em `04-pagina/index.html` com layout responsivo em grid split (mockup à esquerda + conteúdo detalhado, checklists de entregáveis e âncora de preço individual à direita).
+  - Deploy em produção na Hostinger para `https://lp.comersemprebem.site/` e purga de cache da CDN via MCP (`hosting_clearWebsiteCacheV1`).
+  - Verificação com `curl` aprovada com status `HTTP/2 200` para todos os 3 mockups no ar.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `04-pagina/images/bonus/bonus-1-treino.webp`
+  - `04-pagina/images/bonus/bonus-2-calculadora.webp`
+  - `04-pagina/images/bonus/bonus-3-whey.webp`
+  - `HISTORICO_ATUALIZACOES.md`
+
 ### [2026-09-20] Atualização dos Depoimentos Reais (Pasta NOSSOS) e Deploy Hostinger
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`

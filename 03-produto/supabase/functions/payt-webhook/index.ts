@@ -10,19 +10,15 @@
  * Depois da primeira compra de teste, abra a linha criada, veja o formato real
  * e ajuste CAMPOS_* abaixo para ler direto o nome certo.
  *
- * Segredos necessários (Painel > Edge Functions > Secrets):
- *   PAYT_WEBHOOK_SECRET   segredo combinado com a Payt, conferido a cada chamada
- *   SUPABASE_URL          preenchido automaticamente pela Supabase
- *   SUPABASE_SERVICE_ROLE_KEY  idem — nunca vai para o navegador
+ * Segredo: PAYT_WEBHOOK_SECRET, lido do ambiente (Edge Functions > Secrets)
+ * ou, na falta dele, do Vault do banco via public.segredo(). O ambiente tem
+ * prioridade. SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY vêm sempre do ambiente.
  *
- * Deploy:
- *   supabase functions deploy payt-webhook --no-verify-jwt
- *
- * `--no-verify-jwt` é obrigatório: quem chama é a Payt, que não tem sessão de
+ * `verify_jwt` fica desligado: quem chama é a Payt, que não tem sessão de
  * usuário. A autenticação aqui é o segredo compartilhado.
  */
 
-import { createClient } from 'jsr:@supabase/supabase-js@2';
+import { createClient, type SupabaseClient } from 'jsr:@supabase/supabase-js@2';
 
 /* Para onde o link de acesso leva. Precisa estar na lista de Redirect URLs. */
 const ENDERECO_DO_APP = 'https://app.comersemprebem.site/';
@@ -39,6 +35,18 @@ const APROVADOS = ['paid', 'approved', 'completed', 'aprovado', 'pago', 'authori
 const REEMBOLSADOS = ['refunded', 'reembolsado', 'chargeback', 'estornado'];
 const CANCELADOS = ['canceled', 'cancelled', 'cancelado', 'expired', 'refused', 'recusado'];
 
+/** Lê um segredo do ambiente ou, na falta dele, do Vault do banco. */
+async function lerSegredo(sb: SupabaseClient, nome: string): Promise<string | null> {
+  const doAmbiente = Deno.env.get(nome);
+  if (doAmbiente) return doAmbiente;
+  const { data, error } = await sb.rpc('segredo', { nome });
+  if (error) {
+    console.error(`Vault (${nome}): ${error.message}`);
+    return null;
+  }
+  return (data as string | null) ?? null;
+}
+
 /** Procura um valor no payload, inclusive dentro de objetos aninhados. */
 function achar(corpo: Record<string, unknown>, chaves: string[]): string | null {
   for (const chave of chaves) {
@@ -46,7 +54,6 @@ function achar(corpo: Record<string, unknown>, chaves: string[]): string | null 
     if (typeof valor === 'string' && valor.trim()) return valor.trim();
     if (typeof valor === 'number') return String(valor);
   }
-  // A Payt pode aninhar em customer/buyer/order/data.
   for (const ninho of ['customer', 'buyer', 'client', 'order', 'data', 'transaction']) {
     const dentro = corpo[ninho];
     if (dentro && typeof dentro === 'object') {
@@ -74,14 +81,18 @@ function responder(codigo: number, corpo: Record<string, unknown>): Response {
 }
 
 Deno.serve(async (requisicao) => {
-  if (requisicao.method !== 'POST') {
-    return responder(405, { erro: 'Use POST.' });
-  }
+  if (requisicao.method !== 'POST') return responder(405, { erro: 'Use POST.' });
+
+  const supabase = createClient(
+    Deno.env.get('SUPABASE_URL')!,
+    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,
+    { auth: { persistSession: false } }
+  );
 
   // 1. Autenticação: segredo combinado com a Payt.
-  const segredo = Deno.env.get('PAYT_WEBHOOK_SECRET');
+  const segredo = await lerSegredo(supabase, 'PAYT_WEBHOOK_SECRET');
   if (!segredo) {
-    console.error('PAYT_WEBHOOK_SECRET não configurado.');
+    console.error('PAYT_WEBHOOK_SECRET ausente no ambiente e no Vault.');
     return responder(500, { erro: 'Webhook sem segredo configurado.' });
   }
 
@@ -120,12 +131,10 @@ Deno.serve(async (requisicao) => {
   }
 
   if (!situacao) {
-    // Evento que não muda acesso (ex.: pix gerado, boleto emitido).
     console.log('Evento ignorado, status não reconhecido:', JSON.stringify(corpo));
     return responder(200, { ok: true, ignorado: true });
   }
 
-  // A Payt pode mandar centavos ou reais; normalizamos para centavos.
   let centavos: number | null = null;
   if (valorBruto) {
     const numero = Number(String(valorBruto).replace(',', '.'));
@@ -134,24 +143,11 @@ Deno.serve(async (requisicao) => {
     }
   }
 
-  const supabase = createClient(
-    Deno.env.get('SUPABASE_URL')!,
-    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,
-    { auth: { persistSession: false } }
-  );
-
   // 3. Registra o pedido. `pedido_payt` é único, então reenvio não duplica.
   const { error: erroCompra } = await supabase.from('compras').upsert(
-    {
-      email: email.toLowerCase(),
-      pedido_payt: pedido,
-      status: situacao,
-      valor_centavos: centavos,
-      payload_bruto: corpo,
-    },
+    { email: email.toLowerCase(), pedido_payt: pedido, status: situacao, valor_centavos: centavos, payload_bruto: corpo },
     { onConflict: 'pedido_payt' }
   );
-
   if (erroCompra) {
     console.error('Falha ao gravar a compra:', erroCompra.message);
     return responder(500, { erro: 'Falha ao registrar a compra.' });
@@ -168,27 +164,19 @@ Deno.serve(async (requisicao) => {
   //    o único caminho de entrada: ninguém se cadastra sem ter comprado.
   const { error: erroUsuario } = await supabase.auth.admin.createUser({
     email: email.toLowerCase(),
-    email_confirm: true, // entra por link mágico; não há senha para confirmar
+    email_confirm: true,
     user_metadata: nome ? { nome } : {},
   });
-
-  // Recompra ou reenvio do webhook: o usuário já existe e isso não é erro.
-  const jaExistia =
-    erroUsuario &&
-    /already|registered|exists|duplicate/i.test(erroUsuario.message ?? '');
-
+  const jaExistia = erroUsuario && /already|registered|exists|duplicate/i.test(erroUsuario.message ?? '');
   if (erroUsuario && !jaExistia) {
     console.error('Falha ao criar o usuário:', erroUsuario.message);
     return responder(500, { erro: 'Compra registrada, mas o acesso falhou.' });
   }
-
   console.log(`Acesso liberado para ${email}${jaExistia ? ' (já existia)' : ''}.`);
 
-  // 6. Envia o link de acesso agora. Sem isto a pessoa teria que descobrir o
-  //    endereço do app e pedir o link sozinha — dois passos a mais entre pagar
-  //    e entrar. Usa o mesmo modelo e o mesmo SMTP do login normal.
-  //    Uma falha aqui NÃO derruba a resposta: a compra e a conta já estão
-  //    gravadas, e devolver erro faria a Payt reenviar o webhook.
+  // 6. Envia o link de acesso agora. Uma falha aqui NÃO derruba a resposta:
+  //    a compra e a conta já estão gravadas, e devolver erro faria a Payt
+  //    reenviar o webhook e duplicar.
   const { error: erroEmail } = await supabase.auth.signInWithOtp({
     email: email.toLowerCase(),
     options: { shouldCreateUser: false, emailRedirectTo: ENDERECO_DO_APP },

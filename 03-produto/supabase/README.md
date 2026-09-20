@@ -124,8 +124,18 @@ Sugestão: **refresh token de 30 dias**, sem expiração por inatividade.
 | `VAPID_PUBLIC_KEY` | par de chaves do Web Push (a pública também está em `app/config.js`) | `.segredos` |
 | `VAPID_PRIVATE_KEY` | idem — **nunca** vai para o app | `.segredos` |
 
-Os quatro estão em `03-produto/supabase/.segredos`, fora do Git:
-`cat 03-produto/supabase/.segredos`.
+Os quatro estão em `03-produto/supabase/.segredos`, fora do Git.
+
+**Onde as funções os leem:** primeiro no ambiente (esta tela do painel); se
+não houver, no **Vault** do banco, via `public.segredo(nome)`, que só o
+`service_role` consegue chamar. Os valores foram gravados no Vault pelo agente
+em 20/09/2026 (migration `0006`), então **cadastrar no painel é opcional** —
+se cadastrar, o ambiente tem prioridade.
+
+Para trocar um segredo no Vault: `Settings > Vault` no painel, ou por SQL:
+```sql
+select vault.update_secret(id, 'novo-valor') from vault.secrets where name = 'NOME';
+```
 
 `SUPABASE_URL` e `SUPABASE_SERVICE_ROLE_KEY` já vêm preenchidos pela própria
 Supabase — não precisa criar, e **nunca** devem aparecer no código do app.
