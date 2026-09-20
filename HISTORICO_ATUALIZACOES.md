@@ -39,7 +39,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/supabase/`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `369e831`
 - **O que foi feito:**
   - Postback cadastrado na Payt (tipo "PayT V1", "notificar erros" ligado) com a
     URL da função e o `secret` embutido.
