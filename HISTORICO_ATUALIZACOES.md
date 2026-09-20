@@ -92,7 +92,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/supabase/`, `06-entrega/publicacao.md`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `9eb2741` (app), `ba70f04` (docs), `1e9b31d` (config)
 - **O que foi feito** (numeração da proposta aprovada):
   1. **Primeiro acesso guiado:** uma pergunta (peso) → meta pronta. Fim do 140 g arbitrário. Guardado em `perfis.peso_kg` e `perfis.boas_vindas_em`; não se repete em outro aparelho.
   2. **Tela acesa enquanto cozinha** (Wake Lock), só com receita aberta; solta ao sair e retoma ao voltar.
@@ -115,7 +115,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/app.js`, `tools/qa-app.mjs`
 - **Tipo:** `fix`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `9eb2741` (app), `ba70f04` (docs), `1e9b31d` (config)
 - **O que foi feito:**
   - Ingrediente que a pessoa digita no Radar de Despensa gravava a seleção em
     `despensa`, mas o chip não reaparecia em outro aparelho porque a lista
@@ -129,7 +129,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/`, Hostinger, `06-entrega/publicacao.md`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `9eb2741` (app), `ba70f04` (docs), `1e9b31d` (config)
 - **O que foi feito:**
   - Subdomínio `app.comersemprebem.site` criado na Hostinger.
   - Aplicativo publicado: 256 arquivos, 15,3 MB.
@@ -167,7 +167,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/supabase/`, `03-produto/app/`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `9eb2741` (app), `ba70f04` (docs), `1e9b31d` (config)
 - **O que foi feito:**
   - **Tabela `administradores`** com `phenrimedeiros@gmail.com` e
     `pedro.arqtt@gmail.com`. `tenho_acesso()` passou a aceitar dois caminhos:
@@ -219,7 +219,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/supabase/`, `.gitignore`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `9eb2741` (app), `ba70f04` (docs), `1e9b31d` (config)
 - **Decisão:** o app deixa de ser link aberto. Só entra quem comprou, e os dados
   da pessoa passam a acompanhá-la entre aparelhos. Em troca, o app passa a
   **exigir internet** — a página de vendas não pode mais prometer uso offline.
