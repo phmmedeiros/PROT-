@@ -542,60 +542,109 @@
       margin: 0;
     }
 
-    /* VITRINE SENSORIAL */
-    .gallery { background: #fff; }
-    .recipe-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
+    /* O APLICATIVO POR DENTRO (SHOWCASE INTERNO) */
+    .app-showcase-section {
+      background: #fff;
+      padding: 50px 0;
+      border-bottom: 1px solid var(--line);
     }
-    .recipe-card {
+    .app-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+    .app-showcase-card {
       background: var(--cream);
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      box-shadow: 0 10px 30px rgba(23, 61, 49, 0.08);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .recipe-card img {
+    .app-showcase-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(23, 61, 49, 0.13);
+    }
+    .app-showcase-img-wrap {
       width: 100%;
-      aspect-ratio: 1.15;
+      position: relative;
+      background: #111;
+    }
+    .app-showcase-img-wrap img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       display: block;
     }
-    .recipe-content {
-      padding: 10px 12px;
-    }
-    .recipe-content b {
-      font-size: 13.5px;
-      line-height: 1.25;
-      display: block;
-      color: var(--ink);
-    }
-    .recipe-content small {
-      display: block;
-      color: var(--orange);
+    .app-showcase-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      background: rgba(16, 45, 36, 0.94);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color: #ffb56e;
+      font-size: 10.5px;
       font-weight: 900;
-      font-size: 11.5px;
-      margin-top: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255, 181, 110, 0.3);
     }
-
-    /* BENEFÍCIOS DO APLICATIVO */
-    .app-features {
+    .app-showcase-body {
+      padding: 20px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .app-showcase-card h3 {
+      font-size: 19px;
+      color: var(--green);
+      margin-bottom: 6px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+    .app-showcase-highlight {
+      font-size: 13px;
+      color: var(--orange);
+      font-weight: 800;
+      margin-bottom: 10px;
+      display: block;
+      line-height: 1.35;
+    }
+    .app-showcase-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .app-mini-badges {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 18px;
+      gap: 10px;
+      margin-top: 26px;
     }
-    .feat-card {
-      background: #fff;
+    .mini-badge-item {
+      background: var(--cream);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px 14px;
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--ink);
     }
-    .feat-card .f-icon { font-size: 24px; margin-bottom: 6px; }
-    .feat-card h4 { font-size: 15px; color: var(--green); margin-bottom: 4px; }
-    .feat-card p { font-size: 13px; color: var(--muted); line-height: 1.4; }
+    .mini-badge-item .b-icon {
+      font-size: 20px;
+      flex: 0 0 24px;
+    }
 
     /* SEÇÃO DE FERRAMENTAS */
     .tools-section {
@@ -852,8 +901,8 @@
     }
 
     @media (min-width: 700px) {
-      .recipe-grid { grid-template-columns: repeat(3, 1fr); }
-      .app-features { grid-template-columns: repeat(4, 1fr); }
+      .app-showcase-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+      .app-mini-badges { grid-template-columns: repeat(4, 1fr); }
       .tools-grid { grid-template-columns: repeat(4, 1fr); }
       .fork-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
       .cards-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
@@ -1359,96 +1408,73 @@
       </div>
     </section>
 
-    <!-- VITRINE GANANCIOSA: FAST FOOD PROTEICO -->
-    <section class="section gallery">
+    <!-- O APLICATIVO POR DENTRO (SHOWCASE INTERNO) -->
+    <section class="section app-showcase-section">
       <div class="wrap">
         <div class="section-title">
-          <span class="eyebrow">CARDÁPIO ANTI-DELIVERY</span>
-          <h2>O tipo de prato que você vai devorar todos os dias sem um pingo de culpa.</h2>
-          <p>Receitas que parecem saídas de uma hamburgueria ou doceria, mas carregadas de proteína pura de supermercado comum:</p>
+          <span class="eyebrow">NÃO É UM E-BOOK DE 300 PÁGINAS QUE FICA ESQUECIDO NO CELULAR</span>
+          <h2>Veja o aplicativo por dentro: uma arma de bolso que resolve sua fome e sua meta em 3 toques.</h2>
+          <p>Esqueça PDFs travados ou anotações perdidas. Você abre o aplicativo Prot+ na tela inicial do seu celular, escolhe o que quer devorar e cozinha em minutos com tudo calculado na grama:</p>
         </div>
 
-        <div class="recipe-grid">
-          <article class="recipe-card">
-            <img src="../03-produto/app/images/CL-002.png" alt="Crepioca Folhada de Frango com Queijo Crocante">
-            <div class="recipe-content">
-              <b>Crepioca Folhada com Queijo Crocante</b>
-              <small>15 min · 29,8g de Proteína Pura</small>
+        <div class="app-showcase-grid">
+          <!-- CARD 1: CATÁLOGO DE 120 PRATOS -->
+          <article class="app-showcase-card">
+            <div class="app-showcase-img-wrap">
+              <img src="images/app-catalogo.jpg" alt="Catálogo com 120 receitas proteicas calculadas na grama no celular" loading="lazy">
+              <span class="app-showcase-tag">📱 TELA 01 · 120 PREPAROS DE BOLSO</span>
+            </div>
+            <div class="app-showcase-body">
+              <h3>Catálogo Inteligente com Mais de 120 Pratos</h3>
+              <span class="app-showcase-highlight">Filtros por refeição, tempo de preparo e meta de proteína.</span>
+              <p>Almoços suculentos, lanches de 5 minutos e sobremesas densas anti-compulsão. Você rola a tela e escolhe em segundos exatamente o que quer comer hoje sem quebrar a dieta.</p>
             </div>
           </article>
 
-          <article class="recipe-card">
-            <img src="../03-produto/app/images/AJ-003.png" alt="Tilápia com Purê Aveludado de Batata-Doce">
-            <div class="recipe-content">
-              <b>Tilápia com Purê Aveludado</b>
-              <small>25 min · Alta absorção · Prato completo</small>
+          <!-- CARD 2: FICHA DA RECEITA COM MACROS NA GRAMA -->
+          <article class="app-showcase-card">
+            <div class="app-showcase-img-wrap">
+              <img src="images/app-receita.jpg" alt="Ficha da receita com macros na grama e checklist de ingredientes" loading="lazy">
+              <span class="app-showcase-tag">📋 TELA 02 · MACROS CALCULADOS NA GRAMA</span>
+            </div>
+            <div class="app-showcase-body">
+              <h3>Ficha Passo a Passo com Macros na Grama</h3>
+              <span class="app-showcase-highlight">Medidas caseiras simples (colher/xícara) e método 1 panela só.</span>
+              <p>Tabela exata de proteínas, carboidratos, gorduras e calorias calculadas por porção. Checklist de ingredientes acessíveis de supermercado para fazer rápido sem sujar a pia.</p>
             </div>
           </article>
 
-          <article class="recipe-card">
-            <img src="../03-produto/app/images/SOB-002.png" alt="Cheesecake Cremoso de Morango Zero Açúcar">
-            <div class="recipe-content">
-              <b>Cheesecake Cremoso de Morango</b>
-              <small>15 min · Zero Açúcar · 22g de Proteína</small>
+          <!-- CARD 3: MODO GELADEIRA INTELIGENTE -->
+          <article class="app-showcase-card">
+            <div class="app-showcase-img-wrap">
+              <img src="images/app-geladeira.jpg" alt="Modo Geladeira Inteligente com seleção de ingredientes" loading="lazy">
+              <span class="app-showcase-tag">❄️ TELA 03 · MODO GELADEIRA INTELIGENTE</span>
             </div>
-          </article>
-
-          <article class="recipe-card">
-            <img src="../03-produto/app/images/CL-014.png" alt="Milkshake Anabólico de Cacau Intenso">
-            <div class="recipe-content">
-              <b>Milkshake Anabólico de Cacau</b>
-              <small>3 min · Feito sem pó de Whey</small>
-            </div>
-          </article>
-
-          <article class="recipe-card">
-            <img src="../03-produto/app/images/AJ-015.png" alt="Frango Dourado ao Molho Especial com Legumes">
-            <div class="recipe-content">
-              <b>Frango Dourado ao Molho Especial</b>
-              <small>30 min · A família inteira come junto</small>
-            </div>
-          </article>
-
-          <article class="recipe-card">
-            <img src="../03-produto/app/images/SOB-014.png" alt="Gelato Dark Proteico de Frigideira">
-            <div class="recipe-content">
-              <b>Gelato Dark Proteico</b>
-              <small>10 min · Mata a fissura noturna</small>
+            <div class="app-showcase-body">
+              <h3>Modo Geladeira: Cozinhe com o Que Já Tem</h3>
+              <span class="app-showcase-highlight">Marque os ingredientes sobrando e veja os pratos possíveis.</span>
+              <p>Abriu a geladeira e só tem ovo, frango e queijo? Toque nos ingredientes disponíveis e o aplicativo cruza os dados para montar o prato proteico ideal. Chega de jogar comida fora ou ceder ao delivery.</p>
             </div>
           </article>
         </div>
-        <p class="micro" style="text-align: center; margin-top: 14px;">Essas são apenas 6 das 120 receitas calculadas na grama disponíveis no Prot+.</p>
-      </div>
-    </section>
 
-    <!-- O APP DE BOLSO (ANTI-PDF) -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-title">
-          <span class="eyebrow">NÃO É UM E-BOOK DE 300 PÁGINAS QUE SE PERDE NO CELULAR</span>
-          <h2>Uma arma de bolso no celular que resolve sua fome em 3 cliques.</h2>
-        </div>
-
-        <div class="app-features">
-          <div class="feat-card">
-            <div class="f-icon">🔍</div>
-            <h4>Modo Geladeira</h4>
-            <p>Sobrou ovo e frango? O app cruza o que você tem e dá a receita proteica certa na hora.</p>
+        <!-- 4 PILARES DO APP -->
+        <div class="app-mini-badges">
+          <div class="mini-badge-item">
+            <span class="b-icon">📲</span>
+            <span>Instalação em 1 clique (iOS e Android)</span>
           </div>
-          <div class="feat-card">
-            <div class="f-icon">⏱</div>
-            <h4>Zero Erro</h4>
-            <p>Medidas simples de colher/xícara e passos curtos. Não tem como errar ou desperdiçar.</p>
+          <div class="mini-badge-item">
+            <span class="b-icon">📶</span>
+            <span>Funciona 100% Offline</span>
           </div>
-          <div class="feat-card">
-            <div class="f-icon">🛡</div>
-            <h4>Semana Blindada</h4>
-            <p>Cardápios prontos para você não gastar 1 segundo pensando "o que vou comer hoje?".</p>
+          <div class="mini-badge-item">
+            <span class="b-icon">⏱</span>
+            <span>Método 15 Min (Anti-Louça)</span>
           </div>
-          <div class="feat-card">
-            <div class="f-icon">📲</div>
-            <h4>Funciona Offline</h4>
-            <p>Consulte na cozinha ou no supermercado mesmo se a internet do seu celular oscilar.</p>
+          <div class="mini-badge-item">
+            <span class="b-icon">⚡</span>
+            <span>Acesso Imediato no Checkout</span>
           </div>
         </div>
       </div>

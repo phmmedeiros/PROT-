@@ -35,11 +35,31 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] O Aplicativo por Dentro: 3 Mockups Realistas em Smartphone e Pilares Mobile
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`
+- **Tipo:** `feat` / `ui` / `conversion`
+- **Commit:** `c8abf40`
+- **O que foi feito:**
+  - Substituição da vitrine estática e repetitiva de pratos por uma seção dedicada a **mostrar o aplicativo Prot+ por dentro** em uso real na cozinha:
+    1. `images/app-catalogo.jpg`: Smartphone nas mãos em cozinha moderna exibindo o catálogo com mais de 120 receitas calculadas na grama e filtros por meta de proteína.
+    2. `images/app-receita.jpg`: Smartphone sobre bancada exibindo a ficha técnica com tabela de macros na grama, checklist de ingredientes e preparo em 12 minutos.
+    3. `images/app-geladeira.jpg`: Smartphone em frente à geladeira aberta demonstrando o "Modo Geladeira Inteligente" (cruza ingredientes disponíveis e gera pratos na hora).
+  - Inclusão dos 4 pilares mobile do app (Instalação em 1 clique sem loja de apps, Modo 100% Offline, Método 15 min Anti-Louça e Acesso Imediato no Checkout).
+  - Grid responsivo de alta conversão: 1 coluna no mobile (390px) e 3 colunas niveladas em telas maiores.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `04-pagina/images/app-catalogo.jpg`
+  - `04-pagina/images/app-receita.jpg`
+  - `04-pagina/images/app-geladeira.jpg`
+
+---
+
 ### [2026-09-20] Visualização do Mecanismo Único: 3 Cards Fotográficos de Culinária Proteica
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`
 - **Tipo:** `feat` / `ui` / `conversion`
-- **Commit:** `280b77a`
+- **Commit:** `e00bded`
 - **O que foi feito:**
   - Transformação da seção de Mecanismo ("Arquitetura Gastronômica Proteica") em 3 cartões visuais de alta gastronomia com imagens fotográficas:
     1. `images/mecanismo-textura.jpg`: Colher erguendo um creme sedoso e aveludado em macrofotografia (A Ilusão da Textura Sedosa).
