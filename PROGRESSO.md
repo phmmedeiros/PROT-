@@ -86,3 +86,6 @@
    - **Lote 6 concluído e aguardando revisão:** 20 sobremesas finais (`SOB-011` a `SOB-030`).
    - Após a aprovação do acervo, iniciar a construção do PWA somente com plano prévio, conforme o roteiro.
    - Construir a aplicação PWA do **Prot+** (`03-produto/app/`) em HTML, CSS e JS puros com catálogo de receitas, filtros, modo geladeira, cardápio semanal, rastreador diário e os 3 bônus integrados.
+**Atualização de imagens:** 20/09/2026 — 120 imagens gastronômicas geradas e salvas em `03-produto/app/images/`, uma por receita, associadas pelo ID e integradas ao catálogo e à tela de detalhes do PWA.
+**Atualização da página de vendas:** 20/09/2026 — nova página single-file implementada em `04-pagina/index.html`, com foco mobile-first, CTAs, oferta, garantia, FAQ e 8 fotos reais do acervo. Validada em localhost com status 200 e imagens carregando.
+**Atualização do aplicativo:** 20/09/2026 — conferidos os IDs do banco contra `03-produto/app/images/`: 120 receitas, 120 arquivos e nenhum ausente. Cards e detalhes usam `images/{ID}.png`; service worker atualizado para cachear as imagens carregadas.
