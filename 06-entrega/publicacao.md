@@ -16,13 +16,25 @@ Publicar mantendo esta estrutura relativa:
 │   ├── app.js
 │   ├── manifest.json
 │   ├── service-worker.js
-│   └── qa/
+│   ├── images/
+│   │   ├── icons/        ícones do app instalado (obrigatórios)
+│   │   ├── w400/         fotos dos cards (2,8 MB)
+│   │   ├── w900/         fotos da tela de detalhes (12,3 MB)
+│   │   └── *.png         originais: usados pelos PDFs, não pelo app
+│   ├── tools/            scripts de manutenção, não precisam ir ao ar
+│   └── qa/               prints do QA, não precisam ir ao ar
 └── dados/
     ├── receitas.json
+    ├── dicas-chef.json
+    ├── bonus.json
     └── calculo-macros.md
 ```
 
-O app deve ser servido por HTTP/HTTPS, não aberto diretamente por `file://`. O arquivo `app/app.js` carrega as receitas usando `../dados/receitas.json`.
+O app deve ser servido por HTTP/HTTPS, não aberto diretamente por `file://`. O arquivo `app/app.js` carrega `../dados/receitas.json`, `../dados/dicas-chef.json` e `../dados/bonus.json`: os três precisam subir junto.
+
+As pastas `images/w400/` e `images/w900/` são obrigatórias — são as fotos que o app exibe. Os PNGs originais (279,5 MB) podem ficar fora do servidor para economizar espaço; o app só recorre a eles se a versão WebP faltar. Se optar por não publicá-los, confirme antes que `images/w400/` e `images/w900/` têm 120 arquivos cada.
+
+O servidor precisa entregar `.webp` com o tipo MIME `image/webp` e `.json` com `application/json`.
 
 ## 2. Publicação do app
 
@@ -31,7 +43,10 @@ O app deve ser servido por HTTP/HTTPS, não aberto diretamente por `file://`. O 
 3. Confirmar que `app/index.html` abre por HTTPS.
 4. Confirmar que `dados/receitas.json` responde com status 200.
 5. Abrir o app uma vez e verificar o registro do service worker.
-6. Testar a instalação na tela inicial em Android e iPhone.
+6. Rodar o QA automatizado contra a URL publicada:
+   `BASE=https://SEU-DOMINIO/app/ node 03-produto/app/tools/qa-app.mjs`
+7. Testar a instalação na tela inicial em Android e iPhone.
+8. Com o app instalado, ligar o modo avião e confirmar que o catálogo abre.
 
 ## 3. Publicação da página de vendas
 

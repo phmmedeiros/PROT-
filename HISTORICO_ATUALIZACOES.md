@@ -35,6 +35,56 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Aplicativo Prot+ Completo: 8 Telas, 4 Ferramentas, 3 Bônus e QA Automatizado
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/dados/`, `local-preview-server.mjs`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Reescrita do PWA a partir do esboço, cobrindo as 8 telas de `02-blueprint/produto.md`:
+    Início, Catálogo, Detalhe da receita, Seletor Turbo, Radar de Despensa,
+    Semana Blindada, Monitor Diário e Central de Bônus.
+  - Navegação por hash (`#/receitas`, `#/receita/CL-001`), para o botão "voltar"
+    do celular funcionar dentro do app instalado; eventos por delegação, no lugar
+    do religamento de `onclick` a cada render.
+  - **Semana Blindada** implementada conforme a especificação: 3 objetivos,
+    7 dias × 4 refeições sem receita repetida, troca de refeição avulsa e
+    lista de compras consolidada dos 28 pratos.
+  - **Radar de Despensa** com os 39 ingredientes do acervo agrupados por tipo,
+    ingrediente personalizado e ranqueamento por proporção de itens disponíveis.
+  - **Monitor Diário** com anel de progresso, meta calculada pelo peso corporal,
+    exclusão individual, reset e zeragem automática na virada do dia.
+  - **Bônus preenchidos com conteúdo real** em `03-produto/dados/bonus.json`:
+    3 divisões de treino (PPL, ABC, Upper/Lower) com 94 exercícios em versão de
+    academia e de casa, 6 regras de progressão, calculadora Mifflin-St Jeor com
+    nível de atividade e distribuição de macros, e o manual do whey caseiro com
+    5 fórmulas, 6 substituições econômicas e 6 técnicas de sabor.
+  - **Dica de Ouro do Chef por receita** (`03-produto/dados/dicas-chef.json`),
+    gerada a partir do ingrediente principal e da técnica de cada preparo,
+    no lugar do texto genérico único.
+  - **Fotos otimizadas:** 279,5 MB de PNG passaram a 15,1 MB em WebP
+    (`images/w400/` para os cards, `images/w900/` para o detalhe). Os PNGs
+    originais foram mantidos porque alimentam os PDFs e a página de vendas.
+  - **App instalável:** ícones 192/512/maskable e apple-touch gerados,
+    `manifest.json` com ícones e atalhos, e passo a passo de instalação
+    separado para Android e iPhone.
+  - **Service worker** reescrito com duas estratégias: estrutura pré-cacheada na
+    instalação e fotos guardadas sob demanda, com limpeza de caches antigos.
+  - **Correção:** o registro do service worker ficava preso em um `addEventListener`
+    de `load` que já havia disparado, então o modo offline nunca era ativado.
+  - **Correção:** a ficha de treino estourava a largura de 390 px e escondia a
+    coluna de descanso; virou lista numerada.
+  - **QA automatizado** (`tools/qa-app.mjs`): dirige um Chrome headless pelo
+    DevTools Protocol, percorre as telas, executa as interações, testa o modo
+    offline, falha em qualquer erro de console e salva 12 prints.
+- **Arquivos modificados/criados:**
+  - `03-produto/app/index.html`, `style.css`, `app.js`, `manifest.json`, `service-worker.js`
+  - `03-produto/app/tools/otimizar-imagens.py`, `gerar-icones.py`, `gerar-dicas.py`, `qa-app.mjs`
+  - `03-produto/app/images/w400/`, `images/w900/`, `images/icons/`
+  - `03-produto/dados/bonus.json`, `03-produto/dados/dicas-chef.json`
+  - `03-produto/app/qa.md`, `03-produto/app/qa/` (12 prints)
+  - `local-preview-server.mjs` (tipo MIME `image/webp`)
+
 ### [2026-09-20] O Aplicativo por Dentro: 3 Mockups Realistas em Smartphone e Pilares Mobile
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`

@@ -4,24 +4,52 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#153b2e">
-  <meta name="description" content="Prot+ — receitas proteicas práticas para sua rotina.">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Prot+ — 120 receitas proteicas com macros calculados, 4 ferramentas e 3 bônus. Funciona offline e instala na tela inicial.">
+  <meta name="color-scheme" content="light">
+
   <title>Prot+ | Receitas proteicas</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="images/icons/favicon.png">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Prot+">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app" class="app-shell">
-    <header class="topbar"><div><span class="eyebrow">SUA ROTINA MAIS FORTE</span><h1>Prot<span>+</span></h1></div><button id="installBtn" class="icon-button" hidden>＋</button></header>
-    <main id="view" class="view" aria-live="polite"></main>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <span class="eyebrow" id="saudacao">SUA ROTINA MAIS FORTE</span>
+        <h1>Prot<span>+</span></h1>
+      </div>
+      <button type="button" class="topbar-install" data-action="abrir-instalacao" hidden>
+        <span aria-hidden="true">⬇</span> Instalar
+      </button>
+    </header>
+
+    <main id="view" class="view" tabindex="-1"></main>
+
     <nav class="bottom-nav" aria-label="Navegação principal">
-      <button data-screen="home" class="nav-item active">⌂<small>Início</small></button>
-      <button data-screen="recipes" class="nav-item">▦<small>Receitas</small></button>
-      <button data-screen="tools" class="nav-item">⚙<small>Ferramentas</small></button>
-      <button data-screen="bonus" class="nav-item">✦<small>Bônus</small></button>
+      <a class="nav-item" href="#/inicio" data-aba="inicio">
+        <span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Início</span>
+      </a>
+      <a class="nav-item" href="#/receitas" data-aba="receitas">
+        <span class="nav-icon" aria-hidden="true">▤</span><span class="nav-label">Receitas</span>
+      </a>
+      <a class="nav-item" href="#/ferramentas" data-aba="ferramentas">
+        <span class="nav-icon" aria-hidden="true">⚙</span><span class="nav-label">Ferramentas</span>
+      </a>
+      <a class="nav-item" href="#/bonus" data-aba="bonus">
+        <span class="nav-icon" aria-hidden="true">✦</span><span class="nav-label">Bônus</span>
+      </a>
     </nav>
   </div>
-  <div id="modal" class="modal" hidden></div>
+
+  <div id="folha" class="folha" hidden></div>
+  <div id="aviso" class="aviso" role="status" aria-live="polite" hidden></div>
+
   <script src="app.js" defer></script>
 </body>
 </html>

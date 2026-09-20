@@ -1,0 +1,316 @@
+{
+  "treinos": {
+    "titulo": "Fichas de Treino Hipertrofia & Definição Prot+",
+    "subtitulo": "Três divisões completas, cada exercício com versão de academia e versão de casa.",
+    "aviso": "Conteúdo educativo. Não substitui a avaliação de um profissional de educação física. Interrompa qualquer exercício que cause dor e procure orientação antes de começar se você tem lesão, condição cardíaca ou está há muito tempo parado.",
+    "divisoes": [
+      {
+        "id": "ppl",
+        "nome": "Push / Pull / Legs",
+        "sigla": "PPL",
+        "frequencia": "3 a 6 dias por semana",
+        "resumo": "Separa o corpo por padrão de movimento: empurrar, puxar e pernas. Rodando o ciclo duas vezes na semana, cada grupo é treinado a cada 3 ou 4 dias.",
+        "indicado": "Quem já treina há pelo menos 3 meses e consegue ir à academia ou treinar em casa de 4 a 6 vezes por semana.",
+        "sessoes": [
+          {
+            "nome": "Push — peito, ombro e tríceps",
+            "academia": [
+              { "exercicio": "Supino reto com barra", "series": "4", "reps": "6 a 8", "descanso": "90 a 120 s" },
+              { "exercicio": "Supino inclinado com halteres", "series": "3", "reps": "8 a 12", "descanso": "90 s" },
+              { "exercicio": "Desenvolvimento militar sentado", "series": "3", "reps": "8 a 10", "descanso": "90 s" },
+              { "exercicio": "Elevação lateral", "series": "3", "reps": "12 a 15", "descanso": "45 a 60 s" },
+              { "exercicio": "Tríceps na polia com corda", "series": "3", "reps": "10 a 15", "descanso": "60 s" },
+              { "exercicio": "Tríceps testa com barra W", "series": "3", "reps": "10 a 12", "descanso": "60 s" }
+            ],
+            "casa": [
+              { "exercicio": "Flexão de braço (pés elevados para dificultar)", "series": "4", "reps": "até 2 repetições antes da falha", "descanso": "90 s" },
+              { "exercicio": "Flexão com mãos afastadas", "series": "3", "reps": "10 a 15", "descanso": "90 s" },
+              { "exercicio": "Desenvolvimento com mochila carregada", "series": "3", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Elevação lateral com garrafas de água", "series": "3", "reps": "15 a 20", "descanso": "45 s" },
+              { "exercicio": "Mergulho entre duas cadeiras", "series": "3", "reps": "8 a 15", "descanso": "60 s" },
+              { "exercicio": "Flexão diamante", "series": "3", "reps": "até a falha técnica", "descanso": "60 s" }
+            ]
+          },
+          {
+            "nome": "Pull — costas e bíceps",
+            "academia": [
+              { "exercicio": "Barra fixa ou puxada alta", "series": "4", "reps": "6 a 10", "descanso": "90 a 120 s" },
+              { "exercicio": "Remada curvada com barra", "series": "4", "reps": "8 a 10", "descanso": "90 s" },
+              { "exercicio": "Remada unilateral com halter", "series": "3", "reps": "10 a 12 por lado", "descanso": "60 a 90 s" },
+              { "exercicio": "Face pull na polia", "series": "3", "reps": "15 a 20", "descanso": "45 a 60 s" },
+              { "exercicio": "Rosca direta com barra", "series": "3", "reps": "8 a 12", "descanso": "60 s" },
+              { "exercicio": "Rosca martelo", "series": "3", "reps": "10 a 12", "descanso": "60 s" }
+            ],
+            "casa": [
+              { "exercicio": "Barra em porta fixa ou remada australiana sob a mesa", "series": "4", "reps": "até 2 repetições antes da falha", "descanso": "90 s" },
+              { "exercicio": "Remada curvada com mochila carregada", "series": "4", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Remada unilateral com galão de água", "series": "3", "reps": "12 por lado", "descanso": "60 s" },
+              { "exercicio": "Superman no chão", "series": "3", "reps": "15", "descanso": "45 s" },
+              { "exercicio": "Rosca bíceps com mochila ou galões", "series": "3", "reps": "12 a 15", "descanso": "60 s" },
+              { "exercicio": "Rosca martelo com garrafas de 2 litros", "series": "3", "reps": "15", "descanso": "60 s" }
+            ]
+          },
+          {
+            "nome": "Legs — pernas e core",
+            "academia": [
+              { "exercicio": "Agachamento livre", "series": "4", "reps": "6 a 8", "descanso": "120 s" },
+              { "exercicio": "Leg press 45°", "series": "3", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Stiff com barra", "series": "3", "reps": "8 a 12", "descanso": "90 s" },
+              { "exercicio": "Cadeira flexora", "series": "3", "reps": "12 a 15", "descanso": "60 s" },
+              { "exercicio": "Panturrilha em pé", "series": "4", "reps": "15 a 20", "descanso": "45 s" },
+              { "exercicio": "Prancha abdominal", "series": "3", "reps": "30 a 60 s", "descanso": "45 s" }
+            ],
+            "casa": [
+              { "exercicio": "Agachamento búlgaro com pé no sofá", "series": "4", "reps": "10 a 12 por perna", "descanso": "90 s" },
+              { "exercicio": "Agachamento livre com mochila carregada", "series": "3", "reps": "15 a 20", "descanso": "90 s" },
+              { "exercicio": "Stiff unilateral com galão de água", "series": "3", "reps": "12 por perna", "descanso": "60 s" },
+              { "exercicio": "Elevação de quadril apoiada no sofá", "series": "3", "reps": "15 a 20", "descanso": "60 s" },
+              { "exercicio": "Panturrilha em pé no degrau", "series": "4", "reps": "20 a 25", "descanso": "45 s" },
+              { "exercicio": "Prancha abdominal", "series": "3", "reps": "30 a 60 s", "descanso": "45 s" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "abc",
+        "nome": "Treino ABC",
+        "sigla": "ABC",
+        "frequencia": "3 a 6 dias por semana",
+        "resumo": "Divisão clássica em três sessões: peito e tríceps, costas e bíceps, pernas e ombros. Funciona tanto para quem treina 3 vezes quanto para quem repete o ciclo duas vezes na semana.",
+        "indicado": "Quem está voltando a treinar ou tem agenda irregular e precisa de uma divisão que funcione mesmo com 3 dias na semana.",
+        "sessoes": [
+          {
+            "nome": "A — peito e tríceps",
+            "academia": [
+              { "exercicio": "Supino reto com barra", "series": "4", "reps": "8 a 10", "descanso": "90 s" },
+              { "exercicio": "Supino inclinado com halteres", "series": "3", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Crucifixo na máquina ou crossover", "series": "3", "reps": "12 a 15", "descanso": "60 s" },
+              { "exercicio": "Tríceps na polia", "series": "3", "reps": "12 a 15", "descanso": "60 s" },
+              { "exercicio": "Tríceps francês com halter", "series": "3", "reps": "10 a 12", "descanso": "60 s" }
+            ],
+            "casa": [
+              { "exercicio": "Flexão de braço tradicional", "series": "4", "reps": "até 2 repetições antes da falha", "descanso": "90 s" },
+              { "exercicio": "Flexão com os pés no sofá", "series": "3", "reps": "8 a 12", "descanso": "90 s" },
+              { "exercicio": "Flexão aberta e lenta (3 s descendo)", "series": "3", "reps": "10", "descanso": "60 s" },
+              { "exercicio": "Mergulho entre duas cadeiras", "series": "3", "reps": "10 a 15", "descanso": "60 s" },
+              { "exercicio": "Tríceps com mochila acima da cabeça", "series": "3", "reps": "12 a 15", "descanso": "60 s" }
+            ]
+          },
+          {
+            "nome": "B — costas e bíceps",
+            "academia": [
+              { "exercicio": "Puxada alta na polia", "series": "4", "reps": "8 a 12", "descanso": "90 s" },
+              { "exercicio": "Remada baixa sentada", "series": "4", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Remada unilateral com halter", "series": "3", "reps": "10 por lado", "descanso": "60 s" },
+              { "exercicio": "Rosca direta com barra", "series": "3", "reps": "10 a 12", "descanso": "60 s" },
+              { "exercicio": "Rosca concentrada", "series": "3", "reps": "12 por lado", "descanso": "45 s" }
+            ],
+            "casa": [
+              { "exercicio": "Remada australiana sob a mesa", "series": "4", "reps": "10 a 15", "descanso": "90 s" },
+              { "exercicio": "Remada curvada com mochila carregada", "series": "4", "reps": "12", "descanso": "90 s" },
+              { "exercicio": "Remada unilateral com galão de água", "series": "3", "reps": "12 por lado", "descanso": "60 s" },
+              { "exercicio": "Rosca bíceps com mochila", "series": "3", "reps": "12 a 15", "descanso": "60 s" },
+              { "exercicio": "Rosca concentrada com garrafa de 2 litros", "series": "3", "reps": "15 por lado", "descanso": "45 s" }
+            ]
+          },
+          {
+            "nome": "C — pernas e ombros",
+            "academia": [
+              { "exercicio": "Agachamento livre ou no smith", "series": "4", "reps": "8 a 10", "descanso": "120 s" },
+              { "exercicio": "Leg press 45°", "series": "3", "reps": "12", "descanso": "90 s" },
+              { "exercicio": "Stiff com halteres", "series": "3", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Desenvolvimento com halteres", "series": "3", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Elevação lateral", "series": "3", "reps": "15", "descanso": "45 s" },
+              { "exercicio": "Panturrilha em pé", "series": "4", "reps": "15 a 20", "descanso": "45 s" }
+            ],
+            "casa": [
+              { "exercicio": "Agachamento com mochila carregada", "series": "4", "reps": "15 a 20", "descanso": "90 s" },
+              { "exercicio": "Afundo alternado no lugar", "series": "3", "reps": "12 por perna", "descanso": "90 s" },
+              { "exercicio": "Elevação de quadril no chão", "series": "3", "reps": "20", "descanso": "60 s" },
+              { "exercicio": "Desenvolvimento com galões de água", "series": "3", "reps": "12", "descanso": "90 s" },
+              { "exercicio": "Elevação lateral com garrafas", "series": "3", "reps": "20", "descanso": "45 s" },
+              { "exercicio": "Panturrilha no degrau", "series": "4", "reps": "25", "descanso": "45 s" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "upper-lower",
+        "nome": "Upper / Lower",
+        "sigla": "U/L",
+        "frequencia": "4 dias por semana",
+        "resumo": "Duas sessões alternadas: tudo o que é tronco em um dia, tudo o que é perna no outro. Em 4 dias na semana cada metade do corpo é treinada duas vezes.",
+        "indicado": "Quem tem exatamente 4 dias livres e quer a maior frequência semanal por grupo muscular sem sessões longas.",
+        "sessoes": [
+          {
+            "nome": "Upper — tronco completo",
+            "academia": [
+              { "exercicio": "Supino reto com barra", "series": "4", "reps": "6 a 8", "descanso": "120 s" },
+              { "exercicio": "Remada curvada com barra", "series": "4", "reps": "8 a 10", "descanso": "90 s" },
+              { "exercicio": "Desenvolvimento com halteres", "series": "3", "reps": "10", "descanso": "90 s" },
+              { "exercicio": "Puxada alta na polia", "series": "3", "reps": "10 a 12", "descanso": "90 s" },
+              { "exercicio": "Elevação lateral", "series": "3", "reps": "15", "descanso": "45 s" },
+              { "exercicio": "Rosca direta", "series": "2", "reps": "12", "descanso": "60 s" },
+              { "exercicio": "Tríceps na polia", "series": "2", "reps": "12", "descanso": "60 s" }
+            ],
+            "casa": [
+              { "exercicio": "Flexão de braço com pés elevados", "series": "4", "reps": "até 2 repetições antes da falha", "descanso": "120 s" },
+              { "exercicio": "Remada curvada com mochila carregada", "series": "4", "reps": "12", "descanso": "90 s" },
+              { "exercicio": "Desenvolvimento com galões de água", "series": "3", "reps": "12", "descanso": "90 s" },
+              { "exercicio": "Remada australiana sob a mesa", "series": "3", "reps": "10 a 15", "descanso": "90 s" },
+              { "exercicio": "Elevação lateral com garrafas", "series": "3", "reps": "20", "descanso": "45 s" },
+              { "exercicio": "Rosca bíceps com mochila", "series": "2", "reps": "15", "descanso": "60 s" },
+              { "exercicio": "Mergulho entre cadeiras", "series": "2", "reps": "12", "descanso": "60 s" }
+            ]
+          },
+          {
+            "nome": "Lower — pernas, glúteo e core",
+            "academia": [
+              { "exercicio": "Agachamento livre", "series": "4", "reps": "6 a 8", "descanso": "120 s" },
+              { "exercicio": "Stiff com barra", "series": "4", "reps": "8 a 10", "descanso": "90 s" },
+              { "exercicio": "Leg press 45°", "series": "3", "reps": "12", "descanso": "90 s" },
+              { "exercicio": "Cadeira flexora", "series": "3", "reps": "12 a 15", "descanso": "60 s" },
+              { "exercicio": "Panturrilha em pé", "series": "4", "reps": "15 a 20", "descanso": "45 s" },
+              { "exercicio": "Prancha abdominal", "series": "3", "reps": "45 s", "descanso": "45 s" }
+            ],
+            "casa": [
+              { "exercicio": "Agachamento búlgaro com pé no sofá", "series": "4", "reps": "10 a 12 por perna", "descanso": "120 s" },
+              { "exercicio": "Stiff unilateral com galão de água", "series": "4", "reps": "12 por perna", "descanso": "90 s" },
+              { "exercicio": "Agachamento com mochila carregada", "series": "3", "reps": "20", "descanso": "90 s" },
+              { "exercicio": "Elevação de quadril apoiada no sofá", "series": "3", "reps": "20", "descanso": "60 s" },
+              { "exercicio": "Panturrilha no degrau", "series": "4", "reps": "25", "descanso": "45 s" },
+              { "exercicio": "Prancha abdominal", "series": "3", "reps": "45 s", "descanso": "45 s" }
+            ]
+          }
+        ]
+      }
+    ],
+    "progressao": [
+      {
+        "titulo": "Anote a carga de todas as séries",
+        "texto": "Sem registro não existe progressão: você repete o mesmo peso por meses sem perceber. Anote peso e repetições de cada série no fim do treino."
+      },
+      {
+        "titulo": "Regra da faixa de repetições",
+        "texto": "Quando você fecha todas as séries no topo da faixa indicada (por exemplo, 4 séries de 8 em uma faixa de 6 a 8), aumente a carga no próximo treino e volte para a base da faixa."
+      },
+      {
+        "titulo": "Quanto aumentar de cada vez",
+        "texto": "Em exercícios de membros inferiores, salte de 5 a 10% da carga. Em membros superiores, de 2,5 a 5%. Em casa, aumente o peso da mochila ou troque para uma variação mais difícil."
+      },
+      {
+        "titulo": "Deixe repetições na reserva",
+        "texto": "Encerre a maioria das séries com 1 a 2 repetições ainda possíveis. Treinar sempre até a falha total atrapalha a recuperação sem acrescentar resultado proporcional."
+      },
+      {
+        "titulo": "Descanso e recuperação",
+        "texto": "Respeite os intervalos da ficha: em exercícios pesados o descanso curto derruba a carga da série seguinte. Reserve pelo menos um dia sem treino de força por semana."
+      },
+      {
+        "titulo": "Semana leve a cada 6 a 8 semanas",
+        "texto": "Reduza o volume pela metade por uma semana mantendo a carga. Você volta mais forte e reduz o risco de lesão por acúmulo."
+      }
+    ]
+  },
+  "calculadora": {
+    "titulo": "Calculadora Metabólica Inteligente Prot+",
+    "formula": "Mifflin-St Jeor",
+    "aviso": "Estimativa educativa baseada na fórmula de Mifflin-St Jeor. Os números são um ponto de partida, não uma prescrição: não substituem a avaliação de um nutricionista e não servem para tratar nenhuma condição de saúde.",
+    "atividades": [
+      { "id": "sedentario", "nome": "Sedentário", "detalhe": "Trabalho parado e pouco ou nenhum exercício", "fator": 1.2 },
+      { "id": "leve", "nome": "Levemente ativo", "detalhe": "Exercício leve 1 a 3 vezes por semana", "fator": 1.375 },
+      { "id": "moderado", "nome": "Moderadamente ativo", "detalhe": "Exercício moderado 3 a 5 vezes por semana", "fator": 1.55 },
+      { "id": "intenso", "nome": "Muito ativo", "detalhe": "Treino intenso 6 a 7 vezes por semana", "fator": 1.725 },
+      { "id": "atleta", "nome": "Extremamente ativo", "detalhe": "Treino pesado diário ou trabalho braçal", "fator": 1.9 }
+    ],
+    "objetivos": [
+      {
+        "id": "secar",
+        "nome": "Queimar gordura",
+        "ajuste": -0.2,
+        "proteina_por_kg": 2.0,
+        "gordura_por_kg": 0.8,
+        "explicacao": "Déficit de 20% sobre o gasto total, com proteína alta para proteger a massa magra durante a perda de peso."
+      },
+      {
+        "id": "manter",
+        "nome": "Recomposição / manter",
+        "ajuste": 0,
+        "proteina_por_kg": 1.8,
+        "gordura_por_kg": 0.9,
+        "explicacao": "Calorias no gasto estimado, com proteína alta para ganhar músculo e perder gordura ao mesmo tempo."
+      },
+      {
+        "id": "ganhar",
+        "nome": "Ganhar massa magra",
+        "ajuste": 0.12,
+        "proteina_por_kg": 1.8,
+        "gordura_por_kg": 1.0,
+        "explicacao": "Superávit de 12% sobre o gasto total: o suficiente para construir músculo sem acumular gordura rápido demais."
+      }
+    ]
+  },
+  "whey": {
+    "titulo": "Manual do Whey Caseiro & Proteína Econômica",
+    "subtitulo": "Cinco fórmulas de shake feitas com o que já existe no supermercado comum.",
+    "aviso": "As fórmulas usam alimentos, não suplementos. Os valores por porção são estimativas calculadas a partir da tabela TACO, no mesmo critério do acervo de receitas.",
+    "formulas": [
+      {
+        "nome": "Base Clássica de Banana",
+        "ingredientes": ["200 ml de leite desnatado", "30 g de leite em pó desnatado", "80 g de banana-prata", "20 g de aveia em flocos", "canela a gosto"],
+        "proteina_g": 20.8,
+        "calorias": 315,
+        "modo": "Bata tudo no liquidificador por 30 segundos e beba na hora, antes de a aveia assentar.",
+        "quando": "Café da manhã rápido ou pós-treino da manhã."
+      },
+      {
+        "nome": "Cacau Cremoso",
+        "ingredientes": ["200 ml de leite desnatado", "30 g de leite em pó desnatado", "10 g de cacau em pó", "60 g de queijo cottage", "gelo a gosto"],
+        "proteina_g": 25.6,
+        "calorias": 290,
+        "modo": "Bata o cottage primeiro com metade do leite até ficar liso, depois junte o resto e o gelo.",
+        "quando": "Substitui sobremesa de chocolate no fim do dia."
+      },
+      {
+        "nome": "Amendoim & Aveia",
+        "ingredientes": ["200 ml de leite desnatado", "25 g de leite em pó desnatado", "15 g de amendoim torrado sem sal", "25 g de aveia em flocos", "80 g de banana-prata"],
+        "proteina_g": 21.4,
+        "calorias": 410,
+        "modo": "Triture o amendoim junto com a aveia antes de acrescentar os líquidos: o shake fica sem pedaços.",
+        "quando": "Lanche reforçado em dia de treino pesado."
+      },
+      {
+        "nome": "Morango com Chia",
+        "ingredientes": ["200 ml de leite desnatado", "30 g de leite em pó desnatado", "100 g de morango", "10 g de chia"],
+        "proteina_g": 19.9,
+        "calorias": 265,
+        "modo": "Bata tudo menos a chia; misture a chia no copo e espere 5 minutos para engrossar.",
+        "quando": "Lanche da tarde leve, com boa saciedade."
+      },
+      {
+        "nome": "Proteico de Cottage e Maçã",
+        "ingredientes": ["150 ml de leite desnatado", "100 g de queijo cottage", "20 g de leite em pó desnatado", "100 g de maçã com casca", "canela a gosto"],
+        "proteina_g": 24.2,
+        "calorias": 300,
+        "modo": "Bata o cottage com o leite até virar creme, junte a maçã em cubos e pulse poucas vezes para manter pedaços.",
+        "quando": "Ceia, quando bate vontade de doce à noite."
+      }
+    ],
+    "substituicoes": [
+      { "no_lugar_de": "Whey protein em pó", "use": "Leite em pó desnatado", "porque": "Cada 30 g entregam cerca de 10 g de proteína por uma fração do preço por grama de proteína." },
+      { "no_lugar_de": "Iogurte proteico industrializado", "use": "Queijo cottage batido", "porque": "Mesma função de creme na receita, com mais proteína e menos açúcar adicionado." },
+      { "no_lugar_de": "Filé de peito de frango", "use": "Sobrecoxa sem pele ou ovo", "porque": "Proteína completa por um custo bem menor por quilo, mantendo o controle de gordura ao tirar a pele." },
+      { "no_lugar_de": "Salmão", "use": "Sardinha em conserva ou tilápia", "porque": "Opções de peixe muito mais baratas e disponíveis em qualquer mercado do país." },
+      { "no_lugar_de": "Pasta de amendoim integral", "use": "Amendoim torrado triturado na hora", "porque": "O grão puro custa menos que a pasta pronta e você controla sal e açúcar." },
+      { "no_lugar_de": "Barrinha de proteína", "use": "Uma receita de lanche do acervo Prot+", "porque": "Custa menos por grama de proteína e não depende de compra recorrente." }
+    ],
+    "saborizacao": [
+      { "tecnica": "Canela e baunilha", "texto": "Meia colher de chá de canela ou algumas gotas de essência de baunilha dão sensação de doçura sem acrescentar açúcar." },
+      { "tecnica": "Pitada de sal", "texto": "Uma pitada mínima de sal em shakes de cacau ou amendoim aumenta a percepção de doce e reduz o amargor." },
+      { "tecnica": "Gelo batido, não gelo derretido", "texto": "Bater o gelo junto cria espuma e volume; gelo em cubos inteiros só dilui a bebida." },
+      { "tecnica": "Fruta congelada", "texto": "Congele a banana ou o morango em pedaços: o shake ganha textura de milk-shake sem nenhum ingrediente extra." },
+      { "tecnica": "Café solúvel", "texto": "Uma colher de café solúvel em shakes de cacau corta o gosto residual do leite em pó e reforça o sabor de chocolate." },
+      { "tecnica": "Deixe descansar frio", "texto": "Shakes com aveia ou chia ficam melhores depois de 10 minutos na geladeira, quando os grãos hidratam e a bebida encorpa." }
+    ]
+  }
+}

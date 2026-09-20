@@ -7,7 +7,7 @@
 **Manual da Equipe:** [`BOAS_PRATICAS_EQUIPE.md`](./BOAS_PRATICAS_EQUIPE.md)  
 **Diretrizes de IA:** [`AGENTS.md`](./AGENTS.md)
 
-**Última atualização:** 20/09/2026 — Governança e boas práticas para trabalho em dupla integradas.
+**Última atualização:** 20/09/2026 — Fase 3 concluída: aplicativo Prot+ completo, com as 8 telas, as 4 ferramentas, os 3 bônus e QA automatizado passando.
 
 
 ---
@@ -47,7 +47,7 @@
   - [x] Criação de `02-blueprint/produto.md` (especificação do app PWA, 4 ferramentas e 3 bônus)
   - [x] *[Parada de Aprovação do Pedro]*
 
-- [ ] **Fase 3: Construir o Produto (`03-produto/`)**
+- [x] **Fase 3: Construir o Produto (`03-produto/`)**
   - [x] Lote 1 do banco de receitas: 20 receitas de café e lanches com macros TACO (`03-produto/dados/receitas.json` e `03-produto/dados/calculo-macros.md`)
   - [x] Auditoria do roteiro concluída; passos explicitamente numerados e memória de cálculo complementada com ingredientes auxiliares
   - [x] Lote 2 do banco de receitas: 20 receitas adicionais de café e lanches (`CL-021` a `CL-040`), com memória de cálculo e conferência de 3 receitas
@@ -56,6 +56,14 @@
   - [x] QA visual em viewport de 390 px, navegação principal e prints das telas (`03-produto/app/qa/`)
   - [x] Bônus implementados e espaços reservados de fotos identificados pelo nome das receitas
   - [x] PDFs visuais gerados: completo e separados por categoria em `03-produto/pdf/`
+  - [x] Aplicativo completo: as 8 telas do blueprint, roteamento por hash e eventos delegados
+  - [x] As 4 ferramentas funcionando por inteiro (Seletor Turbo, Radar de Despensa, Semana Blindada com lista de compras, Monitor Diário)
+  - [x] Os 3 bônus com conteúdo real (`03-produto/dados/bonus.json`): 94 exercícios, calculadora Mifflin-St Jeor e manual do whey caseiro
+  - [x] Dica de Ouro do Chef por receita (`03-produto/dados/dicas-chef.json`)
+  - [x] Fotos otimizadas para o app: 279,5 MB de PNG → 15,1 MB em WebP (`images/w400/`, `images/w900/`)
+  - [x] App instalável: ícones do manifest, atalhos e passo a passo de instalação para Android e iPhone
+  - [x] Modo offline verificado com a rede desligada
+  - [x] QA automatizado com 33 verificações e 12 prints (`03-produto/app/tools/qa-app.mjs`)
 
 - [ ] **Fase 4: Construir a Página de Vendas (`04-pagina/`)**
   - [x] Esqueleto com 18 blocos e variáveis (`04-pagina/index.html`)
@@ -86,7 +94,7 @@
 
 ## 📌 Onde Paramos / Próximo Passo Imediato
 
-1. **Estado Atual:** **Fase 3 (Banco de Receitas)** em andamento; Lote 1 concluído e aguardando revisão.
+1. **Estado Atual:** **Fase 3 concluída.** O aplicativo está pronto e testado localmente; a página de vendas segue em ajuste.
    - [`02-blueprint/blueprint.md`](./02-blueprint/blueprint.md) e [`02-blueprint/produto.md`](./02-blueprint/produto.md) criados e especificados para o **Prot+**.
 2. **Próximo Passo Imediato (Fase 3 - Construir o Produto):**
    - **Lote 1 concluído:** 20 receitas autorais de café e lanches, com memória de cálculo e conferência independente de 3 receitas.
