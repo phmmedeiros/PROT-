@@ -50,6 +50,11 @@
   <div id="folha" class="folha" hidden></div>
   <div id="aviso" class="aviso" role="status" aria-live="polite" hidden></div>
 
+  <!-- A ordem importa: cliente Supabase, configuração, camada de conta e só
+       então o app, que depende dos três. -->
+  <script src="vendor/supabase.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="conta.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>

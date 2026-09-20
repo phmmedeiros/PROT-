@@ -70,7 +70,11 @@ const calorias = (receita) => macros(receita).calorias;
 
 const arredondar = (numero, casas = 1) => Number(numero.toFixed(casas));
 
-const hoje = () => new Date().toISOString().slice(0, 10);
+/* O "dia" do Monitor é o dia no horário de Brasília, não em UTC.
+   Com `toISOString()` a lista de consumo virava às 21h, três horas cedo demais.
+   'en-CA' é o atalho para o formato AAAA-MM-DD, o mesmo usado no banco. */
+const FORMATO_DIA = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' });
+const hoje = () => FORMATO_DIA.format(new Date());
 
 const foto = (id, tamanho) => `images/${tamanho}/${id}.webp`;
 
@@ -81,9 +85,11 @@ const FALLBACK_FOTO = `onerror="this.onerror=null;this.src='images/'+this.datase
  * 2. Estado salvo no aparelho
  * ------------------------------------------------------------------ */
 
-const CHAVE = 'prot-plus-v3';
-
+/* O estado da pessoa mora no banco e é espelhado aqui na memória. O cache
+   local só serve para a tela pintar instantaneamente ao reabrir o app. */
 const PADRAO = {
+  email: '',
+  admin: false,
   nome: '',
   meta: 140,
   favoritos: [],
@@ -93,32 +99,28 @@ const PADRAO = {
   semana: null,
   faixa: 'medio',
   objetivo: 'recomposicao',
+  peso: null,
+  // Data em que as boas-vindas foram concluídas. Nulo = primeiro acesso.
+  boasVindas: null,
+  // Hora (0-23, Brasília) do lembrete diário. Nulo = desligado.
+  lembrete: null,
 };
 
-function carregarEstado() {
-  let salvo = {};
-  try {
-    salvo = JSON.parse(localStorage.getItem(CHAVE) || '{}');
-  } catch (erro) {
-    salvo = {};
-  }
-  const estado = { ...PADRAO, ...salvo };
+const estado = { ...PADRAO };
 
+/** Aplica o cache local por cima dos padrões, antes do servidor responder. */
+function aplicarCache() {
+  const cache = ProtConta.lerCache();
+  if (!cache) return;
+  Object.assign(estado, cache);
   // O contador de proteína é do dia: virou a data, a lista zera sozinha.
   if (!estado.consumo || estado.consumo.data !== hoje()) {
     estado.consumo = { data: hoje(), itens: [] };
   }
-  return estado;
 }
 
-const estado = carregarEstado();
-
 function salvar() {
-  try {
-    localStorage.setItem(CHAVE, JSON.stringify(estado));
-  } catch (erro) {
-    /* Navegação privada pode bloquear a escrita; o app continua funcionando. */
-  }
+  ProtConta.agendarSalvamento(estado, hoje());
 }
 
 /* ------------------------------------------------------------------ *
@@ -217,7 +219,79 @@ function totalDoDia() {
  * 5. Telas
  * ------------------------------------------------------------------ */
 
+/** 1,8 g de proteína por quilo: referência comum para quem treina força. */
+const metaPeloPeso = (peso) => Math.round(peso * 1.8);
+
+/* --- Enquanto o app carrega --- */
+
+/* No 4G a abertura leva de 2 a 4 segundos (sessão, acesso, dados, sincronia).
+   Sem isto a pessoa olha para uma tela vazia e acha que travou. */
+function telaCarregando() {
+  return `
+    <div class="carregando" role="status" aria-live="polite">
+      <div class="carregando-anel" aria-hidden="true"></div>
+      <p>Carregando suas receitas…</p>
+    </div>`;
+}
+
+/* --- Primeiro acesso: uma pergunta e a meta fica pronta --- */
+
+function telaBoasVindas() {
+  return `
+    <div class="portao boas-vindas">
+      <div class="portao-marca"><span>Prot</span><b>+</b></div>
+      <h2>Bem-vinda ao Prot+</h2>
+      <p class="apagado">
+        Uma pergunta e sua meta de proteína fica pronta. Depois é só cozinhar.
+      </p>
+      <form id="form-boas-vindas" novalidate>
+        <label class="rotulo" for="peso-inicial">Quanto você pesa?</label>
+        <div class="linha-formulario">
+          <input class="campo" id="peso-inicial" type="number" inputmode="decimal"
+                 min="20" max="300" step="0.5" placeholder="ex.: 68" autofocus>
+          <span class="unidade">kg</span>
+        </div>
+        <p class="previa-meta" id="previa-meta">Sua meta aparece aqui.</p>
+        <button type="submit" class="acao">Começar com essa meta</button>
+      </form>
+      <button type="button" class="acao discreta" data-acao="pular-boas-vindas">
+        Prefiro definir depois
+      </button>
+      <p class="apagado pequeno portao-rodape">
+        Usamos 1,8 g de proteína por quilo, referência para quem treina força.
+        Dá para ajustar no Monitor quando quiser.
+      </p>
+    </div>`;
+}
+
+/* --- Convite para instalar, uma vez, depois do primeiro acesso --- */
+
+/* No Safari sem instalar, o iOS apaga o armazenamento de sites não visitados
+   em 7 dias — e a pessoa acha que "o app deslogou". Instalado, não acontece.
+   Por isso o convite é insistente uma vez e depois some para sempre. */
+const CHAVE_CONVITE = 'prot-convite-instalar-dispensado';
+
+function conviteInstalar() {
+  if (jaInstalado()) return '';
+  try {
+    if (localStorage.getItem(CHAVE_CONVITE)) return '';
+  } catch {
+    /* sem armazenamento, mostra mesmo assim */
+  }
+  return `
+    <div class="convite-instalar">
+      <strong>Deixe o Prot+ na tela inicial</strong>
+      <span>Abre num toque, como aplicativo, e você não precisa entrar de novo.</span>
+      <div class="convite-acoes">
+        <button type="button" class="acao" data-acao="abrir-instalacao">Adicionar</button>
+        <button type="button" class="chip" data-acao="dispensar-convite">Agora não</button>
+      </div>
+    </div>`;
+}
+
 /* --- Tela 1: Início / Dashboard --- */
+
+let editandoNome = false;
 
 function saudacao() {
   const hora = new Date().getHours();
@@ -233,15 +307,25 @@ function telaInicio() {
   const indice = Math.floor(Date.now() / 86400000) % dados.receitas.length;
   const chef = dados.receitas[indice];
   return `
+    ${estado.admin ? '<p class="tarja-admin">Sessão de administrador — acesso liberado sem compra</p>' : ''}
+    ${conviteInstalar()}
     <section class="hero">
       <span class="eyebrow apagado">${saudacao()}</span>
       <h2>${estado.nome ? `${esc(estado.nome)}, comer bem pode ser simples.` : 'Comer bem pode ser simples.'}</h2>
       <p>Escolha uma receita, monte sua semana e acompanhe sua proteína sem complicação.</p>
-      <p style="margin:8px 0 0">
-        <button type="button" class="hero-nome" data-acao="editar-nome">
-          ${estado.nome ? `Você é ${esc(estado.nome)} — trocar o nome` : 'Personalizar com o seu nome'}
-        </button>
-      </p>
+      ${
+        editandoNome
+          ? `<form id="form-nome" class="form-nome" novalidate>
+               <input class="campo" id="campo-nome" maxlength="24" autocomplete="given-name"
+                      placeholder="Como quer ser chamada?" value="${esc(estado.nome)}" autofocus>
+               <button type="submit" class="acao">Salvar</button>
+             </form>`
+          : `<p style="margin:8px 0 0">
+               <button type="button" class="hero-nome" data-acao="editar-nome">
+                 ${estado.nome ? `Você é ${esc(estado.nome)} — trocar o nome` : 'Personalizar com o seu nome'}
+               </button>
+             </p>`
+      }
     </section>
 
     <section class="painel">
@@ -276,7 +360,17 @@ function telaInicio() {
       <h2>Chef do dia</h2>
       <span class="apagado pequeno">${chef.tempo} min · ${CATEGORIAS[chef.categoria].nome}</span>
     </div>
-    <div class="grade-receitas">${cardReceita(chef)}</div>`;
+    <div class="grade-receitas">${cardReceita(chef)}</div>
+
+    <div class="rodape-conta">
+      <span class="apagado pequeno">
+        ${estado.admin ? 'Administrador' : 'Conectada como'} ${esc(estado.email || '')}
+      </span>
+      <span class="rodape-acoes">
+        <a class="chip" href="mailto:${esc(PROT_CONFIG.emailSuporte)}?subject=Ajuda%20com%20o%20Prot%2B">Precisa de ajuda?</a>
+        <button type="button" class="chip" data-acao="sair-da-conta">Sair</button>
+      </span>
+    </div>`;
 }
 
 /* --- Tela 2: Catálogo de receitas --- */
@@ -353,6 +447,11 @@ function telaReceitas() {
 
 /* --- Tela 3: Detalhe da receita --- */
 
+/* Escolhas que valem só enquanto a receita está aberta: quantas porções a
+   pessoa vai fazer e em que passo do preparo ela está. Não vão para o banco. */
+let porcoesEscolhidas = { id: null, fator: 1 };
+let passoAtual = { id: null, indice: -1 };
+
 function telaReceita(id) {
   const receita = porId(id);
   if (!receita) return '<div class="vazio">Receita não encontrada.</div>';
@@ -361,6 +460,7 @@ function telaReceita(id) {
   const favorito = estado.favoritos.includes(receita.id);
   const jaAdicionada = estado.consumo.itens.includes(receita.id);
   const dica = dados.dicas[receita.id];
+  const fator = porcoesEscolhidas.id === receita.id ? porcoesEscolhidas.fator : 1;
 
   return `
     <div class="detalhe-capa">
@@ -375,10 +475,16 @@ function telaReceita(id) {
     </div>
 
     <h2 style="margin:0 0 6px">${esc(receita.nome)}</h2>
-    <p class="apagado pequeno" style="margin:0">
-      ${receita.porcoes} porção · ${receita.tempo} minutos · ${CATEGORIAS[receita.categoria].nome}
+    <p class="apagado pequeno" style="margin:0 0 10px">
+      ${receita.tempo} minutos · ${CATEGORIAS[receita.categoria].nome}
     </p>
 
+    <div class="chips porcoes" role="group" aria-label="Quantas porções">
+      ${[1, 2, 3].map((n) => `<button type="button" class="chip ${fator === n ? 'ativo' : ''}"
+            data-acao="escolher-porcoes" data-id="${receita.id}" data-valor="${n}">${n === 1 ? '1 porção' : `${n} porções`}</button>`).join('')}
+    </div>
+
+    <p class="apagado pequeno" style="margin:12px 0 -8px">Valores por porção</p>
     <div class="grade-macros">
       <div class="macro"><strong>${m.calorias}</strong><small>kcal</small></div>
       <div class="macro"><strong>${m['proteína_g']} g</strong><small>proteínas</small></div>
@@ -390,27 +496,41 @@ function telaReceita(id) {
     <div>
       ${receita.ingredientes
         .map(
-          (i) => `<label class="ingrediente">
-                    <input type="checkbox">
-                    <span>${i.quantidade} ${i.unidade === 'unidade' ? (i.quantidade > 1 ? 'unidades' : 'unidade') : i.unidade} de ${esc(i.item)}</span>
-                  </label>`
+          (i) => {
+            const quantidade = arredondar(i.quantidade * fator);
+            const unidade = i.unidade === 'unidade' ? (quantidade > 1 ? 'unidades' : 'unidade') : i.unidade;
+            return `<label class="ingrediente">
+                      <input type="checkbox">
+                      <span>${quantidade} ${unidade} de ${esc(i.item)}</span>
+                    </label>`;
+          }
         )
         .join('')}
     </div>
 
     <h3 style="margin-top:22px">Modo de preparo</h3>
+    <p class="apagado pequeno" style="margin:-6px 0 8px">Toque num passo para marcar onde você está.</p>
     <ol class="passos">
-      ${receita.modo_preparo.map((passo) => `<li>${esc(passo.replace(/^\d+\.\s*/, ''))}</li>`).join('')}
+      ${receita.modo_preparo
+        .map((passo, n) => {
+          const atual = passoAtual.id === receita.id && passoAtual.indice === n;
+          return `<li data-acao="marcar-passo" data-valor="${n}" class="${atual ? 'atual' : ''}">${esc(passo.replace(/^\d+\.\s*/, ''))}</li>`;
+        })
+        .join('')}
     </ol>
 
     ${dica ? `<div class="caixa-dica"><strong>🥄 Dica de ouro do chef</strong>${esc(dica)}</div>` : ''}
 
-    <button type="button" class="acao" data-acao="adicionar-consumo" data-id="${receita.id}">
-      ＋ Adicionar ao meu consumo de hoje
-    </button>
-    ${jaAdicionada ? '<p class="apagado pequeno" style="text-align:center;margin:8px 0 0">Já registrada no Monitor de hoje.</p>' : ''}
+    <a class="acao discreta" href="#/receitas">Voltar ao catálogo</a>
 
-    <a class="acao discreta" href="#/receitas" style="margin-top:8px">Voltar ao catálogo</a>`;
+    <!-- Fica presa acima da navegação: a decisão de "vou comer isso" acontece
+         olhando a foto, não depois de rolar o modo de preparo inteiro. -->
+    <div class="barra-fixa">
+      <button type="button" class="acao" data-acao="adicionar-consumo" data-id="${receita.id}">
+        ＋ Adicionar ao meu consumo de hoje
+      </button>
+      ${jaAdicionada ? '<small>Já registrada no Monitor de hoje — toque para registrar de novo.</small>' : ''}
+    </div>`;
 }
 
 /* --- Tela de índice das ferramentas --- */
@@ -670,12 +790,21 @@ function telaSemana() {
     ${REFEICOES.map((refeicao) => {
       const receita = porId(dia[refeicao.id]);
       if (!receita) return '';
+      const registrada = estado.consumo.itens.includes(receita.id);
       return `
         <div class="refeicao">
           <div class="refeicao-topo">
             <h4>${refeicao.nome}</h4>
-            <button type="button" class="botao-trocar" data-acao="trocar-refeicao"
-                    data-dia="${indice}" data-valor="${refeicao.id}">↻ Trocar</button>
+            <span class="refeicao-botoes">
+              <button type="button" class="botao-trocar" data-acao="trocar-refeicao"
+                      data-dia="${indice}" data-valor="${refeicao.id}">↻ Trocar</button>
+              ${
+                registrada
+                  ? '<span class="botao-trocar registrada">✓ Registrada</span>'
+                  : `<button type="button" class="botao-trocar comi" data-acao="comi-refeicao"
+                             data-id="${receita.id}">＋ Comi</button>`
+              }
+            </span>
           </div>
           ${linhaReceita(receita)}
         </div>`;
@@ -694,8 +823,29 @@ function telaSemana() {
     </button>`;
 }
 
+/* O que já foi para o carrinho fica só neste aparelho: é conveniência da
+   ida ao mercado, não dado da conta. */
+const CHAVE_COMPRAS = 'prot-compras-marcadas';
+
+function comprasMarcadas() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(CHAVE_COMPRAS) || '[]'));
+  } catch {
+    return new Set();
+  }
+}
+
+function gravarComprasMarcadas(conjunto) {
+  try {
+    localStorage.setItem(CHAVE_COMPRAS, JSON.stringify([...conjunto]));
+  } catch {
+    /* sem armazenamento, as marcações valem só até fechar */
+  }
+}
+
 function folhaListaDeCompras() {
   const itens = listaDeCompras();
+  const marcadas = comprasMarcadas();
   return `
     <div class="folha-caixa">
       <div class="titulo-secao">
@@ -707,20 +857,63 @@ function folhaListaDeCompras() {
           OBJETIVOS.find((o) => o.id === estado.semana.objetivo).nome.toLowerCase()
         )}.
       </p>
-      <ul class="lista-compras">
+      <ul class="lista-compras marcavel">
         ${itens
-          .map(
-            (i) =>
-              `<li><strong>${esc(i.item)}</strong>
-                   <span>${arredondar(i.total)} ${i.unidade === 'unidade' ? (i.total > 1 ? 'unidades' : 'unidade') : i.unidade}</span></li>`
-          )
+          .map((i) => {
+            const chave = `${i.item}|${i.unidade}`;
+            const marcada = marcadas.has(chave);
+            return `<li class="${marcada ? 'marcada' : ''}">
+                      <label>
+                        <input type="checkbox" data-compra="${esc(chave)}" ${marcada ? 'checked' : ''}>
+                        <strong>${esc(i.item)}</strong>
+                      </label>
+                      <span>${arredondar(i.total)} ${i.unidade === 'unidade' ? (i.total > 1 ? 'unidades' : 'unidade') : i.unidade}</span>
+                    </li>`;
+          })
           .join('')}
       </ul>
-      <button type="button" class="acao" data-acao="copiar-lista" style="margin-top:16px">Copiar lista</button>
+      <div class="chips" style="margin-top:16px">
+        <button type="button" class="chip" data-acao="copiar-lista">Copiar lista</button>
+        <button type="button" class="chip" data-acao="limpar-compras">Desmarcar tudo</button>
+      </div>
     </div>`;
 }
 
 /* --- Tela 7: Monitor Diário de Macros --- */
+
+/* O lembrete só faz sentido para quem esquece: a função no servidor pula quem
+   já registrou algo no dia. Aqui a pessoa só escolhe a hora e liga. */
+function painelLembrete() {
+  const ligado = estado.lembrete !== null && estado.lembrete !== undefined;
+  const horaEscolhida = ligado ? estado.lembrete : 12;
+  const opcoes = Array.from({ length: 24 }, (_, h) =>
+    `<option value="${h}" ${h === horaEscolhida ? 'selected' : ''}>${String(h).padStart(2, '0')}:00</option>`
+  ).join('');
+
+  return `
+    <div class="painel" id="painel-lembrete">
+      <div class="titulo-secao" style="margin-top:0">
+        <h2 style="font-size:16px">🔔 Lembrete diário</h2>
+        ${ligado ? '<span class="chip ativo">Ligado</span>' : ''}
+      </div>
+      <p class="apagado pequeno" style="margin:0 0 10px">
+        Um aviso no celular, uma vez por dia, na hora que você escolher — e só se você
+        ainda não tiver registrado nada.
+      </p>
+      ${
+        ProtConta.suportaPush()
+          ? `<div class="linha-formulario">
+               <select class="campo" id="lembrete-hora" aria-label="Hora do lembrete">${opcoes}</select>
+               <button type="button" class="acao" data-acao="ligar-lembrete">${ligado ? 'Alterar' : 'Ligar'}</button>
+             </div>
+             ${ligado ? '<button type="button" class="acao discreta" data-acao="desligar-lembrete" style="margin-top:8px">Desligar lembrete</button>' : ''}`
+          : `<p class="apagado pequeno" style="margin:0">
+               Este navegador não permite notificações. No iPhone, instale o Prot+ na tela
+               inicial (botão "Instalar" no topo) para liberar.
+             </p>`
+      }
+    </div>`;
+}
 
 function telaMonitor() {
   const total = totalDoDia();
@@ -761,6 +954,8 @@ function telaMonitor() {
         Ajuste o valor com seu nutricionista.
       </p>
     </div>
+
+    ${painelLembrete()}
 
     <div class="titulo-secao">
       <h2>Consumo de hoje</h2>
@@ -1024,9 +1219,43 @@ function rotaAtual() {
   return { nome: partes[0] || 'inicio', parametro: partes[1] || '', consulta: new URLSearchParams(consulta || '') };
 }
 
+/* Mão suja, receita aberta, celular bloqueia em 30 segundos. O Wake Lock
+   segura a tela acesa só enquanto uma receita está na tela. */
+let travaDeTela = null;
+
+async function manterTelaAcesa() {
+  if (!('wakeLock' in navigator) || travaDeTela) return;
+  try {
+    travaDeTela = await navigator.wakeLock.request('screen');
+    travaDeTela.addEventListener('release', () => {
+      travaDeTela = null;
+    });
+  } catch {
+    /* bateria fraca ou aba em segundo plano: o sistema recusa, e tudo bem */
+  }
+}
+
+function liberarTela() {
+  travaDeTela?.release().catch(() => {});
+  travaDeTela = null;
+}
+
 function render() {
   const rota = rotaAtual();
   const view = $('#view');
+
+  // Primeiro acesso: nada do app aparece antes de a meta existir (ou ser pulada).
+  if (!estado.boasVindas) {
+    document.body.classList.add('em-boas-vindas');
+    view.innerHTML = telaBoasVindas();
+    liberarTela();
+    window.scrollTo(0, 0);
+    return;
+  }
+  document.body.classList.remove('em-boas-vindas');
+  document.body.classList.toggle('com-barra-fixa', rota.nome === 'receita');
+  if (rota.nome === 'receita') manterTelaAcesa();
+  else liberarTela();
 
   if (rota.nome === 'receita') {
     view.innerHTML = telaReceita(rota.parametro);
@@ -1090,11 +1319,51 @@ const ACOES = {
   },
 
   'editar-nome'() {
-    const nome = prompt('Como podemos te chamar?', estado.nome || '');
-    if (nome === null) return;
-    estado.nome = nome.trim().slice(0, 24);
+    editandoNome = true;
+    render();
+    $('#campo-nome')?.focus();
+  },
+
+  'pular-boas-vindas'() {
+    estado.boasVindas = new Date().toISOString();
     salvar();
     render();
+    avisar('Você pode calcular sua meta no Monitor quando quiser.');
+  },
+
+  'dispensar-convite'() {
+    try {
+      localStorage.setItem(CHAVE_CONVITE, '1');
+    } catch {
+      /* sem armazenamento o convite volta na próxima abertura; aceitável */
+    }
+    render();
+  },
+
+  'escolher-porcoes'(alvo) {
+    porcoesEscolhidas = { id: alvo.dataset.id, fator: Number(alvo.dataset.valor) };
+    render();
+  },
+
+  // Troca só as classes: um render() completo rolaria a tela para o topo e a
+  // pessoa perderia de vista exatamente o passo que acabou de marcar.
+  'marcar-passo'(alvo) {
+    const id = rotaAtual().parametro;
+    const indice = Number(alvo.dataset.valor);
+    const desmarcar = passoAtual.id === id && passoAtual.indice === indice;
+    passoAtual = desmarcar ? { id: null, indice: -1 } : { id, indice };
+    document.querySelectorAll('.passos li').forEach((li) => {
+      li.classList.toggle('atual', !desmarcar && Number(li.dataset.valor) === indice);
+    });
+  },
+
+  'comi-refeicao'(alvo) {
+    ACOES['adicionar-consumo'](alvo);
+  },
+
+  'limpar-compras'() {
+    gravarComprasMarcadas(new Set());
+    abrirFolha(folhaListaDeCompras());
   },
 
   'filtrar-categoria'(alvo) {
@@ -1140,10 +1409,37 @@ const ACOES = {
   'meta-por-peso'() {
     const peso = Number($('#peso').value);
     if (!(peso > 0)) return avisar('Informe seu peso em quilos.');
-    estado.meta = Math.round(peso * 1.8);
+    estado.peso = peso;
+    estado.meta = metaPeloPeso(peso);
     salvar();
     render();
     avisar(`Meta calculada: ${estado.meta} g por dia.`);
+  },
+
+  async 'ligar-lembrete'() {
+    const hora = Number($('#lembrete-hora').value);
+    try {
+      await ProtConta.assinarPush();
+    } catch (erro) {
+      if (erro.message === 'sem-permissao') {
+        return avisar('Sem permissão para notificar. Libere nas configurações do navegador.');
+      }
+      if (erro.message === 'sem-suporte') return avisar('Este navegador não permite notificações.');
+      console.error('Falha ao ativar o lembrete:', erro);
+      return avisar('Não foi possível ativar o lembrete agora. Tente de novo.');
+    }
+    estado.lembrete = hora;
+    salvar();
+    render();
+    avisar(`Lembrete ligado para as ${String(hora).padStart(2, '0')}:00.`);
+  },
+
+  async 'desligar-lembrete'() {
+    estado.lembrete = null;
+    salvar();
+    await ProtConta.cancelarPushNesteAparelho().catch(() => {});
+    render();
+    avisar('Lembrete desligado.');
   },
 
   'usar-meta'(alvo) {
@@ -1252,6 +1548,11 @@ const ACOES = {
   'abrir-instalacao'() {
     instalar();
   },
+
+  'sair-da-conta'() {
+    if (!confirm('Sair da sua conta neste aparelho?')) return;
+    ProtConta.sair();
+  },
 };
 
 function ligarEventos() {
@@ -1266,7 +1567,35 @@ function ligarEventos() {
     if (evento.target === $('#folha')) fecharFolha();
   });
 
+  document.addEventListener('submit', (evento) => {
+    if (evento.target.id === 'form-boas-vindas') {
+      evento.preventDefault();
+      const peso = Number($('#peso-inicial').value);
+      if (!(peso >= 20 && peso <= 300)) return avisar('Informe um peso entre 20 e 300 kg.');
+      estado.peso = peso;
+      estado.meta = metaPeloPeso(peso);
+      estado.boasVindas = new Date().toISOString();
+      salvar();
+      render();
+      avisar(`Sua meta: ${estado.meta} g de proteína por dia.`);
+    }
+    if (evento.target.id === 'form-nome') {
+      evento.preventDefault();
+      estado.nome = $('#campo-nome').value.trim().slice(0, 24);
+      editandoNome = false;
+      salvar();
+      render();
+    }
+  });
+
   document.addEventListener('input', (evento) => {
+    if (evento.target.id === 'peso-inicial') {
+      const peso = Number(evento.target.value);
+      $('#previa-meta').textContent =
+        peso >= 20 && peso <= 300
+          ? `Sua meta: ${metaPeloPeso(peso)} g de proteína por dia.`
+          : 'Sua meta aparece aqui.';
+    }
     if (evento.target.id === 'busca') {
       filtros.busca = evento.target.value;
       const grade = $('#grade');
@@ -1277,6 +1606,13 @@ function ligarEventos() {
   });
 
   document.addEventListener('change', (evento) => {
+    if (evento.target.dataset.compra) {
+      const marcadas = comprasMarcadas();
+      if (evento.target.checked) marcadas.add(evento.target.dataset.compra);
+      else marcadas.delete(evento.target.dataset.compra);
+      gravarComprasMarcadas(marcadas);
+      evento.target.closest('li').classList.toggle('marcada', evento.target.checked);
+    }
     if (evento.target.id === 'filtro-faixa') {
       filtros.faixa = evento.target.value;
       render();
@@ -1293,6 +1629,12 @@ function ligarEventos() {
       ACOES['adicionar-ingrediente']();
     }
     if (evento.key === 'Escape') fecharFolha();
+  });
+
+  // O sistema solta a trava quando o app vai para segundo plano; ao voltar
+  // com uma receita aberta, pegamos de novo.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && rotaAtual().nome === 'receita') manterTelaAcesa();
   });
 
   window.addEventListener('hashchange', () => {
@@ -1389,17 +1731,63 @@ function registrarServiceWorker() {
  * ------------------------------------------------------------------ */
 
 async function iniciar() {
+  ProtConta.ligarPortao();
+  $('#view').innerHTML = telaCarregando();
+
+  // O acesso depende do servidor: sem rede, avisamos de cara em vez de deixar
+  // a pessoa diante de uma tela vazia esperando algo que não vai chegar.
+  if (!navigator.onLine) return ProtConta.telaSemInternet();
+
+  // 1. Sessão. Sem ela, o app não passa da tela de entrada.
+  let sessao;
+  try {
+    sessao = await ProtConta.comLimite(ProtConta.sessaoAtual());
+  } catch (erro) {
+    return ProtConta.telaSemInternet();
+  }
+
+  if (!sessao) return ProtConta.telaLogin();
+  ProtConta.limparEnderecoDeRetorno();
+
+  // 2. Portaria: sessão válida não basta, é preciso ter compra ativa.
+  //    Reembolso cai aqui na próxima abertura.
+  try {
+    if (!(await ProtConta.comLimite(ProtConta.temAcesso()))) {
+      return ProtConta.telaSemAcesso(sessao.user.email);
+    }
+  } catch (erro) {
+    return navigator.onLine
+      ? ProtConta.telaErro('Não foi possível confirmar seu acesso. Tente novamente.')
+      : ProtConta.telaSemInternet();
+  }
+
+  document.body.classList.remove('sem-sessao');
+  estado.admin = await ProtConta.souAdmin();
+
+  // 3. Receitas, dicas e bônus: arquivos estáticos, iguais para todo mundo.
   try {
     await carregarDados();
   } catch (erro) {
-    $('#view').innerHTML = `
-      <div class="vazio">
-        Não foi possível carregar as receitas.<br>
-        Abra o Prot+ pelo endereço completo do site, com conexão ativa na primeira visita.
-      </div>`;
-    return;
+    return ProtConta.telaErro('Não foi possível carregar as receitas. Confira sua conexão.');
   }
 
+  // 4. Dados da pessoa. O cache pinta a tela na hora; o servidor manda a verdade.
+  aplicarCache();
+  try {
+    await ProtConta.comLimite(ProtConta.carregarEstado(estado, hoje()));
+  } catch (erro) {
+    return navigator.onLine
+      ? ProtConta.telaErro('Não foi possível carregar os seus dados. Tente novamente.')
+      : ProtConta.telaSemInternet();
+  }
+
+  // Ingredientes que a pessoa digitou (fora dos 39 do acervo) não têm tabela
+  // própria: eles vivem em `despensa` e são reconhecidos por não estarem na
+  // lista conhecida. Assim reaparecem como chips em qualquer aparelho.
+  const conhecidos = new Set(GRUPOS_DESPENSA.flatMap((grupo) => grupo.itens));
+  estado.extras = estado.despensa.filter((item) => !conhecidos.has(item));
+
+  ProtConta.salvarAoSair(estado, hoje());
   ligarEventos();
   const rota = rotaAtual();
   if (rota.nome === 'receitas') {

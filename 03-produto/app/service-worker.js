@@ -14,7 +14,7 @@
  * aparelhos que já visitaram o site descartem o cache antigo.
  */
 
-const VERSAO = 'v3';
+const VERSAO = 'v5';
 const CACHE_ESTRUTURA = `prot-plus-estrutura-${VERSAO}`;
 const CACHE_FOTOS = `prot-plus-fotos-${VERSAO}`;
 
@@ -23,6 +23,9 @@ const ESTRUTURA = [
   './index.html',
   './style.css',
   './app.js',
+  './conta.js',
+  './config.js',
+  './vendor/supabase.js',
   './manifest.json',
   './images/icons/icon-192.png',
   './images/icons/icon-512.png',
@@ -95,6 +98,8 @@ self.addEventListener('fetch', (evento) => {
   if (request.method !== 'GET') return;
 
   const url = new URL(request.url);
+  // Chamadas ao Supabase (login e dados da pessoa) são de outra origem e
+  // seguem direto para a rede: dado de usuário nunca entra em cache.
   if (url.origin !== self.location.origin) return;
 
   if (/\/images\/w\d+\//.test(url.pathname) || url.pathname.endsWith('.png')) {
@@ -103,4 +108,40 @@ self.addEventListener('fetch', (evento) => {
   }
 
   evento.respondWith(estrategiaEstrutura(request));
+});
+
+/* ---- Lembrete diário (Web Push) ---- */
+
+self.addEventListener('push', (evento) => {
+  let dados = { titulo: 'Prot+', corpo: 'Registrou sua refeição de hoje?', url: './#/monitor' };
+  try {
+    if (evento.data) dados = { ...dados, ...evento.data.json() };
+  } catch {
+    /* payload fora do formato: usa o texto padrão */
+  }
+  evento.waitUntil(
+    self.registration.showNotification(dados.titulo, {
+      body: dados.corpo,
+      icon: './images/icons/icon-192.png',
+      badge: './images/icons/icon-192.png',
+      tag: 'lembrete-prot-plus', // uma notificação por vez; a nova substitui a antiga
+      data: { url: dados.url },
+    })
+  );
+});
+
+self.addEventListener('notificationclick', (evento) => {
+  evento.notification.close();
+  const alvo = new URL(evento.notification.data?.url || './#/monitor', self.location.href).href;
+  evento.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((janelas) => {
+      for (const janela of janelas) {
+        if (janela.url.startsWith(self.registration.scope)) {
+          if ('navigate' in janela) janela.navigate(alvo);
+          return janela.focus();
+        }
+      }
+      return self.clients.openWindow(alvo);
+    })
+  );
 });
