@@ -39,7 +39,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/supabase/`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `21507ed`
 - **O que foi feito:**
   - Ao salvar o postback na Payt, ela disparou dois testes reais. A v3 criou conta e
     enviou e-mail ao comprador fictício deles (`yoda@testsuser.com`). Rastro apagado;
