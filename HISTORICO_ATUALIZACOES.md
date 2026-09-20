@@ -42,8 +42,10 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Commit:** `6f72a9b`
 - **O que foi feito:**
   - Novo mockup do aplicativo na seção de oferta (`images/app-mockup-oferta.webp`).
-  - Imagens dos bônus 1 (treino) e 3 (whey) atualizadas.
-  - Ajustes correspondentes em `index.html`.
+  - **Seção de bônus reestruturada** em `index.html` (+215/−48 linhas): cada um dos
+    três bônus ganhou bloco com mockup, conteúdo e linha de preço
+    (`bonus-mockup-wrapper`, `bonus-content`, `bonus-price-row`).
+  - Imagens dos bônus 1 (treino) e 3 (whey) substituídas.
 - **Observação:** commit feito pelo agente a pedido; conteúdo produzido pelo Paulo.
 
 ### [2026-09-20] Webhook v5: Formato Real da Payt, Testes do Painel Ignorados e Chave Única Exigida
