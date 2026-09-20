@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d31">
+  <meta name="description" content="Prot+ | Página de Acesso e Entrega Oficial após a confirmação de pagamento.">
+  <title>Acesso Liberado · Prot+ | Aplicativo e Livros Digitais</title>
+  <style>
+    :root {
+      --ink: #18342a;
+      --green: #173d31;
+      --green-light: #255847;
+      --green-dark: #0e261f;
+      --orange: #e9823d;
+      --orange-hover: #d7712d;
+      --peach: #fff0df;
+      --cream: #fffaf2;
+      --mint: #eaf5ec;
+      --muted: #63746a;
+      --line: #dfebe1;
+      --shadow: 0 14px 40px rgba(23, 61, 49, 0.08);
+      --card-radius: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font: 16px/1.55 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding-bottom: 60px;
+    }
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Header de Sucesso */
+    .header-success {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 60%, #307357 100%);
+      color: #fff;
+      padding: 42px 20px 50px;
+      text-align: center;
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      box-shadow: 0 10px 30px rgba(23, 61, 49, 0.15);
+    }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .badge-status i {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #4ade80;
+    }
+    .header-success h1 {
+      font-size: clamp(26px, 5.5vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+    .header-success p {
+      color: #d1e5d7;
+      font-size: 15px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Card de Acesso Principal ao App */
+    .main-access-box {
+      background: #fff;
+      border: 2px solid var(--orange);
+      border-radius: var(--card-radius);
+      padding: 28px 24px;
+      margin: -28px auto 26px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+    }
+    .main-access-box .tag-destaque {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 99px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .main-access-box h2 {
+      font-size: 22px;
+      color: var(--green);
+      margin: 8px 0 6px;
+      font-weight: 900;
+    }
+    .main-access-box p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .btn-app {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 900;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 10px 24px rgba(233, 130, 61, 0.35);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-app:hover {
+      background: var(--orange-hover);
+      transform: translateY(-2px);
+    }
+    .btn-app span { font-size: 20px; }
+    .main-access-box small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* Cards e Seções */
+    .card-section {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 18px rgba(23, 61, 49, 0.04);
+    }
+    .card-section h3 {
+      font-size: 19px;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+    .card-section p.sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    /* Passo a Passo Instalação */
+    .install-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      background: var(--cream);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 12px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .tab-btn.active {
+      background: #fff;
+      color: var(--green);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .install-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .install-step:last-child { border-bottom: 0; }
+    .step-num {
+      flex: 0 0 28px;
+      height: 28px;
+      background: var(--green);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-content b {
+      display: block;
+      color: var(--ink);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+    .step-content span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Lista de Downloads dos PDFs */
+    .pdf-list {
+      display: grid;
+      gap: 12px;
+    }
+    .pdf-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: all 0.2s;
+    }
+    .pdf-item:hover {
+      border-color: var(--orange);
+      background: #fff;
+      transform: translateY(-1px);
+    }
+    .pdf-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .pdf-icon {
+      flex: 0 0 36px;
+      height: 36px;
+      background: #fee2e2;
+      color: #ef4444;
+      font-size: 18px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+    .pdf-text b {
+      display: block;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .pdf-text span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .btn-download-icon {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--green);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .pdf-item:hover .btn-download-icon {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
+
+    /* Avisos e Suporte */
+    .support-box {
+      background: var(--mint);
+      border: 1px solid #bce1c5;
+      border-radius: var(--card-radius);
+      padding: 22px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .support-box h4 {
+      color: var(--green);
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .support-box p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    .support-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-support {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid #bce1c5;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+    .btn-support:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding-top: 10px;
+    }
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    @media (max-width: 480px) {
+      .header-success { padding: 36px 16px 46px; }
+      .main-access-box { padding: 22px 16px; }
+      .card-section { padding: 18px 16px; }
+      .pdf-item { flex-direction: column; align-items: flex-start; }
+      .btn-download-icon { width: 100%; justify-content: center; margin-top: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topo com Status de Confirmação -->
+  <header class="header-success">
+    <div class="wrap">
+      <div class="badge-status"><i></i> Pagamento Confirmado</div>
+      <h1>Seu acesso ao Prot+ está liberado!</h1>
+      <p>Parabéns pela sua decisão. O seu aplicativo e todo o material de receitas já estão disponíveis para consulta imediata.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Card de Acesso Principal (Destaque) -->
+    <section class="main-access-box">
+      <span class="tag-destaque">Acesso Imediato</span>
+      <h2>Aplicativo Prot+ no seu Celular</h2>
+      <p>Clique no botão abaixo para abrir o aplicativo diretamente no navegador do seu celular.</p>
+      
+      <a href="../app/" id="btnOpenApp" class="btn-app">
+        <span>📲</span> ABRIR APLICATIVO AGORA
+      </a>
+      
+      <small>Dica: Na primeira abertura, aguarde o carregamento e siga as instruções abaixo para salvar na tela inicial.</small>
+    </section>
+
+    <!-- Instruções de Como Instalar na Tela Inicial -->
+    <section class="card-section">
+      <h3><span>📱</span> Como Salvar o App na Tela Inicial</h3>
+      <p class="sub">Instale o Prot+ como um aplicativo no seu aparelho sem precisar baixar na Play Store ou App Store:</p>
+
+      <div class="install-tabs">
+        <button class="tab-btn active" onclick="switchTab('ios')">🍏 iPhone (iOS / Safari)</button>
+        <button class="tab-btn" onclick="switchTab('android')">🤖 Android (Google Chrome)</button>
+      </div>
+
+      <!-- Conteúdo iPhone -->
+      <div id="tab-ios" class="tab-content">
+        <div class="install-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <b>Abra no navegador Safari</b>
+            <span>Certifique-se de estar usando o navegador Safari no seu iPhone.</span>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <b>Toque no botão Compartilhar</b>
+            <span>É o ícone de um quadrado com uma seta apontando para cima (no rodapé do Safari).</span>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <b>Selecione "Adicionar à Tela de Início"</b>
+            <span>Role um pouco para baixo na lista de opções e clique em <strong>Adicionar à Tela de Início</strong>.</span>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <b>Pronto! Toque em "Adicionar"</b>
+            <span>O ícone do Prot+ aparecerá junto aos seus outros aplicativos com acesso rápido e offline!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo Android -->
+      <div id="tab-android" class="tab-content" style="display:none;">
+        <div class="install-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <b>Abra no Google Chrome</b>
+            <span>Abra o link do aplicativo no seu navegador Chrome.</span>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <b>Toque nos 3 Pontinhos do Menu</b>
+            <span>Localizados no canto superior direito da tela do seu Chrome.</span>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <b>Selecione "Instalar Aplicativo"</b>
+            <span>(Ou "Adicionar à Tela Inicial", dependendo do modelo do seu Android).</span>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <b>Confirme a Instalação</b>
+            <span>O app Prot+ será adicionado à sua gaveta de aplicativos com funcionamento offline.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download dos Livros Digitais em PDF -->
+    <section class="card-section">
+      <h3><span>📚</span> Baixar Livros de Receitas em PDF</h3>
+      <p class="sub">Se preferir imprimir ou salvar os livros no seu leitor de PDF, baixe as versões digitais completas:</p>
+
+      <div class="pdf-list">
+        <a href="../03-produto/pdf/receitas-prot-plus.pdf" download class="pdf-item">
+          <div class="pdf-info">
+            <div class="pdf-icon">PDF</div>
+            <div class="pdf-text">
+              <b>Livro Completo Prot+ (120 Receitas)</b>
+              <span>Todas as receitas reunidas em um único volume · 2.1 MB</span>
+            </div>
+          </div>
+          <div class="btn-download-icon">⬇ Baixar PDF</div>
+        </a>
+
+        <a href="../03-produto/pdf/receitas-prot-plus-cafe-lanches.pdf" download class="pdf-item">
+          <div class="pdf-info">
+            <div class="pdf-icon">PDF</div>
+            <div class="pdf-text">
+              <b>Café da Manhã e Lanches Proteicos</b>
+              <span>40 receitas práticas para começar o dia · 750 KB</span>
+            </div>
+          </div>
+          <div class="btn-download-icon">⬇ Baixar PDF</div>
+        </a>
+
+        <a href="../03-produto/pdf/receitas-prot-plus-almoco-jantar.pdf" download class="pdf-item">
+          <div class="pdf-info">
+            <div class="pdf-icon">PDF</div>
+            <div class="pdf-text">
+              <b>Almoço e Jantar Proteico</b>
+              <span>50 receitas completas para refeições principais · 900 KB</span>
+            </div>
+          </div>
+          <div class="btn-download-icon">⬇ Baixar PDF</div>
+        </a>
+
+        <a href="../03-produto/pdf/receitas-prot-plus-sobremesas.pdf" download class="pdf-item">
+          <div class="pdf-info">
+            <div class="pdf-icon">PDF</div>
+            <div class="pdf-text">
+              <b>Sobremesas e Doces Proteicos</b>
+              <span>30 opções saudáveis para matar a vontade de doce · 570 KB</span>
+            </div>
+          </div>
+          <div class="btn-download-icon">⬇ Baixar PDF</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Box de Suporte e Atendimento -->
+    <section class="support-box">
+      <h4>Precisa de Ajuda com seu Acesso?</h4>
+      <p>Nossa equipe de suporte está à disposição para tirar qualquer dúvida sobre seu acesso ou pagamento.</p>
+      <div class="support-btns">
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C+acabei+de+adquirir+o+Prot%2B+e+preciso+de+ajuda" target="_blank" class="btn-support">
+          💬 WhatsApp de Suporte
+        </a>
+        <a href="mailto:suporte@protplus.com.br" class="btn-support">
+          ✉️ suporte@protplus.com.br
+        </a>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>© 2026 Prot+ · Todos os direitos reservados.</p>
+      <p style="margin-top: 6px;">
+        <a href="termos.html">Termos de Uso</a> · 
+        <a href="privacidade.html">Política de Privacidade</a>
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+    function switchTab(os) {
+      const iosTab = document.getElementById('tab-ios');
+      const androidTab = document.getElementById('tab-android');
+      const btns = document.querySelectorAll('.tab-btn');
+
+      if (os === 'ios') {
+        iosTab.style.display = 'block';
+        androidTab.style.display = 'none';
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      } else {
+        iosTab.style.display = 'none';
+        androidTab.style.display = 'block';
+        btns[0].classList.remove('active');
+        btns[1].classList.add('active');
+      }
+    }
+
+    // Ajuste dinâmico de URL se for executado em servidor local ou público
+    window.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('btnOpenApp');
+      if (window.location.pathname.includes('/04-pagina/')) {
+        openBtn.href = '../03-produto/app/';
+      } else {
+        openBtn.href = '/app/';
+      }
+    });
+  </script>
+</body>
+</html>

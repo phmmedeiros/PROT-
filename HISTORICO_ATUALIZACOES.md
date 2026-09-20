@@ -35,6 +35,29 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Execução da Fase 6: Página de Obrigado, Entrega, Páginas Legais e Esteira Payt
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`, raiz (`local-preview-server.mjs`)
+- **Tipo:** `feat` / `docs`
+- **Commit:** `e2ab412`
+- **O que foi feito:**
+  - Criação da Página de Obrigado e Entrega oficial (`04-pagina/obrigado.html`) com status de pagamento confirmado, botão de abertura imediata do app PWA, passo a passo visual para instalação na tela inicial (iOS/Safari e Android/Chrome), central de download direto dos 4 livros em PDF e canal de suporte VIP.
+  - Criação das páginas legais obrigatórias: Termos de Uso (`04-pagina/termos.html`) e Política de Privacidade (`04-pagina/privacidade.html`) em total conformidade com o Código de Defesa do Consumidor e LGPD.
+  - Atualização da página de vendas (`04-pagina/index.html`) integrando links legais no rodapé, disclaimer de desvinculação da Meta/Facebook e variável centralizada `PAYT_CHECKOUT_URL` no script com redirecionamento automático dos botões de compra.
+  - Reestruturação do manual de checkout (`06-entrega/payt-configuracao.md`) com dados cadastrais completos, os 3 Order Bumps formatados, template pronto do e-mail de entrega pós-compra e checklist de testes e homologação.
+  - Atualização do servidor de testes local (`local-preview-server.mjs`) com suporte a rotas amigáveis (`/obrigado`, `/termos`, `/privacidade`, `/pdf/*`), todas respondendo com status 200.
+  - Atualização do checklist de entregáveis em `06-entrega/checklist-roteiro.md`.
+- **Arquivos modificados/criados:**
+  - `04-pagina/obrigado.html` [NOVO]
+  - `04-pagina/termos.html` [NOVO]
+  - `04-pagina/privacidade.html` [NOVO]
+  - `04-pagina/index.html` [MODIFICADO]
+  - `06-entrega/payt-configuracao.md` [MODIFICADO]
+  - `06-entrega/checklist-roteiro.md` [MODIFICADO]
+  - `local-preview-server.mjs` [MODIFICADO]
+
+---
+
 ### [2026-09-20] Configuração de Governança para Equipe de 2 Pessoas e Histórico
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** Raiz do projeto, `.agents/`, documentação

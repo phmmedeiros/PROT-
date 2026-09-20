@@ -63,33 +63,36 @@
 - [ ] Trocar CTAs internos pela URL real da Payt.
 - [ ] Substituir marcadores de prova por provas reais autorizadas.
 - [ ] Definir data promocional real.
-- [ ] Inserir termos, privacidade e suporte.
+- [x] Inserir termos (`termos.html`), privacidade (`privacidade.html`), entrega (`obrigado.html`) e suporte.
 
 ## Fase 5 — Criativos
 
 - [x] Oito roteiros autorais criados.
 - [x] Ganchos, cenas, textos de tela e CTAs definidos.
 - [x] Conferência de originalidade realizada.
-- [ ] Produzir e aprovar as peças finais.
+- [ ] Produzir e aprovar as peças finais (Aguardando aprovação Paulo - Parada 3).
 
 ## Fase 6 — Checkout, QA e entrega
 
 - [x] Payt escolhida como plataforma.
 - [x] Dados do produto e checkout preparados em `06-entrega/payt-configuracao.md`.
-- [ ] Cadastrar o produto Prot+ na Payt.
-- [ ] Criar a oferta de checkout.
+- [x] Página de agradecimento e entrega implementada em `04-pagina/obrigado.html` com guia de instalação e downloads.
+- [x] Variável única de checkout configurada na página de vendas (`04-pagina/index.html`).
+- [x] Rotas amigáveis e preview local configurados para testes locais (`local-preview-server.mjs`).
+- [ ] Cadastrar o produto Prot+ na Payt (copiar dados de `payt-configuracao.md`).
+- [ ] Criar a oferta de checkout e os 3 Order Bumps.
 - [ ] Definir suporte, garantia e termos.
-- [ ] Configurar entrega do app e dos PDFs.
-- [ ] Copiar e registrar a URL real do checkout.
-- [ ] Substituir todos os CTAs da página pela URL real.
+- [ ] Configurar entrega automática do app e dos PDFs no e-mail da Payt.
+- [ ] Copiar e registrar a URL real do checkout na variável de `04-pagina/index.html`.
 - [ ] Publicar app e página em domínio/URL públicos.
-- [ ] Fazer teste em celular real.
+- [ ] Fazer teste em celular real (iOS / Android).
 - [ ] Fazer compra de teste autorizada.
 - [ ] Confirmar recebimento do e-mail e acesso ao produto.
 - [ ] Testar procedimento de reembolso.
 - [ ] Configurar e testar pixel, se aprovado.
-- [ ] Publicar somente após aprovação final.
+- [ ] Publicar somente após aprovação final (Parada 4).
 
 ## Conclusão atual
 
-O produto, os PDFs e a página de vendas estão construídos localmente. O projeto está na **Fase 6**, aguardando a configuração externa da Payt, a hospedagem pública e os dados finais que não podem ser inventados.
+O produto, os PDFs, a página de vendas, a página de agradecimento e as páginas legais estão prontos e integrados localmente. A Fase 6 está com todos os insumos prontos para cadastro imediato na Payt e publicação.
+

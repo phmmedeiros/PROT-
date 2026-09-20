@@ -49,11 +49,30 @@
 
     <section class="section"><div class="wrap"><span class="eyebrow">DÚVIDAS FREQUENTES</span><h2>Antes de começar, confira.</h2><div class="faq"><details><summary>Como recebo o Prot+?</summary><p>O acesso e as instruções de entrada devem ser enviados pelo checkout após a confirmação do pagamento.</p></details><details><summary>As receitas têm macros?</summary><p>Sim. Cada receita apresenta proteína, calorias, carboidratos e gorduras por porção, com memória de cálculo registrada.</p></details><details><summary>Preciso de ingredientes difíceis?</summary><p>Não. O acervo foi planejado com ingredientes comuns de supermercado no Brasil.</p></details><details><summary>Existe mensalidade?</summary><p>A oferta está estruturada como pagamento único, sem mensalidade prevista.</p></details><details><summary>O Prot+ substitui nutricionista?</summary><p>Não. É um material educativo e não substitui avaliação individualizada.</p></details><details><summary>Como funciona a garantia?</summary><p>Consulte as condições e o prazo de 45 dias informados no checkout.</p></details></div><div class="center"><a class="cta" href="#oferta">Quero conhecer o Prot+</a></div></div></section>
   </main>
-  <footer class="footer"><div class="wrap"><strong>Prot+</strong><p>© 2026 Prot+ · Material digital.</p><p><a href="#">Termos de Uso</a><a href="#">Política de Privacidade</a></p><p>Este material não garante resultados específicos. Resultados dependem de fatores individuais. Provas e depoimentos reais serão adicionados somente após coleta autorizada.</p></div></footer>
-  <a class="cta sticky" href="#oferta">Quero meu acesso · R$ 27,50</a>
+  <footer class="footer"><div class="wrap"><strong>Prot+</strong><p>© 2026 Prot+ · Material digital.</p><p><a href="termos.html">Termos de Uso</a><a href="privacidade.html">Política de Privacidade</a><a href="obrigado.html">Área do Aluno / Entrega</a></p><p style="margin-top: 10px; font-size: 11px; opacity: 0.75; line-height: 1.5;">Este site não é afiliado ao Facebook ou à Meta Inc. O nome Prot+ e seus conteúdos são de titularidade exclusiva de seus desenvolvedores. As informações contidas neste material têm caráter meramente informativo e culinário, não substituindo o acompanhamento de nutricionistas ou médicos.</p></div></footer>
+  <a class="cta sticky" id="stickyCta" href="#oferta">Quero meu acesso · R$ 27,50</a>
   <script>
+    // =========================================================================
+    // CONFIGURAÇÃO DO CHECKOUT PAYT (Cole a URL do checkout abaixo quando criada)
+    // =========================================================================
+    const PAYT_CHECKOUT_URL = ""; // Ex: "https://payt.com.br/checkout/exemplo"
+
+    // Redirecionamento inteligente dos botões de compra
+    document.querySelectorAll('a[href="#checkout"], #stickyCta').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (PAYT_CHECKOUT_URL && PAYT_CHECKOUT_URL.trim() !== "") {
+          e.preventDefault();
+          window.location.href = PAYT_CHECKOUT_URL;
+        }
+      });
+    });
+
+    // Acordeon do FAQ
     document.querySelectorAll('.faq details').forEach(item=>item.addEventListener('toggle',()=>{if(item.open)document.querySelectorAll('.faq details').forEach(other=>{if(other!==item)other.open=false})}));
-    const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show')}),{threshold:.08});document.querySelectorAll('.card,.recipe,.offer,.guarantee-box').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+    
+    // Efeito de revelação ao rolar
+    const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show')}),{threshold:.08});
+    document.querySelectorAll('.card,.recipe,.offer,.guarantee-box').forEach(el=>{el.classList.add('reveal');io.observe(el)});
   </script>
 </body>
 </html>
