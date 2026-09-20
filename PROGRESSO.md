@@ -7,7 +7,7 @@
 **Manual da Equipe:** [`BOAS_PRATICAS_EQUIPE.md`](./BOAS_PRATICAS_EQUIPE.md)  
 **Diretrizes de IA:** [`AGENTS.md`](./AGENTS.md)
 
-**Última atualização:** 20/09/2026 — Fase 3 concluída: aplicativo Prot+ completo, com as 8 telas, as 4 ferramentas, os 3 bônus e QA automatizado passando.
+**Última atualização:** 20/09/2026 — Doze melhorias de usabilidade publicadas em https://app.comersemprebem.site, 63 verificações passando em produção. Faltam os segredos do lembrete e do webhook no painel da Supabase.
 
 
 ---
@@ -63,7 +63,14 @@
   - [x] Fotos otimizadas para o app: 279,5 MB de PNG → 15,1 MB em WebP (`images/w400/`, `images/w900/`)
   - [x] App instalável: ícones do manifest, atalhos e passo a passo de instalação para Android e iPhone
   - [x] Modo offline verificado com a rede desligada
-  - [x] QA automatizado com 33 verificações e 12 prints (`03-produto/app/tools/qa-app.mjs`)
+  - [x] QA automatizado com 63 verificações e 12 prints, passando em produção (`03-produto/app/tools/qa-app.mjs`)
+  - [x] Login por link mágico e banco Supabase (`03-produto/supabase/`): acesso só para quem comprou, com corte automático em reembolso
+  - [x] Dados da pessoa sincronizados entre aparelhos (favoritos, meta, consumo, despensa e cardápio)
+  - [x] Edge Function do webhook da Payt escrita, aguardando o formato real do payload
+  - [x] Acesso administrativo para Paulo e Pedro, sem compra e sem poluir o relatório de vendas
+  - [x] Guia do Resend com o DNS do domínio já auditado (`03-produto/supabase/resend.md`)
+  - [x] SMTP do Resend ligado; link mágico entregue e clicado de ponta a ponta
+  - [x] Doze melhorias de usabilidade: primeiro acesso guiado, tela acesa ao cozinhar, carregamento visível, convite para instalar, botão fixo de registrar, passo atual, lista de compras marcável, "Comi" no cardápio, nome na tela, ajuda, porções e lembrete por notificação
 
 - [ ] **Fase 4: Construir a Página de Vendas (`04-pagina/`)**
   - [x] Esqueleto com 18 blocos e variáveis (`04-pagina/index.html`)
@@ -85,7 +92,8 @@
   - [x] Variável de checkout centralizada no script da página de vendas (`04-pagina/index.html`)
   - [x] Servidor de preview local atualizado com rotas amigáveis (`local-preview-server.mjs`)
   - [x] PDFs das receitas gerados e validados (`03-produto/pdf/`)
-  - [ ] Cadastro da oferta e bumps no painel da Payt
+  - [x] Fichas de cadastro e imagens 800x800 preparadas para a Payt (`05-checkout/cadastro-payt.md` e `05-checkout/imagens-payt/`)
+  - [x] Link de checkout da Payt ativado e integrado aos CTAs da Landing Page (`https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9`)
   - [x] Publicação em domínio/hospedagem pública (`lp.comersemprebem.site` e `comersemprebem.site` na Hostinger com SSL)
   - [ ] QA completo no celular real e compra de teste autorizada (Parada 4)
 
@@ -93,7 +101,10 @@
 
 ## 📌 Onde Paramos / Próximo Passo Imediato
 
-1. **Estado Atual:** **Fase 3 concluída.** O aplicativo está pronto e testado localmente; a página de vendas segue em ajuste.
+1. **Estado Atual:** **Fase 3 concluída**, com login e banco. Pendências antes de vender:
+   - Painel da Supabase: `PAYT_WEBHOOK_SECRET` e os três segredos do lembrete (`CRON_SECRET`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`); subir o limite de 30 e-mails/h; modelo do e-mail em português.
+   - Payt: colar a URL do webhook.
+   - Página de vendas: 40 imagens apontam para fora do site; tirar a promessa de offline; publicar em `lp.`.
    - [`02-blueprint/blueprint.md`](./02-blueprint/blueprint.md) e [`02-blueprint/produto.md`](./02-blueprint/produto.md) criados e especificados para o **Prot+**.
 2. **Próximo Passo Imediato (Fase 3 - Construir o Produto):**
    - **Lote 1 concluído:** 20 receitas autorais de café e lanches, com memória de cálculo e conferência independente de 3 receitas.

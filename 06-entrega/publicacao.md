@@ -8,6 +8,53 @@ Publicação realizada com sucesso na Hostinger em 20/09/2026:
 - Aplicativo PWA: `https://lp.comersemprebem.site/app/`
 - Certificado SSL ativo (hSSL Lifetime) e QA automatizado com 33 testes aprovados sem falhas.
 
+## 0. Estado da publicação (20/09/2026)
+
+| O quê | Onde | Estado |
+|---|---|---|
+| Aplicativo | `https://app.comersemprebem.site` | **no ar**, 37 verificações de QA passando contra a URL pública |
+| Página de vendas | `https://lp.comersemprebem.site` | subdomínio criado, conteúdo ainda não publicado |
+| Banco e login | Supabase `Prot+` (`sa-east-1`) | no ar |
+| E-mail | Resend, domínio verificado | falta ligar o SMTP na Supabase |
+| Checkout | Payt | URL já na página; webhook ainda não publicado |
+
+### Como republicar o aplicativo
+
+```bash
+cd 03-produto/app
+python3 tools/preparar-publicacao.py      # gera dist/prot-plus-AAAAMMDD_HHMMSS.zip
+```
+
+Depois subir o `.zip` pelo painel da Hostinger em `app.comersemprebem.site`, ou
+pedir para o agente publicar. O pacote leva só o necessário (15,3 MB): código,
+dados, ícones e as fotos WebP. Os PNGs originais (280 MB) ficam de fora — o app
+não os usa.
+
+**Depois de publicar, limpar o cache do CDN** (painel da Hostinger > site >
+Limpar cache). Sem isso, o navegador pode receber a versão anterior por alguns
+minutos — o deploy é assíncrono e o CDN só troca os arquivos quando propaga.
+O agente faz a limpeza automaticamente ao publicar; a mão, é esse botão.
+
+O app roda na RAIZ do subdomínio, com os JSON numa pasta `dados/` ao lado do
+`index.html`. O caminho `../dados/` do código continua valendo porque o
+navegador não deixa `..` subir acima da raiz.
+
+### ⚠️ Antes de publicar a página de vendas
+
+40 das 50 imagens de `04-pagina/index.html` apontam para
+`../03-produto/app/images/*.png`. Publicada em `lp.comersemprebem.site`, essa
+rota sobe acima da raiz do site e as 40 fotos quebram.
+
+Duas saídas:
+
+1. Copiar as fotos para `04-pagina/images/` e trocar os caminhos para
+   `images/NOME.png`. Use as versões WebP (`03-produto/app/images/w900/`):
+   pesam cerca de 5 MB no total, contra 100 MB dos PNGs.
+2. Apontar para o app, que já as serve publicamente:
+   `https://app.comersemprebem.site/images/w900/AJ-001.webp`.
+
+A opção 1 deixa a página independente do app; a 2 evita duplicar arquivo.
+
 ## 1. Estrutura para hospedagem
 
 Publicar mantendo esta estrutura relativa:
@@ -20,6 +67,9 @@ Publicar mantendo esta estrutura relativa:
 │   ├── app.js
 │   ├── manifest.json
 │   ├── service-worker.js
+│   ├── config.js         endereco e chave publica do Supabase
+│   ├── conta.js          login, portaria de acesso e sincronizacao
+│   ├── vendor/           cliente Supabase (hospedado por nos, sem CDN)
 │   ├── images/
 │   │   ├── icons/        ícones do app instalado (obrigatórios)
 │   │   ├── w400/         fotos dos cards (2,8 MB)
@@ -50,7 +100,10 @@ O servidor precisa entregar `.webp` com o tipo MIME `image/webp` e `.json` com `
 6. Rodar o QA automatizado contra a URL publicada:
    `BASE=https://SEU-DOMINIO/app/ node 03-produto/app/tools/qa-app.mjs`
 7. Testar a instalação na tela inicial em Android e iPhone.
-8. Com o app instalado, ligar o modo avião e confirmar que o catálogo abre.
+8. Conferir no painel da Supabase que o endereço publicado está na lista de
+   Redirect URLs — sem isso o link mágico não devolve a pessoa ao app.
+9. Confirmar que o SMTP próprio está configurado: o envio nativo da Supabase
+   é limitado a poucos e-mails por hora e trava o lançamento.
 
 ## 3. Publicação da página de vendas
 
@@ -76,6 +129,7 @@ Antes de publicar, substituir ou aprovar os seguintes marcadores:
 Configurar na Payt, plataforma de checkout escolhida para esta oferta:
 
 - Produto principal: Prot+ — R$ 27,50, pagamento único.
+- URL do Checkout Ativo: `https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9`
 - Garantia: 45 dias, conforme termos aprovados.
 - Campos: nome, e-mail, celular e CPF/CNPJ, se exigidos pela plataforma.
 - Pagamentos: PIX, cartão e carteiras digitais disponíveis na conta.

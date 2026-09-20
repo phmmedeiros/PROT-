@@ -35,6 +35,258 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Atualização dos Depoimentos Reais (Pasta NOSSOS) e Deploy Hostinger
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`
+- **Tipo:** `feat` / `marketing`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Substituição dos depoimentos anteriores pelos 10 prints reais contidos em `Downloads/comersemprebem depoimentos/nossos/`.
+  - Conversão e otimização das 10 imagens PNG originais para formato WebP de alto desempenho (`dep1.webp` a `dep10.webp` em 500x888 px), reduzindo o peso total de ~14.5 MB para apenas ~608 KB (ganho massivo de velocidade de carregamento mobile).
+  - Atualização do track do slider horizontal em `04-pagina/index.html` com a sequência dos 10 prints reais duplicada para loop infinito 100% contínuo e fluído.
+  - Ajuste de proporção no CSS (altura 390px no desktop e 345px no mobile) e duração da animação para 42s.
+  - Deploy estático em produção na Hostinger (`https://lp.comersemprebem.site/`) e purga de cache da CDN via MCP (`hosting_clearWebsiteCacheV1`).
+  - Validação `HTTP/2 200` confirmada para todos os 10 novos prints em produção.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `04-pagina/images/depoimentos/dep1.webp` ... `dep10.webp`
+  - `HISTORICO_ATUALIZACOES.md`
+
+### [2026-09-20] Integração do Meta Pixel no Site e Página de Obrigado com Deploy Hostinger
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`
+- **Tipo:** `feat` / `marketing`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Instalação do script oficial do Meta Pixel (ID: `1310891797657056`) na tag `<head>` da página de vendas (`04-pagina/index.html`) com rastreamento padrão de `PageView`.
+  - Instalação do Meta Pixel na tag `<head>` da página de obrigado (`04-pagina/obrigado.html`) com eventos de `PageView` e `Purchase` (conversão com valor parametrizado de R$ 27,50 BRL).
+  - Deploy estático em produção na Hostinger para `https://lp.comersemprebem.site/` e purga de cache da CDN via MCP (`hosting_clearWebsiteCacheV1`).
+  - Verificação com `curl` aprovada confirmando o Pixel ativo e rastreando nas páginas publicadas.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `04-pagina/obrigado.html`
+  - `HISTORICO_ATUALIZACOES.md`
+
+### [2026-09-20] Inclusão de Depoimentos Reais em Slider Infinito na LP e Deploy Hostinger
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`
+- **Tipo:** `feat` / `marketing`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Importação e otimização dos 6 prints reais de depoimentos (`dep1.webp` a `dep6.webp`) para o diretório `04-pagina/images/depoimentos/`.
+  - Implementação de slider horizontal contínuo (marquee infinito passando para a esquerda com loop suave) posicionado estrategicamente logo abaixo do preço e do botão de compra da oferta principal.
+  - Estilização moderna com cards simulando telas de smartphone com bordas arredondadas, sombras elegantes, pause on hover e máscara com gradiente de fade nas laterais.
+  - Deploy completo em produção na Hostinger (`https://lp.comersemprebem.site/`) e purga de cache da CDN via MCP (`hosting_clearWebsiteCacheV1`).
+  - Testes de integridade em produção aprovados com status HTTP/2 200 para todas as imagens e estilos.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `04-pagina/images/depoimentos/dep1.webp`
+  - `04-pagina/images/depoimentos/dep2.webp`
+  - `04-pagina/images/depoimentos/dep3.webp`
+  - `04-pagina/images/depoimentos/dep4.webp`
+  - `04-pagina/images/depoimentos/dep5.webp`
+  - `04-pagina/images/depoimentos/dep6.webp`
+  - `HISTORICO_ATUALIZACOES.md`
+
+### [2026-09-20] Doze Melhorias de Usabilidade, Publicadas e Verificadas em Produção
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/supabase/`, `06-entrega/publicacao.md`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito** (numeração da proposta aprovada):
+  1. **Primeiro acesso guiado:** uma pergunta (peso) → meta pronta. Fim do 140 g arbitrário. Guardado em `perfis.peso_kg` e `perfis.boas_vindas_em`; não se repete em outro aparelho.
+  2. **Tela acesa enquanto cozinha** (Wake Lock), só com receita aberta; solta ao sair e retoma ao voltar.
+  3. **Carregamento visível** no lugar da tela em branco dos 2–4 s de abertura no 4G.
+  4. **Convite para instalar** uma vez após o primeiro acesso, dispensável e lembrado. Mitiga o apagamento de sessão do iOS em 7 dias sem uso.
+  5. **"Adicionar ao consumo" preso na base** da tela de receita.
+  6. **Passo atual do preparo** marcável por toque, sem rolar a tela.
+  7. **Lista de compras marcável**, com marcações que sobrevivem a fechar/reabrir (só neste aparelho).
+  8. **"Comi" direto do cardápio** da Semana Blindada.
+  9. **Nome por campo na tela**, no lugar do `prompt()` do navegador.
+  10. **"Precisa de ajuda?"** dentro do app.
+  11. **1, 2 ou 3 porções**: ingredientes escalam, macros seguem por porção.
+  12. **Lembrete diário por notificação:** painel no Monitor, tabela `push_assinaturas`, Edge Function `enviar-lembretes` (envia só a quem não registrou nada no dia), cron `prot-plus-lembretes` a cada hora. Assinatura cancelada ao sair da conta.
+- **Verificação:** suíte ampliada de 38 para **63 verificações**; **63/63 em produção** (`app.comersemprebem.site`), incluindo assinatura push real no Chrome.
+- **Lição registrada:** o deploy da Hostinger é assíncrono; testar segundos depois pegou a versão anterior. A suíte agora sonda a URL canônica antes de rodar, e a publicação inclui limpar o cache do CDN.
+- **Pendente (painel):** `CRON_SECRET`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY` em Edge Functions > Secrets — até lá o lembrete não dispara, mesmo ligado no app.
+- **Arquivos:** `app.js`, `conta.js`, `config.js`, `style.css`, `service-worker.js` (v5), `tools/qa-app.mjs`, `supabase/migrations/0004`, `0005`, `supabase/functions/enviar-lembretes/index.ts`, `supabase/README.md`, `06-entrega/publicacao.md`.
+
+### [2026-09-20] Ingrediente Personalizado Sincroniza Entre Aparelhos
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/app/app.js`, `tools/qa-app.mjs`
+- **Tipo:** `fix`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Ingrediente que a pessoa digita no Radar de Despensa gravava a seleção em
+    `despensa`, mas o chip não reaparecia em outro aparelho porque a lista
+    `extras` vivia só no cache local. Agora `extras` é derivada do que está
+    salvo: tudo em `despensa` que não pertence aos 39 ingredientes do acervo.
+    Sem migration, sem tabela nova.
+  - QA ganhou a verificação "ingrediente digitado volta do servidor sem cache".
+  - Republicado em `app.comersemprebem.site`; suíte de 38 verificações passou
+    contra a URL pública.
+### [2026-09-20] Aplicativo Publicado em app.comersemprebem.site
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/app/`, Hostinger, `06-entrega/publicacao.md`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Subdomínio `app.comersemprebem.site` criado na Hostinger.
+  - Aplicativo publicado: 256 arquivos, 15,3 MB.
+  - Script de empacotamento (`tools/preparar-publicacao.py`), em Python para
+    rodar também no Windows do Pedro.
+  - **QA completo contra a URL pública: 37 verificações, 0 falhas.**
+  - Estrutura de publicação resolvida sem alterar código: o app fica na raiz do
+    subdomínio e os JSON numa pasta `dados/` ao lado, porque o navegador impede
+    que `..` suba acima da raiz — o mesmo caminho serve local e publicado.
+  - Os 280 MB de PNG originais ficam fora do pacote; o app usa só as WebP.
+- **Achado para a Fase 4:** 40 das 50 imagens de `04-pagina/index.html` apontam
+  para `../03-produto/app/images/`. Publicadas em `lp.`, essas 40 quebram.
+  Saídas registradas em `06-entrega/publicacao.md`.
+- **Pendente:** ligar o SMTP do Resend na Supabase. Sem isso os links de acesso
+  não saem — o envio nativo já responde 429 (limite esgotado).
+
+### [2026-09-20] Deploy em Produção na Hostinger com Checkout Payt Ativo
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `03-produto/app/`, `06-entrega/`
+- **Tipo:** `deploy` / `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Empacotamento e deploy estático em produção na Hostinger para o domínio `https://lp.comersemprebem.site/`.
+  - Atualização da Landing Page com o link oficial do checkout da Payt (`https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9`) no botão principal de compra (`#btnMainOffer`) e na variável JavaScript `PAYT_CHECKOUT_URL`.
+  - Publicação dos novos módulos de autenticação e banco de dados do aplicativo PWA (`app/config.js`, `app/conta.js` e `app/vendor/supabase.js`).
+  - Purga de cache da CDN da Hostinger via MCP `hosting_clearWebsiteCacheV1`.
+  - Validação HTTP/2 200 em produção para página de vendas e scripts de autenticação.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `05-checkout/cadastro-payt.md`
+  - `06-entrega/publicacao.md`
+  - `PROGRESSO.md`
+
+### [2026-09-20] Acesso Administrativo e Escolha do Resend para E-mail
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/supabase/`, `03-produto/app/`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - **Tabela `administradores`** com `phenrimedeiros@gmail.com` e
+    `pedro.arqtt@gmail.com`. `tenho_acesso()` passou a aceitar dois caminhos:
+    ser administrador **ou** ter compra ativa.
+  - **Decisão de modelagem:** admin NÃO entra em `compras`. Se entrasse, todo
+    relatório de vendas contaria os dois sócios como clientes. Verificado:
+    `compras` tem 1 linha (a de teste) e `perfis` tem 3.
+  - **Contas de Paulo e Pedro criadas** em `auth.users`, sem senha — entram por
+    link mágico, como as clientes.
+  - **Função `sou_admin()`** e tarja laranja no app avisando que a sessão é
+    administrativa, para não confundirem o que veem com o que a cliente vê.
+  - **Teste do controle de acesso** com 5 situações: admin sem compra entra;
+    e-mail com maiúsculas entra; compradora entra e não é admin; quem não é nem
+    admin nem compradora fica de fora.
+  - **Resend escolhido para o envio de e-mail.** Guia completo em
+    `03-produto/supabase/resend.md`, com o estado real do DNS já conferido.
+  - **DNS auditado:** `comersemprebem.site` não tem SPF, DKIM nem MX. Campo livre
+    para o Resend, mas o domínio não recebe e-mail — resposta de cliente ao link
+    mágico volta com erro, então é preciso um `Reply-To` que funcione.
+  - **QA ampliado** para 37 verificações, incluindo a separação entre conta de
+    compradora e conta administrativa. 0 falhas.
+- **Pendente (só vocês podem fazer):**
+  - Criar o domínio `send.comersemprebem.site` no Resend e me passar os
+    registros DNS — eu publico na Hostinger.
+  - Ligar o SMTP do Resend na Supabase.
+  - Atentar ao limite do plano gratuito: cada login gasta um e-mail.
+- **Arquivos modificados/criados:**
+  - `03-produto/supabase/migrations/0003_acesso_administrativo.sql`
+  - `03-produto/supabase/resend.md`, `03-produto/supabase/README.md`
+  - `03-produto/app/conta.js`, `app.js`, `style.css`
+  - `03-produto/app/tools/qa-app.mjs`
+
+### [2026-09-20] Integração do Link Real de Checkout da Payt na Página de Vendas
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `05-checkout/`, `06-entrega/`
+- **Tipo:** `feat` / `marketing`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Configuração do link real de checkout da Payt (`https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9`) nos botões de CTA da página de vendas (`04-pagina/index.html`).
+  - Atualização do botão principal de oferta (`#btnMainOffer`) e da variável centralizada `PAYT_CHECKOUT_URL` no script client-side.
+  - Registro da URL oficial nos documentos operacionais `05-checkout/cadastro-payt.md`, `06-entrega/publicacao.md` e `PROGRESSO.md`.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `05-checkout/cadastro-payt.md`
+  - `06-entrega/publicacao.md`
+  - `PROGRESSO.md`
+
+### [2026-09-20] Login por Link Mágico e Banco de Dados (Supabase)
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/supabase/`, `.gitignore`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **Decisão:** o app deixa de ser link aberto. Só entra quem comprou, e os dados
+  da pessoa passam a acompanhá-la entre aparelhos. Em troca, o app passa a
+  **exigir internet** — a página de vendas não pode mais prometer uso offline.
+- **O que foi feito:**
+  - **Projeto Supabase `Prot+`** (`zhbvlqlkdpbtqvctrerw`, região `sa-east-1`).
+  - **Banco:** 6 tabelas (`compras`, `perfis`, `favoritos`, `despensa`,
+    `consumo`, `semanas`), RLS em todas, função `tenho_acesso()` e trigger que
+    cria o perfil junto com o usuário.
+  - **Controle de acesso em três travas:** cadastro público desligado, usuário
+    criado apenas pelo webhook da compra, e checagem de compra ativa a cada
+    abertura — reembolso corta o acesso sozinho.
+  - **Isolamento verificado em teste:** com 3 favoritos e 2 compras no banco,
+    cada conta enxergou apenas os próprios (2 e 1), e a conta reembolsada
+    recebeu `tenho_acesso() = false`.
+  - **Login por link mágico** (`conta.js`): sem senha, sem "esqueci minha senha".
+    Telas de entrada, link enviado, sem compra ativa, erro e sem conexão.
+  - **Sincronização:** favoritos, meta, objetivo, consumo do dia, despensa e
+    cardápio da semana passam a viver no banco. O envio é agrupado e manda só o
+    que mudou; o cache local existe apenas para a tela pintar na hora.
+  - **Cache separado por usuário:** dois e-mails no mesmo celular não veem os
+    dados um do outro nem por um instante.
+  - **Edge Function `payt-webhook`:** cria o acesso na compra aprovada e derruba
+    em reembolso. Como a Payt ainda não tem webhook documentado, a leitura dos
+    campos é tolerante e o payload cru fica guardado para ajuste depois da
+    primeira compra de teste.
+  - **Cliente Supabase hospedado por nós** (`vendor/supabase.js`), sem depender
+    de CDN em tempo de execução.
+  - **Endurecimento apontado pelo verificador da Supabase:** `criar_perfil()` e
+    `marcar_atualizacao()` estavam expostas como endpoints REST; `EXECUTE` foi
+    revogado (migration `0002`).
+  - **Credencial de QA fora do Git:** `.qa-credenciais` no `.gitignore`; a suíte
+    recusa rodar sem a variável de ambiente.
+- **Correções:**
+  - **Monitor Diário zerava 3 horas cedo:** a data era calculada em UTC, então às
+    21h no horário de Brasília o app já achava que era outro dia e apagava o
+    consumo da pessoa. Passou a usar `America/Sao_Paulo`, igual ao banco.
+  - **Tela branca sem internet:** a abertura ficava pendurada esperando o
+    servidor. Agora detecta a falta de rede, explica o que houve e reabre sozinha
+    quando a conexão volta.
+- **QA:** suíte reescrita para autenticar antes de testar e conferir cada ação
+  **no banco**, não só na tela. 35 verificações, 0 falhas, 12 prints.
+- **Arquivos modificados/criados:**
+  - `03-produto/supabase/migrations/0001_esquema_inicial.sql`, `0002_restringir_execucao_de_funcoes.sql`
+  - `03-produto/supabase/functions/payt-webhook/index.ts`, `03-produto/supabase/README.md`
+  - `03-produto/app/conta.js`, `config.js`, `vendor/supabase.js`
+  - `03-produto/app/app.js`, `index.html`, `style.css`, `service-worker.js`
+  - `03-produto/app/tools/qa-app.mjs`, `03-produto/app/qa.md`, `03-produto/app/qa/`
+  - `06-entrega/publicacao.md`, `.gitignore`
+
+### [2026-09-20] Criação de Imagens 800x800 e Fichas de Cadastro de Produtos na Payt
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `05-checkout/`
+- **Tipo:** `feat` / `marketing`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Geração e padronização das imagens em alta definição e formato quadrado exato de 800x800 pixels para o Produto Principal e os 3 Order Bumps da esteira Payt.
+  - Redimensionamento e otimização das imagens fotográficas em `05-checkout/imagens-payt/` (`01_prot_plus_produto_principal_800x800.jpg`, `02_order_bump_marmitas_proteicas_800x800.jpg`, `03_order_bump_air_fryer_proteica_800x800.jpg` e `04_order_bump_saladas_proteicas_800x800.jpg`).
+  - Criação da imagem oficial única de checkout na dimensão exata exigida pela Payt: **650x290 pixels** (`05-checkout/imagens-payt/checkout_payt_650x290.jpg`), com branding Prot+, mockup gastronômico, checklist e selo de 45 dias.
+  - Criação do documento completo `05-checkout/cadastro-payt.md` com nomes de alta conversão, headlines, precificação (R$ 27,50 principal, R$ 7,89 bumps 1 e 2, R$ 9,90 bump 3) e copies prontas para copiar e colar diretamente no painel da Payt.
+- **Arquivos modificados/criados:**
+  - `05-checkout/cadastro-payt.md`
+  - `05-checkout/imagens-payt/checkout_payt_650x290.jpg`
+  - `05-checkout/imagens-payt/01_prot_plus_produto_principal_800x800.jpg`
+  - `05-checkout/imagens-payt/02_order_bump_marmitas_proteicas_800x800.jpg`
+  - `05-checkout/imagens-payt/03_order_bump_air_fryer_proteica_800x800.jpg`
+  - `05-checkout/imagens-payt/04_order_bump_saladas_proteicas_800x800.jpg`
+
 ### [2026-09-20] Publicação e Deploy na Hostinger: lp.comersemprebem.site e comersemprebem.site
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`, `03-produto/`, `06-entrega/`
