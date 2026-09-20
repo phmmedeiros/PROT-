@@ -35,6 +35,21 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Segunda Dobra de Alto Impacto: Slider Infinito de Receitas em Movimento e Stack de Valor
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/index.html`
+- **Tipo:** `feat` / `ui` / `conversion`
+- **Commit:** `e316075`
+- **O que foi feito:**
+  - Criação da nova Segunda Dobra visual focada em reter a atenção e acelerar o impulso de compra:
+    - Carrossel infinito animado (CSS Marquee contínuo para a esquerda) com 10 receitas reais do acervo (duplicadas para loop perfeito de 20 cards), com foto apetitosa, nome e badge de proteína, transmitindo imediatamente a percepção de abundância gastronômica.
+    - Seção "ISSO É TUDO O QUE VOCÊ VAI RECEBER" com visual stack claro dos 4 componentes do produto (App PWA, 30 sobremesas, método anti-louça de 15 min e 3 bônus).
+    - Inclusão do gancho de curiosidade ("escorregador") convidando o prospect a continuar a rolagem para entender a química do mecanismo culinário.
+- **Arquivos modificados:**
+  - `04-pagina/index.html`
+
+---
+
 ### [2026-09-20] Otimização Mobile Direct Response Extrema: Foto da Persona, Remoção de Menu e Efeito No-Brainer
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/index.html`, `04-pagina/images/`

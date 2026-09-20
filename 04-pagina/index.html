@@ -224,56 +224,149 @@
       margin-top: 3px;
     }
 
-    /* OFERTA ANTECIPADA (IMPULSE BUY BOX) */
-    .fast-offer-banner {
+    /* SEGUNDA DOBRA: O SLIDER INFINITO COM FOTOS EM MOVIMENTO (MARQUEE) */
+    .what-you-get-section {
       background: #fff;
-      border: 2px dashed #f59e0b;
-      border-radius: 20px;
-      padding: 20px 16px;
-      margin: 24px auto 0;
-      text-align: center;
-      max-width: 600px;
-      background: #fffdf7;
+      padding: 44px 0 48px;
+      border-bottom: 1px solid var(--line);
     }
-    .badge-fast {
-      background: #f59e0b;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 900;
-      padding: 4px 10px;
-      border-radius: 99px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .recipe-marquee-wrap {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      overflow: hidden;
+      position: relative;
+      padding: 14px 0 20px;
     }
-    .fast-offer-banner p {
-      font-size: 14px;
+    .recipe-marquee-wrap::before, .recipe-marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 34px;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .recipe-marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, #fff, transparent);
+    }
+    .recipe-marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, #fff, transparent);
+    }
+    .recipe-marquee-track {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      animation: marqueeLeft 30s linear infinite;
+      will-change: transform;
+    }
+    .recipe-marquee-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes marqueeLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-card {
+      flex: 0 0 170px;
+      width: 170px;
+      background: var(--cream);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 22px rgba(23, 61, 49, 0.08);
+      transition: transform 0.2s ease;
+    }
+    .marquee-card:hover {
+      transform: translateY(-3px);
+    }
+    .marquee-card img {
+      width: 100%;
+      aspect-ratio: 1.15;
+      object-fit: cover;
+      display: block;
+    }
+    .marquee-card-info {
+      padding: 10px 12px 12px;
+    }
+    .marquee-card-info b {
+      display: block;
+      font-size: 13px;
+      line-height: 1.25;
       color: var(--ink);
-      margin: 10px 0 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 800;
     }
-    .fast-price {
-      margin-bottom: 14px;
+    .marquee-badge {
+      display: inline-block;
+      color: #fff;
+      background: var(--orange);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 2.5px 8px;
+      border-radius: 99px;
+      margin-top: 5px;
+      letter-spacing: 0.3px;
     }
-    .fast-price .de {
+
+    /* STACK VISUAL DO QUE O CLIENTE GANHA / RECEBE */
+    .unlocked-stack {
+      display: grid;
+      gap: 10px;
+      margin: 22px auto 26px;
+      max-width: 600px;
+    }
+    .stack-item {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      text-align: left;
+    }
+    .stack-item .s-icon {
+      font-size: 26px;
+      flex: 0 0 32px;
+      display: grid;
+      place-items: center;
+    }
+    .stack-item b {
+      display: block;
+      font-size: 15px;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    .stack-item span {
       font-size: 13px;
       color: var(--muted);
-      text-decoration: line-through;
-      margin-right: 8px;
-    }
-    .fast-price .por {
-      font-size: 24px;
-      color: var(--green);
-      font-weight: 900;
-    }
-    .fast-price .por strong {
-      font-size: 32px;
-      color: var(--green);
-      letter-spacing: -1px;
-    }
-    .fast-price .taxa {
+      line-height: 1.35;
       display: block;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
+    }
+
+    /* GANCHO DE CURIOSIDADE (ESCORREGADOR PARA CONTINUAR LENDO) */
+    .curiosity-hook {
+      background: linear-gradient(135deg, var(--peach) 0%, #fff7ef 100%);
+      border: 1.5px dashed var(--orange);
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    .curiosity-hook p {
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .curiosity-hook strong {
+      color: var(--orange);
     }
 
     /* SEÇÃO DE PROBLEMA & DORES OCULTAS */
@@ -687,7 +780,7 @@
     ⚠️ ATENÇÃO: SE VOCÊ ESTÁ CANSADO DE ENGOLIR FRANGO SECO E OVO COZIDO, LEIA ISTO AGORA
   </div>
 
-  <!-- HERO: O IMPACTO VISCERAL E A FOTO DA PERSONA -->
+  <!-- PRIMEIRA DOBRA: HERO COM A FOTO DA PERSONA E PROMESSA VISCERAL -->
   <header class="hero" id="topo">
     <div class="wrap">
       <span class="eyebrow">CHEGA DE ENGOLIR FRANGO SECO COM ÁGUA NA GARGANTA</span>
@@ -740,19 +833,224 @@
   </div>
 
   <main>
-    <!-- OFERTA ANTECIPADA: CAPTURA DO IMPULSO IMEDIATO (SEM PRECISAR ROLAR ATÉ O FIM) -->
-    <div class="wrap">
-      <div class="fast-offer-banner">
-        <span class="badge-fast">🔥 LIBERAÇÃO IMEDIATA HOJE</span>
-        <p>Acesso vitalício ao <strong>Aplicativo Prot+</strong> com as 120 receitas proteicas + 4 ferramentas de bolso + 3 bônus:</p>
-        <div class="fast-price">
-          <span class="de">De R$ 147,00</span>
-          <span class="por">Por apenas <strong>R$ 27,50</strong></span>
-          <span class="taxa">(Pagamento Único · Menos de R$ 0,90 por dia no mês)</span>
+    <!-- SEGUNDA DOBRA: SLIDER INFINITO EM MOVIMENTO PARA A ESQUERDA + O QUE VOCÊ VAI RECEBER -->
+    <section class="what-you-get-section">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="eyebrow" style="color: var(--green); background: var(--mint);">ISSO É TUDO O QUE VOCÊ VAI RECEBER</span>
+          <h2>Veja um pouco do que você vai devorar todos os dias sem um pingo de culpa:</h2>
+          <p>Mais de 120 preparos calculados na grama com sabor de comida de delivery e até 68g de proteína pura para secar o corpo e queimar gordura.</p>
         </div>
-        <a class="cta" href="#oferta">👉 QUERO APROVEITAR POR R$ 27,50</a>
       </div>
-    </div>
+
+      <!-- SLIDER INFINITO CONTÍNUO DESLIZANDO PARA A ESQUERDA -->
+      <div class="recipe-marquee-wrap">
+        <div class="recipe-marquee-track">
+          <!-- CARD 1: Crepioca Crocante -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-002.png" alt="Crepioca Folhada com Queijo">
+            <div class="marquee-card-info">
+              <b>Crepioca Crocante</b>
+              <span class="marquee-badge">29,8g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 2: Frango Dourado ao Molho -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-001.png" alt="Frango Suculento ao Molho Dourado">
+            <div class="marquee-card-info">
+              <b>Frango ao Molho Dourado</b>
+              <span class="marquee-badge">45g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 3: Cheesecake de Morango -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-002.png" alt="Cheesecake Cremoso de Morango">
+            <div class="marquee-card-info">
+              <b>Cheesecake de Morango</b>
+              <span class="marquee-badge">22g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 4: Tilápia com Purê Aveludado -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-003.png" alt="Tilápia com Purê Aveludado">
+            <div class="marquee-card-info">
+              <b>Tilápia com Purê</b>
+              <span class="marquee-badge">35g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 5: Milkshake de Cacau -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-014.png" alt="Milkshake Anabólico de Cacau">
+            <div class="marquee-card-info">
+              <b>Milkshake de Cacau</b>
+              <span class="marquee-badge">32g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 6: Gelato Dark Proteico -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-014.png" alt="Gelato Dark Proteico">
+            <div class="marquee-card-info">
+              <b>Gelato Dark Chocolate</b>
+              <span class="marquee-badge">24g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 7: Panqueca Doce Vulcão -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-001.png" alt="Panqueca Doce Vulcão de Banana">
+            <div class="marquee-card-info">
+              <b>Panqueca Doce Vulcão</b>
+              <span class="marquee-badge">23,4g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 8: Frango com Legumes ao Molho -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-015.png" alt="Frango Especial com Legumes">
+            <div class="marquee-card-info">
+              <b>Frango Dourado Especial</b>
+              <span class="marquee-badge">48g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 9: Mousse Proteico Aveludado -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-001.png" alt="Mousse Aveludado Proteico">
+            <div class="marquee-card-info">
+              <b>Mousse Aveludado</b>
+              <span class="marquee-badge">20g Proteína</span>
+            </div>
+          </div>
+
+          <!-- CARD 10: Hambúrguer Caseiro Fit -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-020.png" alt="Hambúrguer Caseiro Fit com Queijo">
+            <div class="marquee-card-info">
+              <b>Hambúrguer Fit Caseiro</b>
+              <span class="marquee-badge">42g Proteína</span>
+            </div>
+          </div>
+
+          <!-- ================= DUPLICAÇÃO EXATA PARA O LOOP INFINITO ================= -->
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-002.png" alt="Crepioca Folhada com Queijo">
+            <div class="marquee-card-info">
+              <b>Crepioca Crocante</b>
+              <span class="marquee-badge">29,8g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-001.png" alt="Frango Suculento ao Molho Dourado">
+            <div class="marquee-card-info">
+              <b>Frango ao Molho Dourado</b>
+              <span class="marquee-badge">45g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-002.png" alt="Cheesecake Cremoso de Morango">
+            <div class="marquee-card-info">
+              <b>Cheesecake de Morango</b>
+              <span class="marquee-badge">22g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-003.png" alt="Tilápia com Purê Aveludado">
+            <div class="marquee-card-info">
+              <b>Tilápia com Purê</b>
+              <span class="marquee-badge">35g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-014.png" alt="Milkshake Anabólico de Cacau">
+            <div class="marquee-card-info">
+              <b>Milkshake de Cacau</b>
+              <span class="marquee-badge">32g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-014.png" alt="Gelato Dark Proteico">
+            <div class="marquee-card-info">
+              <b>Gelato Dark Chocolate</b>
+              <span class="marquee-badge">24g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/CL-001.png" alt="Panqueca Doce Vulcão de Banana">
+            <div class="marquee-card-info">
+              <b>Panqueca Doce Vulcão</b>
+              <span class="marquee-badge">23,4g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-015.png" alt="Frango Especial com Legumes">
+            <div class="marquee-card-info">
+              <b>Frango Dourado Especial</b>
+              <span class="marquee-badge">48g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/SOB-001.png" alt="Mousse Aveludado Proteico">
+            <div class="marquee-card-info">
+              <b>Mousse Aveludado</b>
+              <span class="marquee-badge">20g Proteína</span>
+            </div>
+          </div>
+          <div class="marquee-card">
+            <img src="../03-produto/app/images/AJ-020.png" alt="Hambúrguer Caseiro Fit com Queijo">
+            <div class="marquee-card-info">
+              <b>Hambúrguer Fit Caseiro</b>
+              <span class="marquee-badge">42g Proteína</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <!-- O PACOTE COMPLETO QUE VOCÊ RECEBE (VALUE STACK VISUAL) -->
+        <div class="unlocked-stack">
+          <div class="stack-item">
+            <div class="s-icon">📲</div>
+            <div>
+              <b>Aplicativo PWA de Bolso</b>
+              <span>120 preparos no seu celular com busca inteligente e modo offline.</span>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="s-icon">🍰</div>
+            <div>
+              <b>30 Sobremesas Anti-Compulsão</b>
+              <span>Doces densos com até 30g de proteína que matam a fissura da noite.</span>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="s-icon">🍳</div>
+            <div>
+              <b>Método Anti-Louça (15 min)</b>
+              <span>Pratos de 1 panela só para quem não tem tempo a perder na pia.</span>
+            </div>
+          </div>
+          <div class="stack-item">
+            <div class="s-icon">🎁</div>
+            <div>
+              <b>3 Bônus Estratégicos Inclusos</b>
+              <span>Fichas de Treino, Calculadora de Déficit e o Manual do Whey Caseiro.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- O GANCHO DE CURIOSIDADE QUE PUXA PARA A PRÓXIMA SEÇÃO -->
+        <div class="curiosity-hook">
+          <p>
+            👇 Mas como é possível um prato ter gosto de "gordice" do iFood sem farinha branca nem açúcar? <strong>Veja a verdade revelada abaixo:</strong>
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- SEÇÃO DE DORES OCULTAS: TOCANDO NA FERIDA -->
     <section class="section problem">
@@ -1013,7 +1311,7 @@
     <section class="section" id="oferta">
       <div class="wrap">
         <div class="offer-box">
-          <span class="badge-fast">🔥 ACESSO VITALÍCIO LIBERADO</span>
+          <span class="badge-fast" style="background: var(--orange);">🔥 ACESSO VITALÍCIO LIBERADO</span>
           <h2>Tudo o que você precisa para bater a proteína com prazer por menos de 1 lanche do delivery.</h2>
           
           <ul class="checklist-offer">
@@ -1098,6 +1396,11 @@
         <details class="faq-item">
           <summary>Como recebo o acesso após o pagamento?</summary>
           <p>No mesmo segundo em que seu pagamento for aprovado (no PIX é instantâneo), você recebe na tela e no seu e-mail o link para abrir o aplicativo no celular e baixar todos os PDFs.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Como funciona a garantia de 45 dias?</summary>
+          <p>Se em até 45 dias você não amar o sabor das receitas ou achar que não valeu a pena, basta mandar uma mensagem para o nosso suporte e devolvemos 100% do seu dinheiro. Sem burocracia.</p>
         </details>
 
         <div class="center" style="margin-top: 24px; text-align: center;">
