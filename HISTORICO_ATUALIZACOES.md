@@ -35,6 +35,43 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-20] Webhook v5: Formato Real da Payt, Testes do Painel Ignorados e Chave Única Exigida
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/supabase/`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Ao salvar o postback na Payt, ela disparou dois testes reais. A v3 criou conta e
+    enviou e-mail ao comprador fictício deles (`yoda@testsuser.com`). Rastro apagado;
+    o payload foi salvo como `exemplo-postback-payt-v1.json` (chave mascarada) e
+    virou o contrato de referência.
+  - **v5 lê o formato "PayT V1" de verdade:** `test` → nada criado; `integration_key`
+    → segunda trava (401 se ausente/errada); `transaction.total_price` → centavos;
+    `customer.fake_email` → acesso criado sem e-mail; `order_bumps` → `compras.bumps`;
+    `status` e `transaction.payment_status` → o mais severo manda.
+  - **Seis cenários contra produção com o payload real:** teste do painel ignorado;
+    chave errada/ausente → 401; compra → conta + valor + 2 bumps + e-mail entregue;
+    reembolso do mesmo pedido → `reembolsado`; e-mail falso → acesso sem envio.
+  - Confirmado no banco: reembolso de um pedido **não** derruba quem tem outro ativo.
+- **Arquivos:** `supabase/functions/payt-webhook/index.ts`,
+  `supabase/functions/payt-webhook/exemplo-postback-payt-v1.json`, `supabase/README.md`.
+
+### [2026-09-20] Mockup 3D do App Prot+ no Box de Oferta e Deploy Hostinger
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `06-entrega/`
+- **Tipo:** `feat` / `style`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Criação de mockup 3D fotorealista de smartphone com a interface do app Prot+ (dark mode, pratos gourmet com macros reais calculados de 42g proteína e badges flutuantes de vidro).
+  - Otimização da imagem para WebP de alto desempenho (`images/app-mockup-oferta.webp`, 82 KB).
+  - Inserção do mockup logo abaixo do título `Tudo o que você precisa para bater a proteína com prazer por menos de 1 lanche do delivery.` na seção de oferta principal (`#oferta`).
+  - Adição de pills de benefícios do aplicativo: *📱 App PWA no Celular*, *❄️ Geladeira Inteligente*, *📊 Tabela TACO Auditada*, *⚡ 100% Offline*.
+  - Deploy estático em produção na Hostinger (`https://lp.comersemprebem.site/`) e purga imediata de cache CDN.
+- **Arquivos modificados/criados:**
+  - `04-pagina/images/app-mockup-oferta.webp`
+  - `04-pagina/index.html`
+  - `HISTORICO_ATUALIZACOES.md`
+
 ### [2026-09-20] Webhook Reconhece a Chave Única da Payt (v4)
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/supabase/`

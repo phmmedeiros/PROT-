@@ -174,11 +174,26 @@ echo "https://zhbvlqlkdpbtqvctrerw.supabase.co/functions/v1/payt-webhook?secret=
 **Eventos a marcar na Payt:** compra aprovada/paga, reembolso, chargeback e
 cancelamento.
 
-**Chave única do postback** (gerada pela Payt, guardada em `.segredos` e no
-Vault como `PAYT_CHAVE_UNICA`): o webhook a **reconhece e registra** em qual
-cabeçalho ou campo ela chega — a resposta traz `chave_payt` — mas **não a
-exige**, porque o lugar exato só se confirma numa chamada real. Quando isso
-acontecer, ela vira segunda trava além do `secret` da URL.
+### Formato "PayT V1" — confirmado em 20/09/2026
+
+Ao salvar o postback, a Payt dispara chamadas de teste. O corpo real recebido
+está em `functions/payt-webhook/exemplo-postback-payt-v1.json` (chave única
+mascarada). O que o webhook lê:
+
+| campo | uso |
+|---|---|
+| `test` | `true` nos disparos do painel → **nada é criado**, só log |
+| `integration_key` | a chave única (`PAYT_CHAVE_UNICA`) → **segunda trava**: ausente ou errada → 401 |
+| `transaction_id` | pedido; reenvio não duplica |
+| `status` e `transaction.payment_status` | o mais severo manda: `refunded`/`chargeback` em qualquer um corta o acesso |
+| `transaction.total_price` | valor em **centavos** |
+| `customer.email`, `customer.name` | comprador |
+| `customer.fake_email` | `true` → acesso criado, **e-mail não enviado** (não bater em endereço falso) |
+| `order_bumps[].product` | gravados em `compras.bumps` |
+
+Antes disso a v3 chegou a criar conta e enviar e-mail para o comprador
+fictício da Payt (`yoda@testsuser.com`): o rastro foi apagado e o campo `test`
+passou a ser respeitado.
 
 ### Estado verificado sem o segredo no painel
 
