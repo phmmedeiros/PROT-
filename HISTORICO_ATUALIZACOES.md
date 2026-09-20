@@ -39,7 +39,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/supabase/`
 - **Tipo:** `feat`
-- **Commit:** *Local / Em andamento*
+- **Commit:** `a6008fa`
 - **O que foi feito:**
   - O painel de segredos das Edge Functions não é alcançável por MCP nem por CLI sem
     token pessoal. Os quatro segredos (`PAYT_WEBHOOK_SECRET`, `CRON_SECRET`,
