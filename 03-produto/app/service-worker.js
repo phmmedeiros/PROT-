@@ -14,7 +14,7 @@
  * aparelhos que já visitaram o site descartem o cache antigo.
  */
 
-const VERSAO = 'v6';
+const VERSAO = 'v7';
 const CACHE_ESTRUTURA = `prot-plus-estrutura-${VERSAO}`;
 const CACHE_FOTOS = `prot-plus-fotos-${VERSAO}`;
 
@@ -35,7 +35,12 @@ const ESTRUTURA = [
   '../dados/receitas.json',
   '../dados/dicas-chef.json',
   '../dados/bonus.json',
+  '../dados/extras.json',
 ];
+
+/* Os PDFs da Estante ficam de fora de propósito: somam ~4 MB e fariam toda
+   primeira abertura do app esperar por eles. São baixados quando a pessoa
+   abre o livro, e o navegador guarda a partir daí. */
 
 self.addEventListener('install', (evento) => {
   evento.waitUntil(

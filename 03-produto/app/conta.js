@@ -79,6 +79,18 @@ window.ProtConta = (() => {
 
   /* Sessão administrativa (Paulo ou Pedro) entra sem compra. O app avisa na
      tela para não confundirem o que eles veem com o que a cliente vê. */
+  /** Quais order bumps esta pessoa comprou. Devolve a lista de códigos e nomes,
+   *  ou `null` se a pergunta falhou — e aí a tela diz isso em vez de trancar
+   *  quem pagou. Lista vazia é resposta legítima: comprou só o principal. */
+  async function meusBumps() {
+    const { data, error } = await cliente.rpc('meus_bumps');
+    if (error) {
+      console.error('Não foi possível ler os extras:', error.message);
+      return null;
+    }
+    return data || [];
+  }
+
   async function souAdmin() {
     const { data, error } = await cliente.rpc('sou_admin');
     if (error) return false;
@@ -493,6 +505,7 @@ window.ProtConta = (() => {
     sessaoAtual,
     temAcesso,
     souAdmin,
+    meusBumps,
     sair,
     limparEnderecoDeRetorno,
     carregarEstado,

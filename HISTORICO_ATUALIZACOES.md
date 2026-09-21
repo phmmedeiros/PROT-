@@ -35,6 +35,34 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-21] Minha Estante: os entregáveis passam a ser canalizados pelo app
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/dados/`, `03-produto/supabase/`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento*
+- **Decisão do Paulo:** os bumps continuam à venda, e toda a entrega passa a acontecer dentro do aplicativo. Os livros são abertos em PDF a partir do app, inclusive os extras.
+- **A virada:** o dado já existia desde a primeira venda — o webhook grava cada bump em `compras.bumps`. Faltava alguém perguntar. A função `meus_bumps()` é essa pergunta, e a Estante é ela virando tela.
+- **O que foi feito:**
+  - Banco (`0008_meus_bumps.sql`): função `meus_bumps()` no padrão de `tenho_acesso()` — `security definer`, `stable`, execução só para quem tem sessão. Exige `status = 'ativo'`, então reembolso e chargeback já cortam o extra pelo mesmo caminho que cortam o app.
+  - App: nova tela **Minha Estante** (`#/estante`), na aba Bônus, com os 4 livros de receitas e os 3 extras do checkout. Extra comprado aparece "Liberado"; extra não comprado aparece trancado, legível, com preço — é vitrine, não parede.
+  - App: enquanto as receitas dos extras não existem, quem comprou vê o extra liberado com o aviso de que o conteúdo está sendo finalizado, sem custo a mais. É a alternativa honesta a não mostrar nada.
+  - App: se a consulta ao banco falhar, a Estante avisa em vez de trancar quem pagou.
+  - Catálogo em `03-produto/dados/extras.json`, com os 3 códigos conferidos contra os que a Payt registrou (`45OZ5L`, `RVYG8R`, `4ZMX9L`). O casamento é por código, com o nome como reserva — cada código só apareceu uma vez até agora.
+  - Os 4 PDFs passaram a viajar dentro do pacote do app, servidos pelo caminho `../pdf/`, que funciona local e publicado pelo mesmo motivo que `../dados/`. A página de obrigado segue oferecendo os PDFs, como rede de segurança para quem não consegue entrar.
+  - Service worker `v6` → `v7`, com `extras.json` no precache. Os PDFs ficam fora de propósito: somam ~4 MB e atrasariam toda primeira abertura.
+  - QA: 4 verificações novas da Estante e um segundo print (`qa/14-estante`, `qa/13-estante`).
+- **Como foi testado:**
+  - As 6 combinações de posse rodadas contra os dados reais do banco (Debora, Mary Stella, só principal, consulta falha, admin, código trocado com nome igual) — todas corretas.
+  - Um bump foi colocado temporariamente na compra de teste `qa@prot.teste` para conferir o estado destravado de ponta a ponta (webhook → função → tela) e **revertido em seguida**; conferido que as compras reais ficaram intactas.
+  - QA completo verde local e **contra produção**, em duas rodadas seguidas, com zero falhas e nenhum erro de console.
+- **Aprendizado registrado:** a primeira rodada de QA contra produção falhou porque o cache do servidor ainda servia o app antigo. As conferências com `?cb=` furavam esse cache e davam falso positivo — o navegador da cliente, não. **Depois de publicar, limpar o cache do site e conferir com a URL limpa.**
+- **Arquivos modificados/criados:**
+  - `03-produto/supabase/migrations/0008_meus_bumps.sql`
+  - `03-produto/dados/extras.json`
+  - `03-produto/app/app.js`, `conta.js`, `style.css`, `service-worker.js`
+  - `03-produto/app/tools/preparar-publicacao.py`, `tools/qa-app.mjs`
+- **Pendente:** escrever as ~190 receitas dos 3 extras. A entrega já está pronta e esperando: assim que cada livro existir, basta preencher o campo `arquivo` no `extras.json` e publicar.
+
 ### [2026-09-21] Página de obrigado: os 4 downloads de PDF voltaram a funcionar
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`

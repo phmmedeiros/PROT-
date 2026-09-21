@@ -693,6 +693,46 @@ async function principal() {
   checar('calculadora metabólica', calculo.includes('|'), calculo);
   await print('11-calculadora');
 
+  // --- 8.1 Estante (a conta de QA nao tem nenhum bump: tudo deve vir trancado) ---
+  resultados.push('Estante');
+  const chamada = await sessao.avaliar(
+    "return document.querySelector('.chamada-estante')?.getAttribute('href') || '';"
+  );
+  checar('Bônus leva para a Estante', chamada === '#/estante', chamada || 'sem chamada');
+
+  await ir('#/estante');
+  const livros = await sessao.avaliar('return document.querySelectorAll(".livro:not(.extra)").length;');
+  checar('Estante lista os livros em PDF', livros === 4, `${livros} livros`);
+
+  // Os PDFs sao buscados pela propria pagina: assim o teste confere o caminho
+  // relativo `../pdf/` exatamente como o navegador da cliente vai resolve-lo.
+  const pdfs = await sessao.avaliar(`
+    const links = [...document.querySelectorAll('.livro:not(.extra) .livro-acao')];
+    const status = await Promise.all(links.map(async (a) => {
+      try { const r = await fetch(a.href, { method: 'HEAD' }); return r.status; }
+      catch { return 0; }
+    }));
+    return status.join(',');
+  `);
+  checar('todo livro abre de verdade', pdfs === '200,200,200,200', pdfs);
+
+  const extras = await sessao.avaliar(`
+    return [
+      document.querySelectorAll('.livro.extra').length,
+      document.querySelectorAll('.livro.extra.trancado').length,
+      document.querySelectorAll('.livro.extra.meu').length,
+    ].join('/');
+  `);
+  checar('extras aparecem trancados para quem não comprou', extras === '3/3/0', `${extras} (total/trancados/meus)`);
+  await print('13-estante');
+
+  // O print de cima mostra os livros; a logica nova mora nos extras, entao
+  // vale um segundo print ja rolado ate eles.
+  await sessao.avaliar(
+    "document.querySelector('.livro.extra')?.scrollIntoView({ block: 'start' }); return 'ok';"
+  );
+  await print('14-extras');
+
   // --- 9. PWA ---
   resultados.push('PWA');
   // Buscado pela propria pagina, e nao pelo Node: assim o teste usa a mesma

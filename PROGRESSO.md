@@ -7,7 +7,7 @@
 **Manual da Equipe:** [`BOAS_PRATICAS_EQUIPE.md`](./BOAS_PRATICAS_EQUIPE.md)  
 **Diretrizes de IA:** [`AGENTS.md`](./AGENTS.md)
 
-**Última atualização:** 21/09/2026 — As duas primeiras clientes reais compraram e **nenhuma conseguiu entrar**: pediam o link dentro da janela de 30 s do Supabase e o app dizia que o envio falhou. Correções publicadas (app `v6` em `app.comersemprebem.site` e nova `obrigado.html` em `lp.comersemprebem.site`), visões `painel_acessos` / `resumo_acessos` ativas no banco. Falta falar com as duas clientes.
+**Última atualização:** 21/09/2026 — As duas primeiras clientes reais compraram e **nenhuma conseguiu entrar**: pediam o link dentro da janela de 30 s do Supabase e o app dizia que o envio falhou. Correções publicadas, visões `painel_acessos` / `resumo_acessos` ativas e **tela Minha Estante no ar** (app `v7`): os livros em PDF e os extras do checkout agora são entregues dentro do aplicativo, destravados pela compra. Falta o conteúdo dos 3 extras e falar com as duas clientes.
 
 
 ---
@@ -104,7 +104,7 @@
 ## 📌 Onde Paramos / Próximo Passo Imediato
 
 1. **Estado Atual:** app, login, banco, webhook da Payt e lembretes no ar. O circuito de pagamento já fechou com **duas compras reais** — mas o de acesso não: as duas clientes nunca entraram (ver `resumo_acessos`). Pendências, em ordem de urgência:
-   - **Order bumps vendidos sem entrega (mais grave).** Os 3 bumps estão ativos no checkout, mas não existe conteúdo de marmitas, air fryer ou saladas em lugar nenhum do projeto, e nada no app, na página ou no e-mail entrega bump. As duas clientes de 20/09 já compraram: Debora (Marmitas + Saladas) e Mary Stella (Air Fryer). Enquanto não houver conteúdo, cada venda nova aumenta o passivo.
+   - **Escrever as ~190 receitas dos 3 extras.** A entrega já está pronta e publicada (tela **Minha Estante**, no app): quem comprou o bump já vê o extra liberado, com o aviso de que o conteúdo está sendo finalizado. Falta o conteúdo — 60 marmitas, 50 de air fryer e 80 saladas com molhos. Quando cada livro existir, é só preencher `arquivo` em `03-produto/dados/extras.json` e publicar. Os PDFs saem do mesmo gerador das 120 receitas (`03-produto/pdf/gerar-pdfs.js`), que usa espaços reservados no lugar das fotos — não é preciso gerar imagem por receita.
    - **Falar com as duas clientes de 20/09** (Mary Stella e Debora). Os links delas expiraram em 1 hora; basta pedirem outro na tela do app. No mesmo contato, resolver o bump que cada uma pagou.
    - **Confirmar no painel da Payt** se o e-mail pós-compra está ativo e com que texto: o modelo em `06-entrega/payt-configuracao.md` ainda tem `[SEU-DOMINIO]`, `suporte@protplus.com.br` e `[SEU NÚMERO]` por preencher.
    - ~~Publicar as correções de 21/09~~ — **feito**: app `v6` em `https://app.comersemprebem.site` e `obrigado.html` em `https://lp.comersemprebem.site`, ambos conferidos no ar.

@@ -1,0 +1,70 @@
+{
+  "_comentario": "Catálogo da Estante do app. Os caminhos usam ../pdf/ de propósito: no ambiente local o app roda em 03-produto/app/ e os PDFs ficam em 03-produto/pdf/; publicado, o app fica na raiz do subdomínio e o navegador não deixa o .. subir acima dela, então ../pdf/ resolve para /pdf/. O mesmo vale para ../dados/. Um caminho, dois ambientes.",
+
+  "livros": [
+    {
+      "slug": "completo",
+      "titulo": "Livro Completo Prot+",
+      "subtitulo": "As 120 receitas reunidas em um volume",
+      "arquivo": "../pdf/receitas-prot-plus.pdf",
+      "tamanho": "2,0 MB"
+    },
+    {
+      "slug": "cafe-lanches",
+      "titulo": "Café da Manhã e Lanches",
+      "subtitulo": "40 receitas para começar o dia",
+      "arquivo": "../pdf/receitas-prot-plus-cafe-lanches.pdf",
+      "tamanho": "730 KB"
+    },
+    {
+      "slug": "almoco-jantar",
+      "titulo": "Almoço e Jantar Proteico",
+      "subtitulo": "50 receitas para as refeições principais",
+      "arquivo": "../pdf/receitas-prot-plus-almoco-jantar.pdf",
+      "tamanho": "878 KB"
+    },
+    {
+      "slug": "sobremesas",
+      "titulo": "Sobremesas e Doces Proteicos",
+      "subtitulo": "30 opções para matar a vontade de doce",
+      "arquivo": "../pdf/receitas-prot-plus-sobremesas.pdf",
+      "tamanho": "556 KB"
+    }
+  ],
+
+  "extras": [
+    {
+      "codigo": "45OZ5L",
+      "nome_payt": "Marmitas Proteicas da Semana — Guia de Congelamento & Praticidade",
+      "slug": "marmitas",
+      "icone": "🍱",
+      "titulo": "Marmitas Proteicas da Semana",
+      "subtitulo": "60 receitas + guia de congelamento",
+      "promessa": "Cozinhe 1h30 no domingo e garanta almoço e jantar com +40 g de proteína a semana inteira, sem carne seca nem frango borrachudo.",
+      "preco": "R$ 7,89",
+      "arquivo": null
+    },
+    {
+      "codigo": "RVYG8R",
+      "nome_payt": "Receitas Rápidas na Air Fryer Prot+ — Crocância Máxima em Minutos",
+      "slug": "air-fryer",
+      "icone": "🍟",
+      "titulo": "Receitas Rápidas na Air Fryer",
+      "subtitulo": "50 preparos crocantes em até 15 minutos",
+      "promessa": "Crocante por fora, macio por dentro e com zero óleo: frango empanado proteico, hambúrgueres artesanais, nuggets e petiscos sem sujeira na cozinha.",
+      "preco": "R$ 7,89",
+      "arquivo": null
+    },
+    {
+      "codigo": "4ZMX9L",
+      "nome_payt": "80 Saladas Proteicas & Molhos Artesanais Prot+",
+      "slug": "saladas",
+      "icone": "🥗",
+      "titulo": "80 Saladas Proteicas & Molhos",
+      "subtitulo": "80 combinações com +35 g de proteína",
+      "promessa": "Nunca mais salada com gosto de folha molhada: combinações fartas com os molhos Caesar Fit, Mostarda & Mel Proteico e Green Goddess.",
+      "preco": "R$ 9,90",
+      "arquivo": null
+    }
+  ]
+}

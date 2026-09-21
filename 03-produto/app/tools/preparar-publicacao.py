@@ -48,7 +48,11 @@ PASTAS = [
     ("vendor", "vendor"),
 ]
 
-JSONS = ["receitas.json", "dicas-chef.json", "bonus.json"]
+JSONS = ["receitas.json", "dicas-chef.json", "bonus.json", "extras.json"]
+
+# Os livros em PDF viajam junto: a Estante abre `../pdf/...`, que na raiz do
+# subdominio resolve para /pdf/ pelo mesmo motivo que `../dados/` funciona.
+PDF = APP.parent / "pdf"
 
 
 def main() -> int:
@@ -84,6 +88,10 @@ def main() -> int:
             z.write(DADOS / nome, f"dados/{nome}")
             total += 1
 
+        for arquivo in sorted(PDF.glob("*.pdf")):
+            z.write(arquivo, f"pdf/{arquivo.name}")
+            total += 1
+
     tamanho = destino.stat().st_size / 1024 / 1024
     print(f"pacote: {destino.relative_to(APP)}")
     print(f"arquivos: {total} | tamanho: {tamanho:.1f} MB")
@@ -91,7 +99,7 @@ def main() -> int:
     # Conferencia rapida do que entrou, por pasta.
     with zipfile.ZipFile(destino) as z:
         nomes = z.namelist()
-    for prefixo in ("images/w400/", "images/w900/", "images/icons/", "dados/", "vendor/"):
+    for prefixo in ("images/w400/", "images/w900/", "images/icons/", "dados/", "vendor/", "pdf/"):
         print(f"  {prefixo:<16} {sum(1 for n in nomes if n.startswith(prefixo))} arquivos")
 
     # Limpa pacotes antigos, deixando os 3 mais recentes.

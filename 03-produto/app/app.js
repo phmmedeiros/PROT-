@@ -127,19 +127,22 @@ function salvar() {
  * 3. Dados
  * ------------------------------------------------------------------ */
 
-const dados = { receitas: [], dicas: {}, bonus: null };
+const dados = { receitas: [], dicas: {}, bonus: null, estante: null, meusBumps: null };
 
 const porId = (id) => dados.receitas.find((receita) => receita.id === id);
 
 async function carregarDados() {
-  const [receitas, dicas, bonus] = await Promise.all([
+  const [receitas, dicas, bonus, estante] = await Promise.all([
     fetch('../dados/receitas.json').then((r) => r.json()),
     fetch('../dados/dicas-chef.json').then((r) => r.json()).catch(() => ({})),
     fetch('../dados/bonus.json').then((r) => r.json()),
+    // A Estante não pode derrubar o app: se faltar, o resto abre igual.
+    fetch('../dados/extras.json').then((r) => r.json()).catch(() => ({ livros: [], extras: [] })),
   ]);
   dados.receitas = receitas;
   dados.dicas = dicas;
   dados.bonus = bonus;
+  dados.estante = estante;
 }
 
 /* ------------------------------------------------------------------ *
@@ -1192,9 +1195,118 @@ function blocoWhey() {
 function telaBonus() {
   return `
     <div class="titulo-secao"><h2>✦ Central de Bônus</h2></div>
+    ${chamadaEstante()}
     ${blocoTreino()}
     ${blocoCalculadora()}
     ${blocoWhey()}`;
+}
+
+/* ------------------------------------------------------------------ *
+ * 5.4 Estante: os livros em PDF e os extras comprados no checkout
+ *
+ * Até 21/09/2026 o que a pessoa comprava no checkout além do app não
+ * chegava a lugar nenhum: o webhook guardava o bump em `compras.bumps` e
+ * ninguém perguntava. A Estante é essa pergunta virando tela. O que
+ * destrava cada extra é a função `meus_bumps()` no banco, não o navegador.
+ * ------------------------------------------------------------------ */
+
+const normalizar = (texto) => (texto || '').toLowerCase().replace(/\s+/g, ' ').trim();
+
+/** A Payt manda código e nome. Confiamos no código e usamos o nome como
+ *  reserva: cada código só apareceu uma vez até agora, e ainda não dá para
+ *  jurar que ele é fixo por produto em vez de gerado por pedido. */
+function tenhoOExtra(extra) {
+  if (estado.admin) return true;
+  if (!dados.meusBumps) return false;
+  return dados.meusBumps.some(
+    (meu) => meu.codigo === extra.codigo || normalizar(meu.nome) === normalizar(extra.nome_payt)
+  );
+}
+
+function chamadaEstante() {
+  const estante = dados.estante || { livros: [], extras: [] };
+  const meus = (estante.extras || []).filter(tenhoOExtra).length;
+  const recado = meus
+    ? `${estante.livros.length} livros de receitas + ${meus} ${meus === 1 ? 'extra seu' : 'extras seus'}`
+    : `${estante.livros.length} livros de receitas em PDF`;
+  return `
+    <a class="painel chamada-estante" href="#/estante">
+      <span class="chamada-icone" aria-hidden="true">📚</span>
+      <span class="chamada-texto">
+        <strong>Minha Estante</strong>
+        <small class="apagado">${esc(recado)}</small>
+      </span>
+      <span class="chamada-seta" aria-hidden="true">›</span>
+    </a>`;
+}
+
+function cartaoLivro(livro) {
+  return `
+    <article class="livro">
+      <span class="livro-capa" aria-hidden="true">PDF</span>
+      <span class="livro-texto">
+        <strong>${esc(livro.titulo)}</strong>
+        <small class="apagado">${esc(livro.subtitulo)} · ${esc(livro.tamanho)}</small>
+      </span>
+      <a class="livro-acao" href="${esc(livro.arquivo)}" target="_blank" rel="noopener">Abrir</a>
+    </article>`;
+}
+
+function cartaoExtra(extra) {
+  const meu = tenhoOExtra(extra);
+  const pronto = meu && extra.arquivo;
+
+  // Três situações, três conversas diferentes com a pessoa.
+  const acao = pronto
+    ? `<a class="livro-acao" href="${esc(extra.arquivo)}" target="_blank" rel="noopener">Abrir</a>`
+    : meu
+      ? `<span class="selo-liberado">Liberado</span>`
+      : `<span class="selo-trancado" aria-hidden="true">🔒</span>`;
+
+  const recado = pronto
+    ? ''
+    : meu
+      ? `<p class="aviso-extra">Este extra é seu. Estamos finalizando as receitas e elas aparecem
+           aqui assim que ficarem prontas — sem custo nenhum a mais.</p>`
+      : `<p class="apagado pequeno" style="margin:10px 0 0">Você não incluiu este extra na sua compra.
+           Para adicionar, fale com ${esc(PROT_CONFIG.emailSuporte)}.</p>`;
+
+  return `
+    <article class="livro extra ${meu ? 'meu' : 'trancado'}">
+      <span class="livro-capa" aria-hidden="true">${esc(extra.icone)}</span>
+      <span class="livro-texto">
+        <strong>${esc(extra.titulo)}</strong>
+        <small class="apagado">${esc(extra.subtitulo)}${meu ? '' : ` · ${esc(extra.preco)}`}</small>
+      </span>
+      ${acao}
+      <span class="livro-rodape">
+        <p class="apagado pequeno" style="margin:0">${esc(extra.promessa)}</p>
+        ${recado}
+      </span>
+    </article>`;
+}
+
+function telaEstante() {
+  const estante = dados.estante || { livros: [], extras: [] };
+  const livros = (estante.livros || []).map(cartaoLivro).join('');
+  const extras = (estante.extras || []).map(cartaoExtra).join('');
+
+  // A pergunta ao servidor falhou: melhor dizer isso do que trancar quem pagou.
+  const alerta =
+    dados.meusBumps === null && !estado.admin
+      ? `<p class="aviso-extra" style="margin:0 0 14px">Não conseguimos confirmar os seus extras agora.
+           Recarregue a tela em instantes — nada foi perdido.</p>`
+      : '';
+
+  return `
+    <div class="titulo-secao"><h2>📚 Minha Estante</h2></div>
+    ${alerta}
+    <p class="apagado pequeno" style="margin:0 0 14px">
+      Os livros abrem no leitor de PDF do seu aparelho. Dá para salvar e imprimir.
+    </p>
+    ${livros}
+    <div class="titulo-secao" style="margin-top:26px"><h2>✨ Extras do checkout</h2></div>
+    ${extras}`;
 }
 
 /* ------------------------------------------------------------------ *
@@ -1210,6 +1322,7 @@ const ROTAS = {
   semana: { aba: 'ferramentas', tela: telaSemana },
   monitor: { aba: 'ferramentas', tela: telaMonitor },
   bonus: { aba: 'bonus', tela: telaBonus },
+  estante: { aba: 'bonus', tela: telaEstante },
 };
 
 function rotaAtual() {
@@ -1763,6 +1876,11 @@ async function iniciar() {
 
   document.body.classList.remove('sem-sessao');
   estado.admin = await ProtConta.souAdmin();
+
+  // Quais extras esta pessoa comprou. Não trava a abertura: se a pergunta
+  // falhar, `meusBumps` fica null e a Estante avisa em vez de trancar quem
+  // pagou. Administrador não tem compra, e vê tudo para poder conferir.
+  dados.meusBumps = estado.admin ? [] : await ProtConta.meusBumps();
 
   // 3. Receitas, dicas e bônus: arquivos estáticos, iguais para todo mundo.
   try {

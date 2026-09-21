@@ -901,3 +901,89 @@ body.com-barra-fixa .view { padding-bottom: 96px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* ------------------------------------------------------------------ *
+ * Estante: livros em PDF e extras comprados no checkout
+ * ------------------------------------------------------------------ */
+
+.chamada-estante {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 16px;
+}
+.chamada-icone { font-size: 26px; line-height: 1; }
+.chamada-texto { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.chamada-texto strong { color: var(--verde); }
+.chamada-seta { font-size: 24px; color: var(--apagado); line-height: 1; }
+
+.livro {
+  display: grid;
+  grid-template-columns: 46px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--sombra);
+}
+.livro-capa {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--verde-claro);
+  color: var(--verde);
+  font-size: 20px;
+  font-weight: 800;
+}
+.livro .livro-capa:not(:empty) { font-size: 22px; }
+.livro-texto { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.livro-texto strong { color: var(--verde); }
+.livro-acao {
+  background: var(--laranja);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.livro-acao:hover { background: var(--laranja-escuro); }
+
+/* O rodapé ocupa a linha inteira, abaixo das três colunas. */
+.livro-rodape { grid-column: 1 / -1; }
+
+.selo-liberado {
+  background: var(--verde-claro);
+  color: var(--verde-2);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.selo-trancado { font-size: 20px; opacity: .45; }
+
+/* Trancado fica visivelmente mais apagado, mas continua legível: é vitrine,
+   não parede. Quem não comprou precisa entender o que deixou passar. */
+.livro.trancado { background: var(--fundo); box-shadow: none; }
+.livro.trancado .livro-capa { background: var(--linha); filter: grayscale(1); opacity: .7; }
+.livro.trancado .livro-texto strong { color: var(--apagado); }
+
+.aviso-extra {
+  background: #fff6ec;
+  border: 1px solid #f3d9bd;
+  color: #8a5520;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 10px 0 0;
+}
