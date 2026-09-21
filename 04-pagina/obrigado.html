@@ -161,6 +161,29 @@
       transform: translateY(-2px);
     }
     .btn-app span { font-size: 20px; }
+    /* Botão secundário: o caminho principal agora é o e-mail, não o app. */
+    .btn-app.secundario {
+      background: #fff;
+      color: var(--green);
+      border: 2px solid var(--green);
+      font-size: 15px;
+      box-shadow: none;
+    }
+    .btn-app.secundario:hover {
+      background: #f2f7f4;
+      transform: translateY(-2px);
+    }
+    .passos-acesso {
+      text-align: left;
+      margin: 0 auto 20px;
+      max-width: 420px;
+      padding-left: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .passos-acesso li { margin-bottom: 10px; }
+    .passos-acesso strong { color: var(--green); }
     .main-access-box small {
       display: block;
       color: var(--muted);
@@ -401,14 +424,20 @@
     <!-- Card de Acesso Principal (Destaque) -->
     <section class="main-access-box">
       <span class="tag-destaque">Acesso Imediato</span>
-      <h2>Aplicativo Prot+ no seu Celular</h2>
-      <p>Clique no botão abaixo para abrir o aplicativo diretamente no navegador do seu celular.</p>
-      
-      <a href="../app/" id="btnOpenApp" class="btn-app">
-        <span>📲</span> ABRIR APLICATIVO AGORA
+      <h2>Confira agora o seu e-mail</h2>
+      <p>Acabamos de enviar o seu link de acesso ao Prot+ para o mesmo e-mail que você usou na compra. Ele abre o aplicativo já liberado — não existe senha para criar.</p>
+
+      <ol class="passos-acesso">
+        <li>Abra a caixa de entrada desse e-mail. Se a mensagem não estiver lá, olhe também em <strong>Spam</strong> e <strong>Promoções</strong>.</li>
+        <li>Toque no link da mensagem. Ele vale por <strong>1 hora</strong> e funciona uma vez só.</li>
+        <li>O aplicativo abre liberado. Depois, siga as instruções abaixo para salvá-lo na tela inicial.</li>
+      </ol>
+
+      <a href="https://app.comersemprebem.site/" id="btnOpenApp" class="btn-app secundario">
+        <span>📲</span> NÃO ACHOU O E-MAIL? PEÇA OUTRO LINK
       </a>
-      
-      <small>Dica: Na primeira abertura, aguarde o carregamento e siga as instruções abaixo para salvar na tela inicial.</small>
+
+      <small>Na tela do aplicativo, digite o mesmo e-mail da compra e um link novo chega na hora. Se você acabou de comprar, espere um minuto antes de pedir outro: o primeiro já está a caminho.</small>
     </section>
 
     <!-- Instruções de Como Instalar na Tela Inicial -->
@@ -582,13 +611,16 @@
       }
     }
 
-    // Ajuste dinâmico de URL se for executado em servidor local ou público
+    // O app tem um endereço só: https://app.comersemprebem.site (definido no
+    // próprio href). Aqui embaixo é apenas a conveniência de abrir a cópia do
+    // repositório quando a página está sendo vista da pasta local — em
+    // produção o href não é tocado.
     window.addEventListener('DOMContentLoaded', () => {
       const openBtn = document.getElementById('btnOpenApp');
-      if (window.location.pathname.includes('/04-pagina/')) {
-        openBtn.href = '../03-produto/app/';
-      } else {
-        openBtn.href = '/app/';
+      if (window.location.hostname === 'localhost' || window.location.protocol === 'file:') {
+        openBtn.href = window.location.pathname.includes('/04-pagina/')
+          ? '../03-produto/app/'
+          : '/app/';
       }
     });
   </script>

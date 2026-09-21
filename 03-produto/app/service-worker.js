@@ -14,7 +14,7 @@
  * aparelhos que já visitaram o site descartem o cache antigo.
  */
 
-const VERSAO = 'v5';
+const VERSAO = 'v6';
 const CACHE_ESTRUTURA = `prot-plus-estrutura-${VERSAO}`;
 const CACHE_FOTOS = `prot-plus-fotos-${VERSAO}`;
 

@@ -35,6 +35,30 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-21] Acesso pós-compra: diagnóstico das duas primeiras clientes e correções
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/supabase/`, `04-pagina/`
+- **Tipo:** `fix`
+- **Commit:** *Local / Em andamento*
+- **Motivo:** cruzamento de `compras` com `auth.users` mostrou que as **duas primeiras clientes reais** (20/09, 17h39 e 18h19) tiveram conta criada e link enviado, mas **nenhuma das duas chegou a entrar no app**.
+- **Causa identificada nos logs de autenticação:** a cliente sai da página de obrigado, abre o app, digita o e-mail e pede o link **dentro da janela de 30 segundos** em que o Supabase bloqueia um segundo envio para o mesmo endereço (`429 over_email_send_rate_limit`). O app tratava isso como falha de envio e exibia *"Não conseguimos enviar agora"* — com o link já na caixa de entrada dela. Registrado duas vezes no IP da cliente Debora, 6 s e 29 s após a compra.
+- **O que foi feito:**
+  - App: o erro `429` de espera curta deixou de ser tratado como falha. Passa a abrir a tela de "link enviado" com o aviso de que a mensagem já está a caminho, e o limite geral por hora ganhou mensagem própria.
+  - App: tela de login informa que quem acabou de comprar já recebeu o link automaticamente.
+  - App: `VERSAO` do service worker de `v5` para `v6`, para o cache antigo não segurar a correção.
+  - Página de obrigado: o e-mail virou o caminho principal (título, 3 passos e aviso de spam/promoções); o botão do app passou a ser secundário, apresentado como "peça outro link".
+  - Banco: visões `public.painel_acessos` (uma linha por compra, com a coluna `situacao`) e `public.resumo_acessos` (compraram × entraram), sem permissão para `anon` e `authenticated`.
+  - **Endereço único do app:** por decisão do Paulo, o app passa a existir só em `https://app.comersemprebem.site`. O botão da página de obrigado deixou de usar caminho relativo e aponta direto para lá; a cópia em `lp.comersemprebem.site/app/` está aposentada (ainda no ar em `v5`, sem uso).
+  - **Publicado em 21/09/2026:** pacote `prot-plus-20260921_075939.zip` em `app.comersemprebem.site` (confirmado `v6` e `conta.js` com a correção) e `obrigado.html` em `lp.comersemprebem.site` (confirmado no ar, com cache limpo).
+- **Arquivos modificados/criados:**
+  - `03-produto/app/conta.js`
+  - `03-produto/app/service-worker.js`
+  - `04-pagina/obrigado.html`
+  - `03-produto/supabase/migrations/0007_painel_de_acessos.sql`
+  - `06-entrega/publicacao.md`
+  - **Cópia aposentada resolvida por redirecionamento:** `lp.comersemprebem.site/app/` agora responde `301` para `https://app.comersemprebem.site/`. Não foi removida porque a página de vendas puxa as imagens de dentro dela (`/app/images/w400/`) — apagar quebraria as fotos das receitas. Só a porta de entrada redireciona; a regra está registrada em `06-entrega/publicacao.md`.
+- **Pendente:** falar com as duas clientes de 20/09, que seguem sem nunca ter entrado.
+
 ### [2026-09-20] Página de Vendas: Mockup do App na Oferta e Imagens dos Bônus
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`

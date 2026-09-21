@@ -344,6 +344,10 @@ window.ProtConta = (() => {
         Use o mesmo e-mail da sua compra. Enviamos um link de acesso — não existe senha
         para decorar.
       </p>
+      <p class="apagado pequeno">
+        Acabou de comprar? O seu link já foi enviado automaticamente. Confira o e-mail
+        antes de pedir outro.
+      </p>
       <form id="form-entrar" novalidate>
         <input class="campo" id="email-entrar" type="email" inputmode="email"
                autocomplete="email" placeholder="seu@email.com" required>
@@ -355,10 +359,11 @@ window.ProtConta = (() => {
       </p>`);
   }
 
-  function telaLinkEnviado(email) {
+  function telaLinkEnviado(email, aviso = '') {
     moldura(`
       <div class="portao-marca"><span>Prot</span><b>+</b></div>
-      <h2>Link enviado</h2>
+      <h2>${aviso ? 'O seu link já está a caminho' : 'Link enviado'}</h2>
+      ${aviso ? `<p class="portao-recado">${aviso}</p>` : ''}
       <p class="apagado">
         Se <strong>${esc(email)}</strong> tiver uma compra do Prot+, o link de acesso
         chega em instantes. Ele vale por 1 hora e só funciona uma vez.
@@ -444,11 +449,30 @@ window.ProtConta = (() => {
       if (error) {
         // Mensagem genérica de propósito: dizer "este e-mail não comprou"
         // permitiria descobrir quem é cliente testando endereços.
-        const limite = /rate|limit|seconds/i.test(error.message);
+        //
+        // Exceção importante: o Supabase recusa um segundo envio para o mesmo
+        // e-mail dentro de 30 segundos ("...after N seconds"). Quem acabou de
+        // comprar cai exatamente aí — o webhook mandou o link segundos antes,
+        // ela chega pela página de obrigado e pede outro. Tratar isso como
+        // falha faz a cliente desistir com o link já na caixa de entrada; é o
+        // que aconteceu em 20/09/2026. Então aqui a resposta é a verdade:
+        // o link existe, é só abrir o e-mail.
+        const mensagem = error.message || '';
+        const esperaCurta = /after\s+\d+\s+second/i.test(mensagem);
+        const limiteGeral = /rate|limit/i.test(mensagem);
+
+        if (esperaCurta) {
+          telaLinkEnviado(
+            email,
+            'Um link de acesso já foi enviado para você agora há pouco — não precisa pedir de novo.'
+          );
+          return;
+        }
+
         telaLogin(
-          limite
-            ? 'Muitas tentativas seguidas. Espere um minuto e tente de novo.'
-            : 'Não conseguimos enviar agora. Tente novamente em instantes.'
+          limiteGeral
+            ? 'Estamos com muitos pedidos neste momento. Se você acabou de comprar, o seu link já foi enviado automaticamente: confira o e-mail, inclusive spam e promoções.'
+            : 'Não conseguimos enviar agora. Se você acabou de comprar, confira o e-mail: o seu link é enviado automaticamente assim que o pagamento é aprovado.'
         );
         return;
       }

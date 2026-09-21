@@ -7,7 +7,7 @@
 **Manual da Equipe:** [`BOAS_PRATICAS_EQUIPE.md`](./BOAS_PRATICAS_EQUIPE.md)  
 **Diretrizes de IA:** [`AGENTS.md`](./AGENTS.md)
 
-**Última atualização:** 20/09/2026 — Webhook da Payt cadastrado e testado com o payload real (compra → conta → e-mail de acesso). Segredos no Vault da Supabase. App, página de vendas e banco no ar. Falta subir o limite de e-mails/hora antes do tráfego.
+**Última atualização:** 21/09/2026 — As duas primeiras clientes reais compraram e **nenhuma conseguiu entrar**: pediam o link dentro da janela de 30 s do Supabase e o app dizia que o envio falhou. Correções publicadas (app `v6` em `app.comersemprebem.site` e nova `obrigado.html` em `lp.comersemprebem.site`), visões `painel_acessos` / `resumo_acessos` ativas no banco. Falta falar com as duas clientes.
 
 
 ---
@@ -103,10 +103,13 @@
 
 ## 📌 Onde Paramos / Próximo Passo Imediato
 
-1. **Estado Atual:** app, login, banco, webhook da Payt e lembretes no ar e testados. Pendências antes de ligar o tráfego:
-   - Supabase: subir o limite de **30 e-mails/hora** — cada compra agora dispara um e-mail sozinha; a cliente 31 da hora não recebe.
+1. **Estado Atual:** app, login, banco, webhook da Payt e lembretes no ar. O circuito de pagamento já fechou com **duas compras reais** — mas o de acesso não: as duas clientes nunca entraram (ver `resumo_acessos`). Pendências, em ordem de urgência:
+   - **Falar com as duas clientes de 20/09** (Mary Stella e Debora). Os links delas expiraram em 1 hora; basta pedirem outro na tela do app.
+   - ~~Publicar as correções de 21/09~~ — **feito**: app `v6` em `https://app.comersemprebem.site` e `obrigado.html` em `https://lp.comersemprebem.site`, ambos conferidos no ar.
+   - ~~Endereço único do app~~ — **feito**: `https://app.comersemprebem.site` é o único endereço. `lp.comersemprebem.site/app/` devolve `301` para lá. A pasta não foi apagada de propósito: a página de vendas puxa as imagens de dentro dela.
+   - **Conferir o acesso todo dia** com `select * from public.resumo_acessos;` no SQL Editor. Linha com `situacao = 'NUNCA ENTROU'` em `painel_acessos` é cliente pagante do lado de fora.
+   - Supabase: subir o limite de **30 e-mails/hora** — cada compra dispara um e-mail sozinha; a cliente 31 da hora não recebe. (Não foi a causa da falha de 20/09; segue pendente para o volume de tráfego.)
    - Página de vendas: revisar a promessa de funcionamento offline (o app exige internet).
-   - Compra real de teste na Payt, para fechar o circuito com pagamento de verdade (a função guarda o payload; ajuste é rápido se algo vier diferente).
    - [`02-blueprint/blueprint.md`](./02-blueprint/blueprint.md) e [`02-blueprint/produto.md`](./02-blueprint/produto.md) criados e especificados para o **Prot+**.
 2. **Próximo Passo Imediato (Fase 3 - Construir o Produto):**
    - **Lote 1 concluído:** 20 receitas autorais de café e lanches, com memória de cálculo e conferência independente de 3 receitas.

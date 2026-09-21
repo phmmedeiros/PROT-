@@ -5,15 +5,35 @@
 Publicação realizada com sucesso na Hostinger em 20/09/2026:
 - Domínio principal: `https://comersemprebem.site/` (redireciona para o subdomínio `lp`)
 - Página de vendas: `https://lp.comersemprebem.site/`
-- Aplicativo PWA: `https://lp.comersemprebem.site/app/`
+- Aplicativo PWA: `https://app.comersemprebem.site/` — **endereço único e oficial do app**
+  (em 21/09/2026 a cópia em `lp.comersemprebem.site/app/` foi aposentada: manter duas
+  publicações do mesmo app significava manter duas versões, e uma delas ficava para trás)
 - Certificado SSL ativo (hSSL Lifetime) e QA automatizado com 33 testes aprovados sem falhas.
+
+## 0.1 Endereço único do app e o `.htaccess` da `lp` (21/09/2026)
+
+O app é servido **apenas** por `https://app.comersemprebem.site`. A cópia antiga
+que mora em `/app` dentro da hospedagem da `lp` ficou na versão `v5` e não deve
+mais receber ninguém — **mas os arquivos dela continuam servindo as imagens da
+página de vendas** (`/app/images/w400/*.webp`). Apagar a pasta quebraria a página.
+
+Por isso o `.htaccess` da `lp` redireciona só a porta de entrada, e nada abaixo dela:
+
+```apache
+RewriteRule ^app/?$ https://app.comersemprebem.site/ [R=301,L]
+RewriteRule ^app/index\.html$ https://app.comersemprebem.site/ [R=301,L]
+```
+
+Quem tiver o endereço antigo salvo na tela inicial cai no app certo; as imagens
+da página seguem locais. O `.htaccess` não é versionado: ele vive no servidor,
+e esta seção é o registro do que há nele.
 
 ## 0. Estado da publicação (20/09/2026)
 
 | O quê | Onde | Estado |
 |---|---|---|
-| Aplicativo | `https://app.comersemprebem.site` | **no ar**, 37 verificações de QA passando contra a URL pública |
-| Página de vendas | `https://lp.comersemprebem.site` | subdomínio criado, conteúdo ainda não publicado |
+| Aplicativo | `https://app.comersemprebem.site` | **no ar** (`v6`, publicado em 21/09/2026). É o único endereço do app. |
+| Página de vendas | `https://lp.comersemprebem.site` | **no ar**, incluindo a `obrigado.html` revisada em 21/09/2026 |
 | Banco e login | Supabase `Prot+` (`sa-east-1`) | no ar |
 | E-mail | Resend, domínio verificado | falta ligar o SMTP na Supabase |
 | Checkout | Payt | URL já na página; webhook ainda não publicado |
@@ -160,7 +180,7 @@ Texto-base:
 |---|---|
 | URL real do checkout | `[CONFIGURAR]` |
 | Domínio da página | `https://lp.comersemprebem.site/` |
-| Domínio ou caminho final do app | `https://lp.comersemprebem.site/app/` |
+| Domínio ou caminho final do app | `https://app.comersemprebem.site/` |
 | E-mail remetente | `[CONFIGURAR]` |
 | Canal de suporte | `[CONFIGURAR]` |
 | Pixel e eventos | `[CONFIGURAR]` |
