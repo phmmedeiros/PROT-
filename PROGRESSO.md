@@ -104,7 +104,9 @@
 ## 📌 Onde Paramos / Próximo Passo Imediato
 
 1. **Estado Atual:** app, login, banco, webhook da Payt e lembretes no ar. O circuito de pagamento já fechou com **duas compras reais** — mas o de acesso não: as duas clientes nunca entraram (ver `resumo_acessos`). Pendências, em ordem de urgência:
-   - **Falar com as duas clientes de 20/09** (Mary Stella e Debora). Os links delas expiraram em 1 hora; basta pedirem outro na tela do app.
+   - **Order bumps vendidos sem entrega (mais grave).** Os 3 bumps estão ativos no checkout, mas não existe conteúdo de marmitas, air fryer ou saladas em lugar nenhum do projeto, e nada no app, na página ou no e-mail entrega bump. As duas clientes de 20/09 já compraram: Debora (Marmitas + Saladas) e Mary Stella (Air Fryer). Enquanto não houver conteúdo, cada venda nova aumenta o passivo.
+   - **Falar com as duas clientes de 20/09** (Mary Stella e Debora). Os links delas expiraram em 1 hora; basta pedirem outro na tela do app. No mesmo contato, resolver o bump que cada uma pagou.
+   - **Confirmar no painel da Payt** se o e-mail pós-compra está ativo e com que texto: o modelo em `06-entrega/payt-configuracao.md` ainda tem `[SEU-DOMINIO]`, `suporte@protplus.com.br` e `[SEU NÚMERO]` por preencher.
    - ~~Publicar as correções de 21/09~~ — **feito**: app `v6` em `https://app.comersemprebem.site` e `obrigado.html` em `https://lp.comersemprebem.site`, ambos conferidos no ar.
    - ~~Endereço único do app~~ — **feito**: `https://app.comersemprebem.site` é o único endereço. `lp.comersemprebem.site/app/` devolve `301` para lá. A pasta não foi apagada de propósito: a página de vendas puxa as imagens de dentro dela.
    - **Conferir o acesso todo dia** com `select * from public.resumo_acessos;` no SQL Editor. Linha com `situacao = 'NUNCA ENTROU'` em `painel_acessos` é cliente pagante do lado de fora.

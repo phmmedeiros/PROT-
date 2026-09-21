@@ -35,6 +35,20 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-21] Página de obrigado: os 4 downloads de PDF voltaram a funcionar
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`
+- **Tipo:** `fix`
+- **Commit:** *Local / Em andamento*
+- **Motivo:** auditoria da esteira de entrega mostrou que os quatro botões "Baixar PDF" da página de obrigado devolviam **404 em produção**. Os arquivos estavam no servidor em `/pdf/`, mas o `href` apontava para `../03-produto/pdf/` — caminho herdado da estrutura de pastas do repositório, que não existe na hospedagem. Nenhum script corrigia isso no ar.
+- **O que foi feito:**
+  - Os quatro `href` passaram de `../03-produto/pdf/...` para `/pdf/...`. O caminho absoluto vale nos dois ambientes: na hospedagem a página fica na raiz, e o servidor de preview local (`local-preview-server.mjs`) já mapeia `/pdf/` para `03-produto/pdf/`. É também o caminho que o modelo de e-mail da Payt sempre usou.
+  - Publicado em `lp.comersemprebem.site` com o cache limpo. Os quatro PDFs conferidos no ar em `200 application/pdf`, com o tamanho idêntico ao do arquivo local (2.066.520, 749.746, 899.105 e 569.065 bytes).
+  - Conferido que nada mais regrediu: home, `/obrigado`, `/termos`, `/privacidade`, o `301` de `/app/` e as imagens do acervo seguem respondendo.
+- **Arquivos modificados/criados:**
+  - `04-pagina/obrigado.html`
+- **Aberto (não é este commit):** os **3 order bumps** seguem à venda no checkout **sem conteúdo produzido e sem caminho de entrega**. As duas clientes de 20/09 compraram bump (Debora: Marmitas + Saladas; Mary Stella: Air Fryer) e não têm como receber. Decisão pendente do Paulo.
+
 ### [2026-09-21] Acesso pós-compra: diagnóstico das duas primeiras clientes e correções
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/supabase/`, `04-pagina/`
