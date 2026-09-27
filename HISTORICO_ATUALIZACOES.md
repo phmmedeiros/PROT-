@@ -35,6 +35,20 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-27] Página principal: nova headline, subtítulo e slide de comidas no topo
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`
+- **Tipo:** `feat` + `style`
+- **Commit:** *Local / Em andamento*, ainda não publicada
+- **O que foi feito:**
+  - Headline trocada para "Chega de frango seco e ovo cozido todo dia."
+  - Logo abaixo, o subtítulo: "Descubra a engenharia reversa do sabor, o método exato que transforma hambúrguer, pizza e doces em refeições anabólicas com até 68 g de proteína pura."
+  - Logo abaixo, um slide infinito com 10 fotos reais do app (pratos e doces), com nome e proteína conferidos em `receitas.json`. As fotos vêm de `/app/images/w400/`, que já está no servidor.
+  - Saíram do topo o selo "CHEGA DE ENGOLIR FRANGO SECO…" (repetia a headline), a foto da persona e o parágrafo antigo. Selos, botão e garantia continuam.
+- **Arquivos modificados/criados:**
+  - `04-pagina/index.html`
+  - `HISTORICO_ATUALIZACOES.md`
+
 ### [2026-09-27] Página v3: formato da oferta de referência (FIT. Pro) com o conteúdo real do Prot+
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/v3/`, `local-preview-server.mjs`

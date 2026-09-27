@@ -351,6 +351,27 @@
       background: #c2410c;
     }
 
+    /* SLIDE DE COMIDAS DENTRO DO HERO (FUNDO VERDE: ESMAECE AS BORDAS COM MÁSCARA) */
+    .hero .hero-sub {
+      margin: 0 auto 20px;
+    }
+    .hero-marquee {
+      padding: 4px 0 26px;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 38px, #000 calc(100% - 38px), transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0, #000 38px, #000 calc(100% - 38px), transparent 100%);
+    }
+    .hero-marquee::before, .hero-marquee::after {
+      display: none;
+    }
+    .hero-marquee .marquee-card {
+      text-align: left;
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    }
+    .hero-marquee .marquee-card img {
+      height: auto;
+    }
+
     /* GANCHO DE CURIOSIDADE (ESCORREGADOR PARA CONTINUAR LENDO) */
     .curiosity-hook {
       background: linear-gradient(135deg, #fff2e8 0%, #fffbf7 100%);
@@ -1135,22 +1156,39 @@
   <!-- PRIMEIRA DOBRA: HERO COM A FOTO DA PERSONA E PROMESSA VISCERAL -->
   <header class="hero" id="topo">
     <div class="wrap">
-      <span class="eyebrow">CHEGA DE ENGOLIR FRANGO SECO COM ÁGUA NA GARGANTA</span>
-      
-      <h1>Como Bater Sua Meta de Proteína e Secar o Corpo Comendo Pratos com Sabor de <span class="destaque">"Gordice" do iFood</span>.</h1>
+      <h1>Chega de frango seco e ovo cozido todo dia.</h1>
 
-      <!-- IMAGEM DA PERSONA: FELIZ, COMENDO LANCHE COM PRAZER, COZINHA REAL -->
-      <div class="hero-persona-box">
-        <img src="images/hero-persona.jpg" alt="Mulher brasileira atlética feliz comendo um hambúrguer proteico suculento na cozinha">
-        <div class="persona-badge">
-          <b>✓ SABOR DE LANCHE DE SEXTA-FEIRA</b>
-          45g de Proteína Pura · Zero Açúcar · Mata a Fome
+      <p class="lead hero-sub">
+        Descubra a engenharia reversa do sabor, o método exato que transforma hambúrguer, pizza e doces em refeições anabólicas com até 68 g de proteína pura.
+      </p>
+
+      <!-- SLIDE DE COMIDAS LOGO ABAIXO DA PROMESSA (FOTOS REAIS DO APP, UMA LINHA PARA A ESQUERDA) -->
+      <div class="recipe-marquee-wrap hero-marquee">
+        <div class="recipe-marquee-track track-left">
+          <div class="marquee-card"><img src="/app/images/w400/AJ-041.webp" alt="Frango com cuscuz, brócolis e cottage" width="400" height="400"><div class="marquee-card-info"><b>Frango com Cuscuz</b><span class="marquee-badge">55,6g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/SOB-006.webp" alt="Brownie de caneca com aveia e cacau" width="400" height="400"><div class="marquee-card-info"><b>Brownie de Caneca</b><span class="marquee-badge sweet">12,8g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/AJ-014.webp" alt="Penne integral com carne e cottage" width="400" height="400"><div class="marquee-card-info"><b>Penne com Carne</b><span class="marquee-badge">45,4g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/SOB-013.webp" alt="Pudim de chocolate" width="400" height="400"><div class="marquee-card-info"><b>Pudim de Chocolate</b><span class="marquee-badge sweet">22,3g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/CL-007.webp" alt="Sanduíche integral de frango desfiado" width="400" height="400"><div class="marquee-card-info"><b>Sanduíche de Frango</b><span class="marquee-badge">30,7g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/SOB-015.webp" alt="Brigadeiro de cottage e cacau" width="400" height="400"><div class="marquee-card-info"><b>Brigadeiro Proteico</b><span class="marquee-badge sweet">24,3g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/AJ-005.webp" alt="Lombo suíno com purê de abóbora" width="400" height="400"><div class="marquee-card-info"><b>Lombo com Purê</b><span class="marquee-badge">51,1g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/SOB-002.webp" alt="Cheesecake de morango com ricota" width="400" height="400"><div class="marquee-card-info"><b>Cheesecake de Morango</b><span class="marquee-badge sweet">21,8g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/CL-022.webp" alt="Pão de queijo de frigideira com cottage" width="400" height="400"><div class="marquee-card-info"><b>Pão de Queijo</b><span class="marquee-badge">15,7g Proteína</span></div></div>
+          <div class="marquee-card"><img src="/app/images/w400/SOB-016.webp" alt="Pavê de morango, cottage e aveia" width="400" height="400"><div class="marquee-card-info"><b>Pavê de Morango</b><span class="marquee-badge sweet">21,1g Proteína</span></div></div>
+
+          <!-- DUPLICAÇÃO EXATA PARA O LOOP INFINITO -->
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/AJ-041.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Frango com Cuscuz</b><span class="marquee-badge">55,6g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/SOB-006.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Brownie de Caneca</b><span class="marquee-badge sweet">12,8g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/AJ-014.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Penne com Carne</b><span class="marquee-badge">45,4g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/SOB-013.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Pudim de Chocolate</b><span class="marquee-badge sweet">22,3g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/CL-007.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Sanduíche de Frango</b><span class="marquee-badge">30,7g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/SOB-015.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Brigadeiro Proteico</b><span class="marquee-badge sweet">24,3g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/AJ-005.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Lombo com Purê</b><span class="marquee-badge">51,1g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/SOB-002.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Cheesecake de Morango</b><span class="marquee-badge sweet">21,8g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/CL-022.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Pão de Queijo</b><span class="marquee-badge">15,7g Proteína</span></div></div>
+          <div class="marquee-card" aria-hidden="true"><img src="/app/images/w400/SOB-016.webp" alt="" width="400" height="400"><div class="marquee-card-info"><b>Pavê de Morango</b><span class="marquee-badge sweet">21,1g Proteína</span></div></div>
         </div>
       </div>
-
-      <p class="lead">
-        Você treina e se esforça, mas <strong>não aguenta mais abrir marmita com cheiro de ovo</strong> ou mastigar frango borrachudo. Tenha na palma da mão 120 receitas práticas — de 25g a 68g de proteína pura — com textura de comida de delivery e prontas em 15 minutos. Sem farinha branca, sem açúcar e sem passar a noite lavando louça.
-      </p>
 
       <div class="hero-pills">
         <span class="pill">🔥 Até 68g de Proteína</span>
