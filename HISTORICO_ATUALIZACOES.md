@@ -39,7 +39,7 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `04-pagina/`
 - **Tipo:** `feat` + `style`
-- **Commit:** *Local / Em andamento*, ainda não publicada
+- **Commit:** `8ddf108`, **publicado** em `https://lp.comersemprebem.site/` no dia 27/09 (upload do `index.html` e cache limpo; o arquivo no ar foi conferido e é idêntico ao local)
 - **O que foi feito:**
   - Headline trocada para "Chega de frango seco e ovo cozido todo dia."
   - Logo abaixo, o subtítulo: "Descubra a engenharia reversa do sabor, o método exato que transforma hambúrguer, pizza e doces em refeições anabólicas com até 68 g de proteína pura."
