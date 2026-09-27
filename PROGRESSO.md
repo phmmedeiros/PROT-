@@ -81,6 +81,7 @@
 - [ ] **Fase 5: Criativos Modelados dos Vencedores (`05-criativos/`)**
   - [x] 8 roteiros autorais com fichas, ganchos e CTAs em `05-criativos/roteiros/`
   - [x] Conferência de originalidade e ausência de frases-chave copiadas
+  - [x] Manual de produção dos 30 criativos em vídeo, com copy, cenas, cortes e textos em `05-criativos/30-criativos-producao.pdf`
   - [ ] *[Parada de Aprovação do Pedro]*
 
 - [ ] **Fase 6: Checkout, Esteira, QA e Entrega (`06-entrega/`)**

@@ -35,6 +35,19 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-26] Manual de Produção dos 30 Criativos em Vídeo
+- **Autor:** Pedro Henrique (`phmmedeiros`)
+- **Módulo(s) Afetado(s):** `05-criativos/`
+- **Tipo:** `docs`
+- **Commit:** `11534b6`
+- **O que foi feito:**
+  - Criação de um manual de produção com 30 criativos de direct response para Meta Ads.
+  - Inclusão de timeline de edição, cenas, cortes, textos na tela, narração completa, materiais necessários e CTA para cada criativo.
+  - Organização dos roteiros para produção com banco de vídeos, fotos reais do acervo, gravações de tela do app e narração.
+- **Arquivos modificados/criados:**
+  - `05-criativos/30-criativos-producao.html`
+  - `05-criativos/30-criativos-producao.pdf`
+
 ### [2026-09-21] Minha Estante: os entregáveis passam a ser canalizados pelo app
 - **Autor:** Paulo Henrique
 - **Módulo(s) Afetado(s):** `03-produto/app/`, `03-produto/dados/`, `03-produto/supabase/`
