@@ -35,6 +35,60 @@ Sempre que concluir uma alteração relevante no projeto, adicione uma nova entr
 
 ## 🚀 Registro de Alterações
 
+### [2026-09-27] Página v3: formato da oferta de referência (FIT. Pro) com o conteúdo real do Prot+
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/v3/`, `local-preview-server.mjs`
+- **Tipo:** `feat`
+- **Commit:** *Local / Em andamento* — ainda não publicada
+- **O que foi feito:**
+  - `04-pagina/v3/index.html` reproduz o formato da página de referência: mesma ordem de seções, verde-limão `#8cbc36`, Arial/Poppins, um card por receita (tempo, proteína, calorias), faixa verde com as 4 ferramentas, bônus com cabeçalho verde e card de preço sobre fundo preto.
+  - Texto próprio e só fatos do acervo: os 12 cards são gerados de `receitas.json`; "até 55g"; "60 receitas em até 15 minutos".
+  - Não reproduzidos, de propósito: depoimentos com nome e @, "nutri Camila Braga", prazo que é sempre "hoje", "+5.000 pessoas", "De R$ 147" (preço nunca praticado) e pratos que o acervo não tem. Detalhes em `02-blueprint/diagnostico-roi-2026-09-27.md`.
+  - Mesmo rastreio da v2: só `PageView` e repasse de UTMs e `fbclid` para a Payt.
+- **Arquivos modificados/criados:**
+  - `04-pagina/v3/index.html`
+  - `local-preview-server.mjs`
+  - `02-blueprint/diagnostico-roi-2026-09-27.md`
+  - `PROGRESSO.md`
+  - `HISTORICO_ATUALIZACOES.md`
+
+### [2026-09-27] Página de vendas v2 para mulheres de 35 a 60 anos e correção do rastreio
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `04-pagina/`, `02-blueprint/`, `local-preview-server.mjs`
+- **Tipo:** `feat` + `fix`
+- **Commit:** *Local / Em andamento* — **publicado** em `https://lp.comersemprebem.site/v2/` (v2), `index.html` e `obrigado.html`, no dia 27/09
+- **O que foi feito:**
+  - Nova página `04-pagina/v2/index.html`, com copy reescrita para mulheres de 35 a 60 anos: comida caseira que a família já come, fome da tarde, doce à noite e o corpo que muda com os anos. Letra maior, barra fixa de compra no celular e FAQ para quem não é boa na cozinha nem com tecnologia.
+  - Todas as afirmações conferidas contra `03-produto/dados/receitas.json` e `bonus.json`. A vitrine é gerada com os nomes, as proteínas e os tempos reais.
+  - Fora da v2: depoimentos montados, "68g", "15 minutos" para tudo, "100% offline", mockup de oferta e mockups dos bônus com texto desatualizado.
+  - Rastreio: UTMs e `fbclid` passam a ir para o checkout da Payt (v1 e v2). `Purchase` removido da `obrigado.html`: a Payt já envia o evento, e o nosso duplicava as vendas (45 `Purchase` no pixel para 12 pedidos reais). Nenhum `InitiateCheckout` na página, por decisão do Paulo, porque a Payt já dispara.
+  - Rota `/v2` no servidor de preview local.
+  - Diagnóstico atualizado com a comparação pixel × banco, o descompasso entre a promessa da v1 e o acervo e a correção de duas recomendações.
+- **Arquivos modificados/criados:**
+  - `04-pagina/v2/index.html`
+  - `04-pagina/index.html` (só o script do botão de compra)
+  - `04-pagina/obrigado.html`
+  - `local-preview-server.mjs`
+  - `02-blueprint/diagnostico-roi-2026-09-27.md`
+  - `PROGRESSO.md`
+  - `06-entrega/publicacao.md`
+  - `HISTORICO_ATUALIZACOES.md`
+
+### [2026-09-27] Diagnóstico de ROI: comparação com o FIT. Pro e análise da copy para mulheres de 35 a 60
+- **Autor:** Paulo Henrique
+- **Módulo(s) Afetado(s):** `02-blueprint/`
+- **Tipo:** `docs`
+- **Commit:** *Local / Em andamento*
+- **O que foi feito:**
+  - Comparação da nossa página com a de referência: página, preço, bônus e bumps praticamente iguais; faltam upsell, autoridade com nome, prazo com data e número de clientes no topo.
+  - Identificados três problemas de rastreio: UTMs não chegam à Payt, `Purchase` com valor fixo e sem proteção contra duplicidade, e ausência de `InitiateCheckout`.
+  - Análise da copy para o público real (mulheres de 35 a 60 anos): texto no masculino, vocabulário de academia, promessa no nível de consciência errado, dores centrais ausentes e bônus desalinhados.
+  - Plano de ação priorizado registrado no documento. Nenhuma alteração feita na página.
+- **Arquivos modificados/criados:**
+  - `02-blueprint/diagnostico-roi-2026-09-27.md`
+  - `PROGRESSO.md`
+  - `HISTORICO_ATUALIZACOES.md`
+
 ### [2026-09-26] Manual de Produção dos 30 Criativos em Vídeo
 - **Autor:** Pedro Henrique (`phmmedeiros`)
 - **Módulo(s) Afetado(s):** `05-criativos/`

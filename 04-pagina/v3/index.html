@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="theme-color" content="#8cbc36">
+  <meta name="description" content="Prot+: 120 receitas caseiras com proteína em todas as refeições, direto no celular. Café, lanches, almoço, jantar e sobremesas.">
+  <title>Prot+ | 120 Receitas Proteicas no Celular</title>
+
+  <!-- Meta Pixel Code — só PageView. InitiateCheckout e Purchase são disparados pela Payt. -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1310891797657056');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1310891797657056&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --lime: #8cbc36;
+      --lime-soft: #b7d152;
+      --lime-bg: #f3f7ec;
+      --ink: #14170b;
+      --text: #2d3536;
+      --muted: #555046;
+      --red: #b91c1c;
+      --white: #ffffff;
+      --shadow: 0 8px 18px rgba(0,0,0,0.18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      background: var(--white);
+      color: var(--text);
+      font: 16px/1.5 Poppins, Arial, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 0 22px; }
+    .sec { padding: 48px 0; }
+    .sec.soft { background: var(--lime-bg); }
+    .sec.green { background: var(--lime); color: #fff; }
+    .center { text-align: center; }
+    .lime { color: var(--lime); }
+    .arial { font-family: Arial, sans-serif; }
+    h2 {
+      font-family: Arial, sans-serif;
+      font-size: 27px;
+      line-height: 1.22;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .kicker {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--lime);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    /* BOTÃO */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--lime);
+      color: #fff;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 16px 26px;
+      border-radius: 40px;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.55);
+      width: 100%;
+      max-width: 330px;
+      transition: transform 0.15s ease;
+    }
+    .btn:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(0,0,0,0.55); }
+    .btn.white { background: #fff; color: var(--lime); }
+    .btn.small { text-transform: none; font-size: 16px; padding: 13px 22px; max-width: 250px; box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
+    .btn-row { text-align: center; margin-top: 28px; }
+
+    /* TOPO */
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 22px; max-width: 480px; margin: 0 auto; }
+    .logo { font-family: Arial, sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); white-space: nowrap; }
+    .logo span { color: var(--lime); }
+    .tagline { font-family: Arial, sans-serif; font-style: italic; font-size: 12.5px; text-align: right; color: var(--ink); line-height: 1.3; }
+
+    .hero { padding: 20px 0 40px; }
+    .hero h1 {
+      font-family: Arial, sans-serif;
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .hero .sub { font-family: Arial, sans-serif; font-size: 16px; margin-bottom: 22px; color: var(--text); }
+    .hero .sub b.l { color: var(--lime); }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 4px; margin-bottom: 22px; }
+    .hero-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; aspect-ratio: 1 / 1; }
+    .hero-grid img.tall { grid-row: span 2; aspect-ratio: auto; }
+    .hero .note { font-family: Arial, sans-serif; text-align: center; font-size: 16px; margin-bottom: 22px; }
+    .hero .note b { color: var(--lime); }
+    .hero .trust { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 13.5px; color: #6b7280; }
+    .hero .trust span { font-size: 18px; }
+
+    /* PILARES */
+    .pillars { display: grid; gap: 34px; margin-top: 26px; }
+    .pillar { background: #fff; border-radius: 10px; box-shadow: var(--shadow); padding: 16px 16px 20px; text-align: center; }
+    .pillar .ico { background: var(--lime-soft); border-radius: 4px; font-size: 64px; line-height: 1; padding: 26px 0; margin-bottom: 14px; }
+    .pillar h3 { color: var(--lime-soft); font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+    .pillar p { font-size: 14.5px; color: var(--muted); }
+    .pillar p b { color: #333; }
+
+    /* LISTA COM ÍCONES */
+    .ilist { list-style: none; display: grid; gap: 26px; margin: 28px 0 30px; }
+    .ilist li { display: flex; gap: 12px; align-items: flex-start; }
+    .ilist .i { color: var(--lime); font-size: 20px; line-height: 1.1; width: 24px; flex: 0 0 24px; text-align: center; }
+    .ilist b { display: block; font-family: Arial, sans-serif; color: #000; font-size: 15px; }
+    .ilist small { display: block; color: #6b7280; font-size: 14px; }
+    .photo-round { border-radius: 16px; box-shadow: var(--shadow); width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
+    .quote { font-family: Arial, sans-serif; font-style: italic; font-size: 21px; line-height: 1.45; text-align: center; color: #111; margin-top: 26px; }
+
+    /* CARDS DE RECEITA */
+    .subh { text-align: center; font-size: 20px; color: var(--muted); margin-top: -6px; }
+    .recipes { display: grid; gap: 40px; margin-top: 30px; }
+    .rc { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); text-align: center; }
+    .rc img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .rc h3 { font-family: Arial, sans-serif; color: var(--lime); font-size: 20px; line-height: 1.2; text-transform: uppercase; padding: 20px 18px 12px; }
+    .rc ul { list-style: none; display: inline-grid; gap: 12px; text-align: left; padding-bottom: 22px; }
+    .rc li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 500; color: #333; }
+    .rc li span { color: var(--lime); font-size: 18px; width: 22px; text-align: center; }
+    .more { text-align: center; font-size: 21px; color: var(--text); margin-top: 38px; }
+
+    /* CATEGORIAS */
+    .cats { display: grid; gap: 16px; margin-top: 24px; }
+    .cat { position: relative; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+    .cat img { width: 100%; aspect-ratio: 5 / 2; object-fit: cover; }
+    .cat b {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.72), transparent);
+      color: #fff; font-family: Arial, sans-serif; font-size: 20px; padding: 26px 16px 12px;
+    }
+
+    /* FERRAMENTAS (FAIXA VERDE) */
+    .sec.green .kicker { color: #fff; }
+    .sec.green h2 { color: #fff; }
+    .sec.green h2 em { font-style: normal; color: var(--ink); }
+    .tools { display: grid; gap: 28px; margin-top: 30px; }
+    .tool { display: grid; grid-template-columns: 120px 1fr; background: #fff; border-radius: 14px; overflow: hidden; color: var(--ink); }
+    .tool img { width: 120px; height: 100%; object-fit: cover; }
+    .tool .ph { background: var(--lime-bg); display: grid; place-items: center; font-size: 46px; }
+    .tool div.t { padding: 16px 14px; text-align: center; }
+    .tool h3 { color: var(--lime); font-size: 18.5px; font-weight: 600; margin-bottom: 6px; }
+    .tool p { font-size: 14.5px; line-height: 1.45; }
+
+    /* BÔNUS */
+    .bonus-title { text-align: center; font-family: Arial, sans-serif; font-weight: 700; font-size: 24px; color: var(--ink); line-height: 1.25; }
+    .bonus-title span { color: var(--lime); }
+    .bonus-sub { text-align: center; font-style: italic; font-size: 14.5px; margin: 8px 0 30px; }
+    .bonus { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 36px; text-align: center; }
+    .bonus .head { background: var(--lime); color: #fff; font-size: 19px; line-height: 1.35; padding: 12px 16px; }
+    .bonus .head b { background: #fff; color: var(--lime); padding: 0 4px; font-weight: 700; }
+    .bonus .desc { font-family: Arial, sans-serif; font-style: italic; font-size: 19px; line-height: 1.45; color: #111; padding: 18px 18px 10px; }
+    .bonus .desc span { color: var(--lime); }
+    .bonus .ico { font-size: 70px; line-height: 1; padding: 10px 0 14px; }
+    .bonus .val { font-family: Arial, sans-serif; font-size: 18px; color: #111; padding: 0 16px 8px; }
+    .bonus .val s { color: var(--red); font-weight: 700; }
+    .bonus .val b { color: var(--lime); }
+    .bonus ul { list-style: none; display: inline-grid; gap: 10px; text-align: left; padding: 6px 16px 22px; }
+    .bonus li { font-size: 13.5px; display: flex; gap: 8px; align-items: center; }
+    .bonus li::before { content: "✓"; background: var(--lime); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; flex: 0 0 20px; }
+    .bonus-total { text-align: center; font-size: 19px; color: #384f52; }
+    .bonus-total b { color: var(--lime); font-weight: 500; }
+
+    /* APP */
+    .app-h { font-family: Arial, sans-serif; text-align: center; font-size: 23px; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: 18px; }
+    .app-h span { color: var(--red); }
+    .app-shot { width: 78%; margin: 0 auto 20px; border-radius: 22px; box-shadow: var(--shadow); }
+    .app-p { font-family: Arial, sans-serif; text-align: center; font-size: 16px; line-height: 1.9; }
+    .app-p b.l { color: var(--lime-soft); }
+    .app-q { font-family: Arial, sans-serif; text-align: center; font-style: italic; color: var(--muted); font-size: 17px; line-height: 1.8; margin-top: 22px; }
+
+    /* PREÇO */
+    .cta-title { font-family: Arial, sans-serif; text-align: center; font-weight: 700; font-size: 20px; color: var(--ink); line-height: 1.3; }
+    .cta-title span { color: var(--lime); }
+    .price-wrap { background: #000; padding: 40px 0 46px; }
+    .price-card { background: #fff; border-radius: 18px; overflow: hidden; text-align: center; }
+    .price-card .top { background: var(--lime); color: #fff; padding: 16px; }
+    .price-card .top small { display: block; font-size: 13px; opacity: 0.95; }
+    .price-card .top b { font-family: Arial, sans-serif; font-size: 24px; letter-spacing: 0.5px; }
+    .price-card .body { padding: 22px 20px 26px; }
+    .price-card .lifetime { font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 14px; }
+    .price-card .imgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
+    .price-card .imgs img { aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; width: 100%; }
+    .price-card .old { font-size: 15px; color: var(--muted); }
+    .price-card .old s { color: var(--red); font-weight: 600; }
+    .price-card .por { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .price-card .big { font-family: Arial, sans-serif; font-weight: 700; font-size: 58px; color: var(--lime); line-height: 1.05; letter-spacing: -1px; }
+    .price-card h4 { font-size: 15px; text-align: left; margin: 20px 0 10px; color: var(--ink); }
+    .price-card ul { list-style: none; text-align: left; display: grid; gap: 8px; }
+    .price-card li { font-size: 14.5px; display: flex; gap: 8px; align-items: flex-start; }
+    .price-card li::before { content: "✓"; color: var(--lime); font-weight: 800; }
+    .price-card li.g::before { content: "🎁"; }
+    .price-card .fine { font-size: 12.5px; color: var(--muted); margin: 16px 0 18px; }
+
+    /* GARANTIA */
+    .guar { text-align: center; }
+    .guar .seal { width: 120px; height: 120px; margin: 0 auto 18px; border-radius: 50%; background: var(--lime); color: #fff; display: grid; place-items: center; font-family: Arial, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.1; box-shadow: 0 0 0 6px var(--lime-bg), 0 0 0 8px var(--lime); }
+    .guar h2 span { color: var(--lime); }
+    .guar p { font-size: 15.5px; }
+    .seals { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
+    .seals div { background: #fff; border-radius: 10px; padding: 12px 8px; font-size: 13.5px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .seals span { display: block; font-size: 22px; }
+    .repeat-price { text-align: center; margin-top: 30px; }
+    .repeat-price .old { font-size: 15px; color: var(--muted); }
+    .repeat-price .old s { color: var(--red); }
+    .repeat-price .big { font-family: Arial, sans-serif; font-size: 48px; font-weight: 700; color: var(--lime); line-height: 1.1; }
+    .repeat-price small { display: block; color: var(--muted); margin-bottom: 20px; }
+
+    /* FAQ */
+    .faq-sub { text-align: center; color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+    details { background: #fff; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+    summary { list-style: none; cursor: pointer; padding: 16px 44px 16px 16px; font-weight: 600; font-size: 15.5px; position: relative; color: var(--ink); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 16px; top: 11px; font-size: 24px; color: var(--lime); }
+    details[open] summary::after { content: "–"; }
+    details p { padding: 0 16px 16px; font-size: 14.5px; color: var(--muted); }
+
+    footer { background: #1e2e18; color: #c9d6c0; text-align: center; font-size: 13px; padding: 28px 0; }
+    footer a { color: #fff; }
+    footer .disc { font-size: 11.5px; opacity: 0.75; margin-top: 10px; line-height: 1.5; }
+
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO -->
+  <div class="topbar">
+    <div class="logo">Prot<span>+</span></div>
+    <div class="tagline">"As <b>120 receitas</b> com proteína em todas as refeições"</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <h1>Cansou de comer <span class="lime">sempre a mesma coisa</span> na dieta?</h1>
+      <p class="sub"><b class="l">Conheça o Prot+:</b> 120 receitas caseiras com proteína em <b>todas as refeições</b> — do café da manhã à sobremesa — com <b>até 55g de proteína</b> por prato.</p>
+
+      <div class="hero-grid">
+        <img src="/app/images/w400/CL-002.webp" alt="Crepioca de frango com tomate" width="400" height="400">
+        <img class="tall" src="/app/images/w400/AJ-005.webp" alt="Lombo suíno com purê de abóbora" width="400" height="400">
+        <img src="/app/images/w400/SOB-013.webp" alt="Pudim de chocolate" width="400" height="400">
+      </div>
+
+      <p class="note">Usando ingredientes do <b>mercado do bairro</b>! <i>(Sem nada caro ou difícil de achar)</i></p>
+
+      <div class="center"><a class="btn small" href="#receitas">Quero Conhecer Mais &nbsp;→</a></div>
+
+      <div class="trust"><span>📱</span> Acesso na hora, direto no celular · 45 dias de garantia</div>
+    </div>
+  </header>
+
+  <!-- PILARES -->
+  <section class="sec soft">
+    <div class="wrap">
+      <h2>Como fazer dieta sem enjoar <span class="lime">da comida?</span></h2>
+      <p class="center">O Prot+ se apoia em <b>3 ideias simples</b>:</p>
+
+      <div class="pillars">
+        <article class="pillar">
+          <div class="ico">🍽</div>
+          <h3>Proteína em toda refeição</h3>
+          <p>Não é só o almoço. Café, lanche, jantar e até a sobremesa trazem proteína — <b>o nutriente que mais dá saciedade</b>. Você fica satisfeita por mais tempo e para de beliscar.</p>
+        </article>
+        <article class="pillar">
+          <div class="ico">🏠</div>
+          <h3>Comida de casa</h3>
+          <p>Arroz, feijão, frango, carne moída, lombo, tilápia, macarrão, cuscuz. <b>A comida que você já conhece</b>, com a proporção certa no prato — e que a família come junto.</p>
+        </article>
+        <article class="pillar">
+          <div class="ico">⚡</div>
+          <h3>Rápido e sem complicação</h3>
+          <p>A maioria dos cafés e sobremesas fica pronta <b>em até 15 minutos</b>; almoço e jantar, em 18 a 25. Medidas de colher e xícara e passo a passo numerado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE TEM NO APP -->
+  <section class="sec">
+    <div class="wrap">
+      <h2 style="font-weight:400;">O que você vai encontrar no <span class="lime">aplicativo Prot+</span></h2>
+
+      <ul class="ilist">
+        <li><span class="i">💪</span><div><b>Receitas ricas em proteína</b><small>até 55g por porção</small></div></li>
+        <li><span class="i">😋</span><div><b>Variedade de verdade</b><small>muito além do ovo cozido e do frango grelhado</small></div></li>
+        <li><span class="i">⏱</span><div><b>Receitas rápidas</b><small>60 receitas prontas em até 15 minutos</small></div></li>
+        <li><span class="i">🍴</span><div><b>Café / Lanches / Almoço / Jantar / Sobremesas</b></div></li>
+        <li><span class="i">👩‍🍳</span><div><b>Zero dificuldade</b><small>feito para quem não tem tempo nem prática na cozinha</small></div></li>
+        <li><span class="i">📋</span><div><b>Passo a passo numerado</b><small>com proteína e calorias de cada porção (Tabela TACO)</small></div></li>
+      </ul>
+
+      <img class="photo-round" src="/images/mecanismo-densidade.jpg" alt="Prato com carne e frango" loading="lazy">
+
+      <p class="quote">"Variedade de receitas com proteína para você não enjoar da dieta e bater a sua meta sem sofrimento."</p>
+
+      <div class="btn-row"><a class="btn" href="#oferta">Quero as receitas proteicas</a></div>
+    </div>
+  </section>
+
+  <!-- RECEITAS -->
+  <section class="sec soft" id="receitas">
+    <div class="wrap">
+      <span class="kicker">O que você recebe</span>
+      <h2>Veja as <span class="lime">delícias</span> que você vai comer no dia a dia</h2>
+      <p class="subh">(sem culpa nenhuma):</p>
+
+      <div class="recipes">
+        <article class="rc">
+          <img src="/app/images/w400/AJ-005.webp" alt="Lombo Suíno com Purê de Abóbora" loading="lazy">
+          <h3>Lombo Suíno com Purê de Abóbora</h3>
+          <ul><li><span>⏱</span>APENAS 25 MINUTOS</li><li><span>💪</span>51,1g DE PROTEÍNA</li><li><span>🔥</span>461 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/AJ-006.webp" alt="Macarrão Integral com Frango e Tomate" loading="lazy">
+          <h3>Macarrão Integral com Frango e Tomate</h3>
+          <ul><li><span>⏱</span>APENAS 20 MINUTOS</li><li><span>💪</span>50,8g DE PROTEÍNA</li><li><span>🔥</span>406 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/AJ-007.webp" alt="Carne Moída com Arroz, Feijão e Cenoura" loading="lazy">
+          <h3>Carne Moída com Arroz, Feijão e Cenoura</h3>
+          <ul><li><span>⏱</span>APENAS 22 MINUTOS</li><li><span>💪</span>39,1g DE PROTEÍNA</li><li><span>🔥</span>449 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/AJ-002.webp" alt="Picadinho de Carne com Abóbora e Tomate" loading="lazy">
+          <h3>Picadinho de Carne com Abóbora e Tomate</h3>
+          <ul><li><span>⏱</span>APENAS 25 MINUTOS</li><li><span>💪</span>36,8g DE PROTEÍNA</li><li><span>🔥</span>430 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/AJ-019.webp" alt="Frango com Cuscuz de Milho e Feijão" loading="lazy">
+          <h3>Frango com Cuscuz de Milho e Feijão</h3>
+          <ul><li><span>⏱</span>APENAS 20 MINUTOS</li><li><span>💪</span>50,5g DE PROTEÍNA</li><li><span>🔥</span>426 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/AJ-012.webp" alt="Frango Desfiado com Purê de Abóbora e Brócolis" loading="lazy">
+          <h3>Frango Desfiado com Purê de Abóbora e Brócolis</h3>
+          <ul><li><span>⏱</span>APENAS 22 MINUTOS</li><li><span>💪</span>50,2g DE PROTEÍNA</li><li><span>🔥</span>352 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/CL-015.webp" alt="Cuscuz de Milho com Frango e Ovo" loading="lazy">
+          <h3>Cuscuz de Milho com Frango e Ovo</h3>
+          <ul><li><span>⏱</span>APENAS 18 MINUTOS</li><li><span>💪</span>26g DE PROTEÍNA</li><li><span>🔥</span>277 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/CL-002.webp" alt="Crepioca de Frango com Tomate" loading="lazy">
+          <h3>Crepioca de Frango com Tomate</h3>
+          <ul><li><span>⏱</span>APENAS 15 MINUTOS</li><li><span>💪</span>29,8g DE PROTEÍNA</li><li><span>🔥</span>285 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/CL-027.webp" alt="Bolinho Assado de Batata-Doce e Frango" loading="lazy">
+          <h3>Bolinho Assado de Batata-Doce e Frango</h3>
+          <ul><li><span>⏱</span>APENAS 25 MINUTOS</li><li><span>💪</span>28,3g DE PROTEÍNA</li><li><span>🔥</span>318 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/CL-007.webp" alt="Sanduíche Integral de Frango Desfiado" loading="lazy">
+          <h3>Sanduíche Integral de Frango Desfiado</h3>
+          <ul><li><span>⏱</span>APENAS 12 MINUTOS</li><li><span>💪</span>30,7g DE PROTEÍNA</li><li><span>🔥</span>340 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/SOB-013.webp" alt="Pudim de Chocolate com Ovo e Leite em Pó" loading="lazy">
+          <h3>Pudim de Chocolate com Ovo e Leite em Pó</h3>
+          <ul><li><span>⏱</span>APENAS 10 MINUTOS</li><li><span>💪</span>22,3g DE PROTEÍNA</li><li><span>🔥</span>245 CALORIAS</li></ul>
+        </article>
+        <article class="rc">
+          <img src="/app/images/w400/SOB-015.webp" alt="Brigadeiro de Cottage e Cacau" loading="lazy">
+          <h3>Brigadeiro de Cottage e Cacau</h3>
+          <ul><li><span>⏱</span>APENAS 12 MINUTOS</li><li><span>💪</span>24,3g DE PROTEÍNA</li><li><span>🔥</span>273 CALORIAS</li></ul>
+        </article>
+      </div>
+
+      <p class="more"><span class="lime">+ de 100</span> outras receitas com proteína esperando por você!</p>
+      <div class="btn-row"><a class="btn" href="#oferta">Ok, quero essas receitas 😋</a></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="sec">
+    <div class="wrap">
+      <h2>Tudo separado <span class="lime">por refeição</span><br><span style="font-weight:400;font-size:20px;">para você não perder tempo.</span></h2>
+      <div class="cats">
+        <div class="cat"><img src="/app/images/w400/CL-007.webp" alt="Sanduíche integral de frango desfiado" loading="lazy"><b>☕ Café da manhã e lanches · 40</b></div>
+        <div class="cat"><img src="/app/images/w400/AJ-007.webp" alt="Carne moída com arroz, feijão e cenoura" loading="lazy"><b>🍽 Almoço e jantar · 50</b></div>
+        <div class="cat"><img src="/app/images/w400/SOB-016.webp" alt="Pavê de morango" loading="lazy"><b>🍮 Sobremesas · 30</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FERRAMENTAS -->
+  <section class="sec green">
+    <div class="wrap">
+      <span class="kicker">O que você recebe</span>
+      <h2>Não é só receita. São ferramentas para você <em>NÃO DESISTIR DA DIETA</em></h2>
+
+      <div class="tools">
+        <div class="tool">
+          <img src="/images/app-catalogo.jpg" alt="Lista de receitas no app" loading="lazy">
+          <div class="t"><h3>Filtro por Proteína</h3><p>Veja na hora quais receitas têm mais proteína e escolha a que sustenta mais.</p></div>
+        </div>
+        <div class="tool">
+          <div class="ph">📅</div>
+          <div class="t"><h3>Semana Pronta</h3><p>Cardápio de 7 dias já montado, com a lista de compras do mercado. É só seguir.</p></div>
+        </div>
+        <div class="tool">
+          <img src="/images/app-geladeira.jpg" alt="Escolha de ingredientes no app" loading="lazy">
+          <div class="t"><h3>Modo Geladeira</h3><p>Marque o que tem em casa e o app mostra as receitas que dá para fazer agora.</p></div>
+        </div>
+        <div class="tool">
+          <div class="ph">✅</div>
+          <div class="t"><h3>Contador de Proteína</h3><p>Marque o que comeu e acompanhe quanta proteína já consumiu no dia.</p></div>
+        </div>
+      </div>
+
+      <div class="btn-row"><a class="btn white" href="#oferta">Quero liberar meu acesso agora</a></div>
+    </div>
+  </section>
+
+  <!-- BÔNUS -->
+  <section class="sec" style="background:#fcfbf7;">
+    <div class="wrap">
+      <p class="bonus-title">RECEBA TAMBÉM<br><span>+ 3 BÔNUS INCLUSOS:</span></p>
+      <p class="bonus-sub">(Já vêm junto com o seu acesso)</p>
+
+      <article class="bonus">
+        <div class="head"><b>BÔNUS 1:</b> Fichas de exercícios</div>
+        <p class="desc">Do iniciante ao avançado, <span>em casa ou na academia</span> — cada exercício tem uma versão sem aparelho</p>
+        <div class="ico">🏋️</div>
+        <p class="val">Valor de referência: <s>R$ 47,00</s> → <b>INCLUÍDO</b></p>
+        <ul><li>Exercícios com garrafa, cadeira e o peso do corpo</li><li>Séries, repetições e descanso indicados</li></ul>
+      </article>
+
+      <article class="bonus">
+        <div class="head"><b>BÔNUS 2:</b> Calculadora de calorias + meta de proteína</div>
+        <p class="desc">Descubra quanto comer por dia para <span>emagrecer sem passar fome</span></p>
+        <div class="ico">🧮</div>
+        <p class="val">Valor de referência: <s>R$ 37,00</s> → <b>INCLUÍDO</b></p>
+        <ul><li>Usa peso, altura, idade e rotina</li><li>Divide o dia em proteínas, carboidratos e gorduras</li></ul>
+      </article>
+
+      <article class="bonus">
+        <div class="head"><b>BÔNUS 3:</b> Shakes caseiros sem whey</div>
+        <p class="desc">5 shakes cremosos com <span>20g a 25g de proteína</span>, feitos com leite em pó, cottage, banana e cacau</p>
+        <div class="ico">🥤</div>
+        <p class="val">Valor de referência: <s>R$ 47,00</s> → <b>INCLUÍDO</b></p>
+        <ul><li>Sem comprar suplemento</li><li>Dicas para trocar produtos caros por opções de mercado</li></ul>
+      </article>
+
+      <p class="bonus-total">Mais de <b>R$ 130 em bônus</b> incluídos no seu acesso.</p>
+      <div class="btn-row"><a class="btn" href="#oferta">Quero aproveitar os bônus</a></div>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section class="sec">
+    <div class="wrap">
+      <p class="app-h">Esqueça <span>PDF pesado</span> travando no celular!</p>
+      <img class="app-shot" src="/images/app-receita.jpg" alt="Receita aberta no celular" loading="lazy">
+      <p class="app-p">As 120 receitas ficam num <b class="l">aplicativo no navegador</b>. Você recebe o link no e-mail e, com <b>1 toque</b>, ele abre no seu celular — sem baixar nada da loja. E, se quiser imprimir, também vem em PDF.</p>
+      <p class="app-q">"Abra na cozinha ou no mercado e tenha as fotos e o passo a passo na palma da mão."</p>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="sec" style="padding-bottom:28px;">
+    <div class="wrap">
+      <p class="cta-title">FACILITE SUA DIETA LIBERANDO AGORA O SEU ACESSO ÀS <span>120 RECEITAS PROTEICAS + BÔNUS</span></p>
+    </div>
+  </section>
+
+  <section class="price-wrap" id="oferta">
+    <div class="wrap">
+      <div class="price-card">
+        <div class="top"><small>Acesso vitalício</small><b>PACOTE PROT+</b></div>
+        <div class="body">
+          <p class="lifetime">Acesso imediato + todos os bônus</p>
+          <div class="imgs">
+            <img src="/app/images/w400/AJ-012.webp" alt="Frango desfiado com purê de abóbora" loading="lazy">
+            <img src="/app/images/w400/SOB-002.webp" alt="Cheesecake de morango" loading="lazy">
+            <img src="/app/images/w400/CL-015.webp" alt="Cuscuz de milho com frango e ovo" loading="lazy">
+          </div>
+          <p class="old">Valor somado dos itens: <s>R$ 228,00</s></p>
+          <p class="por">por apenas</p>
+          <div class="big">R$ 27,50</div>
+
+          <h4>Tudo que você recebe:</h4>
+          <ul>
+            <li>120 receitas proteicas</li>
+            <li>Filtro por Proteína</li>
+            <li>Semana Pronta</li>
+            <li>Modo Geladeira</li>
+            <li>Contador de Proteína</li>
+            <li>Receitas também em PDF</li>
+          </ul>
+          <h4>Bônus inclusos:</h4>
+          <ul>
+            <li class="g">Fichas de exercícios</li>
+            <li class="g">Calculadora de calorias e proteína</li>
+            <li class="g">Shakes caseiros sem whey</li>
+          </ul>
+
+          <p class="fine">*Pagamento único, sem mensalidade.</p>
+          <a class="btn" href="https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9" data-checkout>👉 Quero as receitas com os bônus!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    DEPOIMENTOS: incluir aqui SOMENTE prints reais de clientes, com autorização por escrito.
+    Os prints de images/depoimentos/ são montagens e não devem ser usados.
+  -->
+
+  <!-- GARANTIA -->
+  <section class="sec soft">
+    <div class="wrap guar">
+      <div class="seal">45<br>DIAS</div>
+      <h2>SATISFAÇÃO GARANTIDA <span>E RISCO ZERO!</span></h2>
+      <p>Se você comprar e, por qualquer motivo, não ficar satisfeita, é só pedir em até 45 dias e devolvemos 100% do seu dinheiro.</p>
+      <div class="seals">
+        <div><span>🔒</span>Compra 100% segura</div>
+        <div><span>🛡</span>45 dias de garantia</div>
+        <div><span>↩️</span>Reembolso garantido</div>
+        <div><span>⭐</span>Acesso vitalício</div>
+      </div>
+
+      <div class="repeat-price">
+        <p class="old">Valor somado dos itens: <s>R$ 228,00</s></p>
+        <div class="big">R$ 27,50</div>
+        <small>Pagamento único, sem mensalidade</small>
+        <a class="btn" href="https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9" data-checkout>👉 Quero as receitas com os bônus!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="kicker">Dúvidas frequentes</span>
+      <h2>Perguntas Frequentes</h2>
+      <p class="faq-sub">Ainda tem dúvidas? Aqui estão as respostas.</p>
+
+      <details><summary>Como vou receber o produto?</summary><p>Assim que o pagamento é aprovado (no Pix é na hora), você recebe um e-mail com o link de acesso. Por isso é importante digitar o e-mail certo no checkout. Confira também o spam e a aba Promoções.</p></details>
+      <details><summary>Por quanto tempo tenho acesso?</summary><p>Para sempre. Você paga uma única vez, sem mensalidade e sem taxa extra.</p></details>
+      <details><summary>As receitas são gostosas mesmo?</summary><p>São receitas de comida caseira — picadinho, carne moída com arroz e feijão, lombo com purê, cuscuz com frango, pudim, pavê, brigadeiro — pensadas para quem quer comer bem sem sair da dieta.</p></details>
+      <details><summary>Serve para a família toda?</summary><p>Sim. São pratos do dia a dia, com ingredientes comuns, que adultos e crianças comem junto.</p></details>
+      <details><summary>Os ingredientes são caros?</summary><p>Não. Arroz, feijão, frango, carne, tilápia, sardinha, ovos, cottage, ricota, aveia, banana e cacau — tudo de mercado comum.</p></details>
+      <details><summary>Preciso de utensílios especiais?</summary><p>Não. Panela, frigideira, forno ou air fryer e liquidificador resolvem.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 45 dias de garantia. Se não ficar satisfeita, é só pedir o reembolso nesse prazo e devolvemos 100% do valor, sem perguntas.</p></details>
+      <details><summary>Tenho alguma condição de saúde. Posso usar?</summary><p>As receitas não substituem a orientação do seu médico ou nutricionista. Se você tem diabetes, pressão alta ou outra condição, mostre as receitas a quem acompanha você.</p></details>
+
+      <div class="btn-row"><a class="btn" href="#oferta">👉 Quero as receitas com os bônus!</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Copyright 2026 · Prot+</p>
+      <p style="margin-top:6px;"><a href="/termos.html">Termos de Uso</a> · <a href="/privacidade.html">Políticas de privacidade</a></p>
+      <p class="disc">Este site não é afiliado ao Facebook ou à Meta Inc. O conteúdo do Prot+ tem caráter informativo e culinário e não substitui o acompanhamento de nutricionistas ou médicos. Os resultados variam de pessoa para pessoa.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Checkout da Payt. InitiateCheckout e Purchase são disparados pela própria Payt;
+    // esta página só repassa os parâmetros do anúncio (utm_*, fbclid, src…) para o checkout.
+    const PAYT_CHECKOUT_URL = "https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9";
+
+    function checkoutComParametros() {
+      const destino = new URL(PAYT_CHECKOUT_URL);
+      new URLSearchParams(window.location.search).forEach((valor, chave) => {
+        if (!destino.searchParams.has(chave)) destino.searchParams.set(chave, valor);
+      });
+      return destino.toString();
+    }
+
+    document.querySelectorAll('[data-checkout]').forEach(link => {
+      link.href = checkoutComParametros();
+    });
+
+    document.querySelectorAll('details summary').forEach(summary => {
+      summary.addEventListener('click', function () {
+        const atual = this.parentElement;
+        document.querySelectorAll('details').forEach(d => { if (d !== atual) d.removeAttribute('open'); });
+      });
+    });
+  </script>
+</body>
+</html>

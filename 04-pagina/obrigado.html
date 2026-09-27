@@ -19,7 +19,8 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1310891797657056');
   fbq('track', 'PageView');
-  fbq('track', 'Purchase', { value: 27.50, currency: 'BRL' });
+  // Purchase não é disparado aqui: a Payt já envia o evento do checkout, com o valor real.
+  // Disparar de novo duplicava cada venda no Meta (e sempre com R$ 27,50, ignorando os bumps).
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1310891797657056&ev=PageView&noscript=1"

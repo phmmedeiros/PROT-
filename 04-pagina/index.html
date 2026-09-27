@@ -2001,12 +2001,22 @@
     // =========================================================================
     const PAYT_CHECKOUT_URL = "https://checkout.payt.com.br/8b77902c47ab4ecdabdcd7909b342ad9";
 
+    // Leva os parâmetros do anúncio (utm_*, fbclid, src…) para o checkout, para a Payt
+    // atribuir a venda. InitiateCheckout e Purchase são disparados pela própria Payt.
+    function checkoutComParametros() {
+      const destino = new URL(PAYT_CHECKOUT_URL);
+      new URLSearchParams(window.location.search).forEach((valor, chave) => {
+        if (!destino.searchParams.has(chave)) destino.searchParams.set(chave, valor);
+      });
+      return destino.toString();
+    }
+
     // Redirecionamento inteligente dos botões de compra para o checkout Payt
     document.querySelectorAll('a[href="#checkout"], #btnMainOffer').forEach(btn => {
       btn.addEventListener('click', (e) => {
         if (PAYT_CHECKOUT_URL && PAYT_CHECKOUT_URL.trim() !== "") {
           e.preventDefault();
-          window.location.href = PAYT_CHECKOUT_URL;
+          window.location.href = checkoutComParametros();
         }
       });
     });

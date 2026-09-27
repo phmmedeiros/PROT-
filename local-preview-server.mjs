@@ -15,6 +15,10 @@ const server = http.createServer((req, res) => {
   let relative;
   if (urlPath === '/' || urlPath === '/index.html') {
     relative = '04-pagina/index.html';
+  } else if (urlPath === '/v2' || urlPath === '/v2/' || urlPath === '/v2/index.html') {
+    relative = '04-pagina/v2/index.html';
+  } else if (urlPath === '/v3' || urlPath === '/v3/' || urlPath === '/v3/index.html') {
+    relative = '04-pagina/v3/index.html';
   } else if (urlPath === '/obrigado' || urlPath === '/obrigado/' || urlPath === '/obrigado.html') {
     relative = '04-pagina/obrigado.html';
   } else if (urlPath === '/termos' || urlPath === '/termos/' || urlPath === '/termos.html') {

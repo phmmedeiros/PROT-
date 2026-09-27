@@ -75,6 +75,21 @@ Duas saídas:
 
 A opção 1 deixa a página independente do app; a 2 evita duplicar arquivo.
 
+## 0.2 Página v2 (27/09/2026) — **no ar**
+
+Publicada em 27/09/2026, arquivo por arquivo (upload TUS), sem pacote que sobrescreva o site. Os três arquivos no ar foram conferidos e são idênticos aos locais. A conta da Hostinger do Comer Sempre Bem é a `u189366629`, que não é a mesma dos outros projetos.
+
+`04-pagina/v2/index.html` vai para a pasta `v2/` na raiz da hospedagem da `lp`, e fica em
+`https://lp.comersemprebem.site/v2/`. Ela usa só caminhos a partir da raiz do site
+(`/images/…` para as fotos da página e `/app/images/w400/…` para as fotos das receitas),
+então não precisa copiar imagens: tudo já está no servidor. Não é preciso mexer no `.htaccess`.
+
+No mesmo envio, subir também `04-pagina/index.html` (UTMs até o checkout) e
+`04-pagina/obrigado.html` (sem `Purchase` duplicado).
+
+Nos anúncios, apontar para `https://lp.comersemprebem.site/v2/` com os parâmetros UTM.
+A página repassa `utm_*`, `fbclid` e qualquer outro parâmetro para o checkout da Payt.
+
 ## 1. Estrutura para hospedagem
 
 Publicar mantendo esta estrutura relativa:
